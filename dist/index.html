@@ -142,6 +142,50 @@ li {
   left: 118px;
   top: 835px;
 }
+
+[template="two"] .text {
+  left: 92px;
+  top: 239px;
+}
+
+[template="two"] .people {
+  left: 183.07px;
+  top: 341.34px;
+}
+
+[template="two"] .scroll-box {
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 870px;
+  width: 0;
+  height: 398px;
+  opacity: 0;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+
+[template="two"] .scroll-box .scroll {
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  height: 100%;
+  background-position: center;
+  background-image: url('./static/resource/scroll.png');
+}
+
+[template="two"] .scroll-box .scroll-bar {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  background-image: url('./static/resource/scroll.png');
+}
+
+[template="two"] .scroll-box .scroll-right {
+  right: 0;
+  top: 0;
+  background-position-x: 40px;
+}
 </style>
     <!-- 附属css文件 -->
     <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
@@ -151,7 +195,7 @@ li {
   <body>
     <!-- 页面区域 -->
     <div class="box one ox" template="one" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="start" src="./static/resource/start.png"></div><div class="text" font="FZZZHONGJW.TTF">loading...</div></div></div>
-    <div class="box two ox" template="two" style="display: none;"><div class="safety"><img class="item button" src="./static/resource/two-button.png"><img class="item logo" src="./static/resource/two-logo.png"><img class="item title" src="./static/resource/two-title.png"></div></div>
+    <div class="box two ox" template="two" style="display: none;"><div class="safety"><img class="item button" src="./static/resource/two-button.png"><img class="item logo" src="./static/resource/two-logo.png"><img class="item text" src="./static/resource/two-text.png"><img class="item title" src="./static/resource/two-title.png"><img class="item people" src="./static/resource/people.png"><!-- 卷轴--><div class="scroll-box item"><div class="scroll-left scroll-bar"></div><div class="scroll"></div><div class="scroll-right scroll-bar"></div></div></div></div>
     <!-- 框架script代码 --><script>"use strict";
 
 // 存储页面基本信息
@@ -183,7 +227,15 @@ owo.script = {
   "two": {
     "data": {},
     "created": function created() {
+      var _this = this;
+
       changeDecorate(this.$el, 750, 1508);
+      owo.tool.animate('bounceIn', this.query('.text')[0], 500);
+      owo.tool.animate('fadeInRight', this.query('.people')[0], 800);
+      setTimeout(function () {
+        _this.query('.scroll-box')[0].style.opacity = '1';
+        _this.query('.scroll-box')[0].style.width = '644px';
+      }, 1000);
     }
   }
 };</script>

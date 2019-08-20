@@ -1,4 +1,4 @@
-// Tue Aug 20 2019 20:09:48 GMT+0800 (GMT+08:00)
+// Wed Aug 21 2019 00:08:34 GMT+0800 (GMT+08:00)
 
 /* 方法合集 */
 var _owo = {
@@ -404,7 +404,28 @@ _owo.ready = (function() {               //这个函数返回whenReady()函数
 _owo.ready(_owo.showPage)
 
 
-
+/**
+ * 赋予节点动画效果
+ * @param  {string} name 动画效果名称
+ * @param  {dom} dom 节点
+ */
+owo.tool.animate = function (name, dom, delay) {
+  dom.classList.add(name)
+  dom.classList.add('owo-animated')
+  if (delay) {
+    dom.style.animationDelay = delay + 'ms'
+  }
+  // 待优化可以单独提出绑定方法
+  dom.addEventListener('animationend', animateEnd)
+  function animateEnd () {
+    // 待优化 感觉不需要这样
+    dom.classList.remove(name)
+    dom.classList.remove('owo-animated')
+    if (delay) {
+      dom.style.animationDelay = 'unset'
+    }
+  }
+}
 
 /* 运行页面所属的方法 */
 _owo.handlePage = function (newPageFunction, entryDom) {
