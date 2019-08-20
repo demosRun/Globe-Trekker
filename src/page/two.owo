@@ -1,0 +1,37 @@
+<template lang="pug">
+.box.two
+  //- 山背景
+  .safety
+    img.item.button(src="@|two-button.png|")
+    img.item.logo(src="@|two-logo.png|")
+    img.item.title(src="@|two-title.png|")
+</template>
+
+<script>
+  module.exports = {
+    data: {
+    },
+    created: function () {
+      changeDecorate(this.$el, 750, 1508)
+    }
+  }
+</script>
+
+<style lang="less">
+.box {
+  background: url('@|two-bg.jpg|');
+  background-size: 100% 100%;
+}
+.button {
+  left: 218px;
+  top: 1266px;
+}
+.logo {
+  left: 488px;
+  top: 146px;
+}
+.title {
+  left: 118px;
+  top: 835px;
+}
+</style>

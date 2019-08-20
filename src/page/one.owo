@@ -1,0 +1,60 @@
+<template lang="pug">
+.box.one
+  //- .safety
+  //- 加载条
+  .loading-box
+    .loading-bar
+      img.start(src="@|start.png|")
+    .text(font="FZZZHONGJW.TTF") loading...
+</template>
+
+<script>
+  module.exports = {
+    data: {
+    },
+    created: function () {
+      // owo.go('two')
+      // changeDecorate(this.$el, 750, 1508)
+      setTimeout(() => {
+        owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
+      }, 2000)
+      // 不断地更换加载文字
+    }
+  }
+</script>
+
+<style lang="less">
+.box {
+  background: linear-gradient(#b4c5ec,#e7e6ef);
+}
+.loading-bar {
+  width: 100%;
+  height: 35px;
+  position: relative;
+  background-size: 100%;
+  background-image: url('@|loading-bar.png|');
+}
+.loading-box {
+  position: absolute;
+  width: 287px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+}
+.start {
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+</style>

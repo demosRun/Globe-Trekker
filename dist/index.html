@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>页面</title>
+    <!-- 页面的元信息 -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="filetype" content="1"/>
+    <meta name="publishedtype" content="1"/>
+    <meta name="pagetype" content="2"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-orientation" content="portrait"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="browsermode" content="application"/>
+    <meta name="x5-page-mode" content="app"/>
+    <!-- 页面主样式文件 -->
+<style>
+body, html, .ox {
+  padding: 0;
+  margin: 0;
+}
+
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  -o-animation-duration: 1s;
+     animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+     animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+.box[template="one"] {
+  background: -webkit-gradient(linear, left top, left bottom, from(#b4c5ec), to(#e7e6ef));
+  background: -webkit-linear-gradient(#b4c5ec, #e7e6ef);
+  background: -o-linear-gradient(#b4c5ec, #e7e6ef);
+  background: linear-gradient(#b4c5ec, #e7e6ef);
+}
+
+[template="one"] .loading-bar {
+  width: 100%;
+  height: 35px;
+  position: relative;
+  background-size: 100%;
+  background-image: url('./static/resource/loading-bar.png');
+}
+
+[template="one"] .loading-box {
+  position: absolute;
+  width: 287px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+[template="one"] .text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+[template="one"] .start {
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.box[template="two"] {
+  background: url('./static/resource/two-bg.jpg');
+  background-size: 100% 100%;
+}
+
+[template="two"] .button {
+  left: 218px;
+  top: 1266px;
+}
+
+[template="two"] .logo {
+  left: 488px;
+  top: 146px;
+}
+
+[template="two"] .title {
+  left: 118px;
+  top: 835px;
+}
+</style>
+    <!-- 附属css文件 -->
+    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+    <link rel="stylesheet" href="./static/css/owo.animation.css">
+    <link rel="stylesheet" href="./static/css/owo.animate.css">
+  </head>
+  <body>
+    <!-- 页面区域 -->
+    <div class="box one ox" template="one" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="start" src="./static/resource/start.png"></div><div class="text" font="FZZZHONGJW.TTF">loading...</div></div></div>
+    <div class="box two ox" template="two" style="display: none;"><div class="safety"><img class="item button" src="./static/resource/two-button.png"><img class="item logo" src="./static/resource/two-logo.png"><img class="item title" src="./static/resource/two-title.png"></div></div>
+    <!-- 框架script代码 --><script>"use strict";
+
+// 存储页面基本信息
+var owo = {
+  // 页面默认入口 如果没有设置 则取第一个页面为默认页面
+  entry: "one",
+  // 全局方法变量
+  tool: {},
+  // 框架状态变量
+  state: {}
+};
+/*
+  存储每个页面的函数
+  键名：页面名称
+  键值：方法列表
+*/
+
+owo.script = {
+  "one": {
+    "data": {},
+    "created": function created() {
+      // owo.go('two')
+      // changeDecorate(this.$el, 750, 1508)
+      setTimeout(function () {
+        owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
+      }, 2000); // 不断地更换加载文字
+    }
+  },
+  "two": {
+    "data": {},
+    "created": function created() {
+      changeDecorate(this.$el, 750, 1508);
+    }
+  }
+};</script>
+<!-- 框架script文件 -->
+<script src="./static/js/owo.main.js" type="text/javascript" charset="UTF-8"></script>
+<!-- 调试-热刷新代码 -->
+<script src="./static/js/autoReload.js" type="text/javascript" charset="UTF-8"></script>
+<!-- 调试-远程调试 -->
+<script src="./static/js/log.js" type="text/javascript" charset="UTF-8"></script>
+
+    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+  </body>
+</html>
