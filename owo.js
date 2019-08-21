@@ -83,7 +83,23 @@ module.exports = {
     {
       name: "main",
       src: "./src/main.js"
-    }
+    },
+    {
+      name: "classie",
+      src: "./src/resource/classie.js"
+    },
+    {
+      name: "dynamics.min",
+      src: "./src/resource/dynamics.min.js"
+    },
+    {
+      name: "modernizr-custom",
+      src: "./src/resource/modernizr-custom.js"
+    },
+    {
+      name: "stack",
+      src: "./src/resource/stack.js"
+    },
   ],
   // 使用到的样式列表
   styleList: [
@@ -102,6 +118,10 @@ module.exports = {
     {
       name: 'two',
       src: './src/page/two.owo'
+    },
+    {
+      name: 'three',
+      src: './src/page/three.owo'
     },
   ],
   // 调试模式配置
