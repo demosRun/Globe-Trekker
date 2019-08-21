@@ -2,7 +2,7 @@
 .box.two
   //- 山背景
   .safety
-    img.item.button(src="@|two-button.png|")
+    img.item.button(src="@|two-button.png|", :click="owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')")
     img.item.logo(src="@|two-logo.png|")
     img.item.text(src="@|two-text.png|")
     img.item.title(src="@|two-title.png|")

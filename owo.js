@@ -123,6 +123,14 @@ module.exports = {
       name: 'three',
       src: './src/page/three.owo'
     },
+    {
+      name: 'four',
+      src: './src/page/four.owo'
+    },
+    {
+      name: 'five',
+      src: './src/page/five.owo'
+    },
   ],
   // 调试模式配置
   dev: {

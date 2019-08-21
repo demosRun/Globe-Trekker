@@ -1,0 +1,139 @@
+<template lang="pug">
+.box.five
+  .safety
+    .scroll-box.item
+      img.scroll-1(src="@|five-scroll-1.png|")
+      img.scroll-2(src="@|five-scroll-1.png|")
+      .info-box
+        p
+          span 中国领事服务网：
+          a(href="http://cs.mfa.gov.cn/") http://cs.mfa.gov.cn/
+        p
+          span 驻美国使馆：
+          a(href="http://www.china-embassy.org/chn/") http://www.china-embassy.org/chn/
+        p
+          span 驻纽约总领馆：
+          a(href="http://newyork.chineseconsulate.org/chn/") http://newyork.chineseconsulate.org/chn/
+        p
+          span 驻旧金山总领馆：
+          a(href="http://www.chinaconsulatesf.org/chn/") http://www.chinaconsulatesf.org/chn/
+        p
+          span 驻洛杉矶总领馆：
+          a(href="http://losangeles.china-consulate.org/chn/") http://losangeles.china-consulate.org/chn/
+        p
+          span 驻芝加哥总领馆：
+          a(href="http://www.chinaconsulatechicago.org/chn/") http://www.chinaconsulatechicago.org/chn/
+        p
+          span 驻休斯敦总领馆：
+          a(href="http://houston.china-consulate.org/chn/") http://houston.china-consulate.org/chn/
+        p.bottom 美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。
+    .bottom-bar
+      .bottom-button(font="FZZZHONGJW.TTF") 查看答案
+      .bottom-button(font="FZZZHONGJW.TTF", :click="location.replace('')") 再测一次
+      .bottom-button(font="FZZZHONGJW.TTF") 点我转发
+</template>
+
+<script>
+  module.exports = {
+    data: {
+    },
+    created: function () {
+      // 根据不同的分数更换不同的样式
+      console.log(owo.state.code)
+      if (owo.state.code >= 8) {
+        this.$el.classList.add('lave3')
+      } else if (owo.state.code >= 5) {
+        this.$el.classList.add('lave2')
+      } else {
+        this.$el.classList.add('lave1')
+      }
+      changeDecorate(this.$el, 750, 1508)
+      setTimeout(() => {
+        this.query('.scroll-box')[0].style.height = '990px'
+      }, 800)
+      
+      owo.tool.animate('fadeIn', this.query('.info-box')[0], 2800)
+      owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 2800)
+    }
+  }
+</script>
+
+<style lang="less" original>
+.box.five {
+  background: #e39f89;
+  .scroll-box {
+    width: 610px;
+    height: 990px;
+    left: 0;
+    right: 0;
+    top: 10%;
+    height: 73px;
+    margin: auto;
+    position: relative;
+    transition: height 2s;
+    background-image: url('@|five-scroll-box-1.png|');
+  }
+  .scroll-1 {
+    width: 692px;
+    top: -7px;
+    left: -40px;
+    position: absolute;
+  }
+  .scroll-2 {
+    width: 692px;
+    bottom: -7px;
+    left: -40px;
+    position: absolute;
+  }
+  .info-box {
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 670px;
+    position: absolute;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #404040;
+    .bottom {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+  .bottom-button {
+    width: 233px;
+    height: 73px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 25px;
+    background-image: url('@|five-button.png|');
+  }
+  .bottom-bar {
+    position: absolute;
+    top: 1240px;
+    left: 30px;
+    display: flex;
+  }
+}
+.lave2.box.five {
+  background-color: #898989;
+  .scroll-box {
+    background-image: url('@|five-scroll-box-2.png|');
+  }
+  .bottom-button {
+    color: #6d6d6d;
+  }
+}
+
+.lave3.box.five {
+  background-color: #f1d371;
+  .scroll-box {
+    background-image: url('@|five-scroll-box-3.png|');
+  }
+  .bottom-button {
+    color: #cbbc5d;
+  }
+}
+</style>

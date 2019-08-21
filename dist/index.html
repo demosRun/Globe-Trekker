@@ -186,18 +186,6 @@ li {
   top: 0;
   background-position-x: 40px;
 }
-          [font="FZZZHONGJW.TTF"] {
-            font-family: 'FZZZHONGJW';
-          }
-          @font-face {
-            font-family: 'FZZZHONGJW';
-            src: url('./static/font/FZZZHONGJW.eot');
-            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
-              url('./static/font/FZZZHONGJW.woff') format('woff'),
-              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
-              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
-          }
-        
 .card-switch[template="card"] {
   width: 100%;
   height: 100%;
@@ -223,7 +211,7 @@ li {
   background: #fff;
   height: 100%;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 10px;
   text-align: center;
   overflow: hidden;
   position: absolute;
@@ -322,7 +310,7 @@ li {
 }
 
 [template="card"] .title-bar {
-  height: 70px;
+  padding: 10px;
   color: white;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -334,7 +322,6 @@ li {
       -ms-flex-align: center;
           align-items: center;
   text-align: left;
-  padding: 0 10px;
   font-size: 14px;
   line-height: 20px;
   background: -webkit-gradient(linear, left top, right top, from(#90a9e7), to(#6179d6));
@@ -399,7 +386,6 @@ li {
 }
 
 [template="card"] .answer-list .answer {
-  height: 40px;
   background: -webkit-gradient(linear, left top, right top, from(#e5eaed), to(#b5c3dd));
   background: -webkit-linear-gradient(left, #e5eaed, #b5c3dd);
   background: -o-linear-gradient(left, #e5eaed, #b5c3dd);
@@ -409,13 +395,16 @@ li {
   padding: 0 15px;
   cursor: pointer;
   position: relative;
+  padding-right: 35px;
 }
 
 [template="card"] .answer-list p {
-  line-height: 40px;
+  line-height: 20px;
   text-align: left;
   font-weight: bold;
   pointer-events: none;
+  font-size: 14px;
+  padding: 10px 0;
 }
 
 [template="card"] .answer-list .check-box {
@@ -471,6 +460,214 @@ li {
   margin: 8px 0;
 }
 
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+.box[template="four"] {
+  background: -webkit-gradient(linear, left top, left bottom, from(#b4c5ec), to(#e7e6ef));
+  background: -webkit-linear-gradient(#b4c5ec, #e7e6ef);
+  background: -o-linear-gradient(#b4c5ec, #e7e6ef);
+  background: linear-gradient(#b4c5ec, #e7e6ef);
+}
+
+[template="four"] .loading-bar {
+  width: 100%;
+  height: 35px;
+  position: relative;
+  background-size: 100%;
+  background-image: url('./static/resource/loading-bar.png');
+}
+
+[template="four"] .loading-bar img {
+  position: absolute;
+  height: 24px;
+}
+
+[template="four"] .loading-bar .icon-1 {
+  left: 34%;
+  top: 7px;
+}
+
+[template="four"] .loading-bar .icon-2 {
+  left: 43%;
+  top: 7px;
+}
+
+[template="four"] .loading-bar .icon-3 {
+  left: 52%;
+  top: 6px;
+  height: 22px;
+}
+
+[template="four"] .loading-bar .icon-4 {
+  left: 61%;
+  height: 20px;
+  top: 8px;
+}
+
+[template="four"] .loading-box {
+  position: absolute;
+  width: 287px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+[template="four"] .text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+[template="four"] .start {
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+.box.five {
+  background: #e39f89;
+}
+
+.box.five .scroll-box {
+  width: 610px;
+  height: 990px;
+  left: 0;
+  right: 0;
+  top: 10%;
+  height: 73px;
+  margin: auto;
+  position: relative;
+  -webkit-transition: height 2s;
+  -o-transition: height 2s;
+  transition: height 2s;
+  background-image: url('./static/resource/five-scroll-box-1.png');
+}
+
+.box.five .scroll-1 {
+  width: 692px;
+  top: -7px;
+  left: -40px;
+  position: absolute;
+}
+
+.box.five .scroll-2 {
+  width: 692px;
+  bottom: -7px;
+  left: -40px;
+  position: absolute;
+}
+
+.box.five .info-box {
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 670px;
+  position: absolute;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #404040;
+}
+
+.box.five .info-box .bottom {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.box.five .bottom-button {
+  width: 233px;
+  height: 73px;
+  text-align: center;
+  line-height: 70px;
+  font-size: 25px;
+  background-image: url('./static/resource/five-button.png');
+}
+
+.box.five .bottom-bar {
+  position: absolute;
+  top: 1240px;
+  left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lave2.box.five {
+  background-color: #898989;
+}
+
+.lave2.box.five .scroll-box {
+  background-image: url('./static/resource/five-scroll-box-2.png');
+}
+
+.lave2.box.five .bottom-button {
+  color: #6d6d6d;
+}
+
+.lave3.box.five {
+  background-color: #f1d371;
+}
+
+.lave3.box.five .scroll-box {
+  background-image: url('./static/resource/five-scroll-box-3.png');
+}
+
+.lave3.box.five .bottom-button {
+  color: #cbbc5d;
+}
 </style>
     <!-- 附属css文件 -->
     <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
@@ -480,14 +677,17 @@ li {
   <body>
     <!-- 页面区域 -->
     <div class="box one ox" template="one" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="start" src="./static/resource/start.png"></div><div class="text" font="FZZZHONGJW.TTF">loading...</div></div></div>
-    <div class="box two ox" template="two" style="display: none;"><div class="safety"><img class="item button" src="./static/resource/two-button.png"><img class="item logo" src="./static/resource/two-logo.png"><img class="item text" src="./static/resource/two-text.png"><img class="item title" src="./static/resource/two-title.png"><img class="item people" src="./static/resource/people.png"><!-- 卷轴--><div class="scroll-box item"><div class="scroll-left scroll-bar"></div><div class="scroll"></div><div class="scroll-right scroll-bar"></div></div></div></div>
-    <div class="box three ox" template="three" style="display: none;"><div class="card-switch" template="card"><ul class="stack stack--yuda" id="stack_yuda"><li class="stack__item tips"><div class="tips-title-bar"><img class="left" src="./static/resource/two-tip-title.png"><img class="close" src="./static/resource/two-tip-close.png" :click="reject"></div><div class="tips-text-box" font="FZZZHONGJW.TTF"><p>1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。</p><div class="line"></div><p>2.美国对入境携带礼品、烟、酒、药品、动植物制品等有严格规定，建议行前认真查阅了解，可参考<a href="http://newyork.chineseconsulate.org/chn//lgfw/mdlxzn/t1242318.htm">链接地址</a></p><div class="line"></div><p>3.美执法部门有权检查入境旅客所有电子产品，如美方认定其中包含违法（如：含有儿童色情内容）或显示与入境目的不符（如：持旅行签证来美，但社交软件聊天记录透露出来美打工、移民等倾向）的信息，将导致拒绝入境、遣返甚至追究法律责任。</p></div></li>
-<li class="stack__item"><div class="title-bar">1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">2.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">3.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">4.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">5.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li></ul><div class="page">1 / 10</div></div></div>
+    <div class="box two ox" template="two" style="display: none;"><div class="safety"><img class="item button" src="./static/resource/two-button.png" :click="owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')"><img class="item logo" src="./static/resource/two-logo.png"><img class="item text" src="./static/resource/two-text.png"><img class="item title" src="./static/resource/two-title.png"><img class="item people" src="./static/resource/people.png"><!-- 卷轴--><div class="scroll-box item"><div class="scroll-left scroll-bar"></div><div class="scroll"></div><div class="scroll-right scroll-bar"></div></div></div></div>
+    <div class="box three ox" template="three" style="display: none;"><div class="card-switch" template="card"><ul class="stack stack--yuda" id="stack_yuda">
+<li class="stack__item"><div class="title-bar">1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 一块妈妈刚做好的腊肉</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 知名老中医抓的调理中药</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 存有“情趣小电影”的平板电脑</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 接通人工服务</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 直接挂断电话</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 请教身边亲友如何处理</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 挂断电话并查询使馆电话号码去电核实</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 只要没超速就可以不用管，继续平稳行驶</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 立即靠边停车，下车并礼貌向警察询问情况</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 开车超速被警察开了出庭通知，因日程原因未上庭</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 将未付款衣物放进自己口袋</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 付完款就将发票撕毁扔掉</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 用兄弟的信用卡刷卡消费</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 优惠换汇</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 打折缴纳学费</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 低价代缴房租</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 低价代购奢侈品</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 帅哥美女搭讪提供“特殊”服务</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 街头有人搭讪，低价兜售新款高档手机</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 酒吧门口有人搭讪，低价兜售可卡因</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li></ul><div class="page">1 / 10</div></div></div>
+    <div class="box one ox" template="four" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="icon-1" src="./static/resource/icon-1.png"><img class="icon-2" src="./static/resource/icon-2.png"><img class="icon-3" src="./static/resource/icon-3.png"><img class="icon-4" src="./static/resource/icon-4.png"></div><div class="text" font="FZZZHONGJW.TTF">正在计算您的江湖指数.....</div></div></div>
+    <div class="box five ox" template="five" style="display: none;"><div class="safety"><div class="scroll-box item"><img class="scroll-1" src="./static/resource/five-scroll-1.png"><img class="scroll-2" src="./static/resource/five-scroll-1.png"><div class="info-box"><p><span>中国领事服务网：</span><a href="http://cs.mfa.gov.cn/">http://cs.mfa.gov.cn/</a></p><p><span>驻美国使馆：</span><a href="http://www.china-embassy.org/chn/">http://www.china-embassy.org/chn/</a></p><p><span>驻纽约总领馆：</span><a href="http://newyork.chineseconsulate.org/chn/">http://newyork.chineseconsulate.org/chn/</a></p><p><span>驻旧金山总领馆：</span><a href="http://www.chinaconsulatesf.org/chn/">http://www.chinaconsulatesf.org/chn/</a></p><p><span>驻洛杉矶总领馆：</span><a href="http://losangeles.china-consulate.org/chn/">http://losangeles.china-consulate.org/chn/</a></p><p><span>驻芝加哥总领馆：</span><a href="http://www.chinaconsulatechicago.org/chn/">http://www.chinaconsulatechicago.org/chn/</a></p><p><span>驻休斯敦总领馆：</span><a href="http://houston.china-consulate.org/chn/">http://houston.china-consulate.org/chn/</a></p><p class="bottom">美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。</p></div></div><div class="bottom-bar"><div class="bottom-button" font="FZZZHONGJW.TTF">查看答案</div><div class="bottom-button" font="FZZZHONGJW.TTF" :click="location.replace('')">再测一次</div><div class="bottom-button" font="FZZZHONGJW.TTF">点我转发</div></div></div></div>
     <!-- 框架script代码 --><script>"use strict";
 
 // 存储页面基本信息
@@ -543,83 +743,95 @@ owo.script = {
           "number": 1,
           "allNumber": 0,
           "list": [{
-            "text": "1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
+            "text": "1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:",
             "answer": [{
-              "text": "A.6000美元现金",
-              "correct": true
+              "text": "A. 6000美元现金"
             }, {
-              "text": "A.6000美元现金"
+              "text": "B. 一块妈妈刚做好的腊肉"
             }, {
-              "text": "A.6000美元现金"
+              "text": "C. 知名老中医抓的调理中药"
             }, {
-              "text": "A.6000美元现金"
+              "text": "D. 存有“情趣小电影”的平板电脑"
             }]
           }, {
-            "text": "1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
+            "text": "2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：",
             "answer": [{
-              "text": "A.6000美元现金",
-              "correct": true
+              "text": "A. 接通人工服务"
             }, {
-              "text": "A.6000美元现金"
+              "text": "B. 直接挂断电话"
             }, {
-              "text": "A.6000美元现金"
+              "text": "C. 请教身边亲友如何处理"
             }, {
-              "text": "A.6000美元现金"
+              "text": "D. 挂断电话并查询使馆电话号码去电核实"
             }]
           }, {
-            "text": "2.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
+            "text": "3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：",
             "answer": [{
-              "text": "A.6000美元现金",
-              "correct": true
+              "text": "A. 只要没超速就可以不用管，继续平稳行驶"
             }, {
-              "text": "A.6000美元现金"
+              "text": "B. 立即靠边停车，下车并礼貌向警察询问情况"
             }, {
-              "text": "A.6000美元现金"
+              "text": "C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理"
             }, {
-              "text": "A.6000美元现金"
+              "text": "D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查"
             }]
           }, {
-            "text": "3.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
+            "text": "4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：",
             "answer": [{
-              "text": "A.6000美元现金"
+              "text": "A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭"
             }, {
-              "text": "A.6000美元现金"
+              "text": "B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子"
             }, {
-              "text": "A.6000美元现金"
+              "text": "C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言"
             }, {
-              "text": "A.6000美元现金"
+              "text": "D. 开车超速被警察开了出庭通知，因日程原因未上庭"
             }]
           }, {
-            "text": "4.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
+            "text": "5、小明到美国某商场购物，以下行为不恰当的有：",
             "answer": [{
-              "text": "A.6000美元现金"
+              "text": "A. 将未付款衣物放进自己口袋"
             }, {
-              "text": "A.6000美元现金"
+              "text": "B. 付完款就将发票撕毁扔掉"
             }, {
-              "text": "A.6000美元现金"
+              "text": "C. 用兄弟的信用卡刷卡消费"
             }, {
-              "text": "A.6000美元现金"
+              "text": "D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”"
+            }, {
+              "text": "E. 逛累了在商场椅子上睡一觉再继续扫货"
             }]
           }, {
-            "text": "5.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
+            "text": "6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：",
             "answer": [{
-              "text": "A.6000美元现金"
+              "text": "A. 优惠换汇"
             }, {
-              "text": "A.6000美元现金"
+              "text": "B. 打折缴纳学费"
             }, {
-              "text": "A.6000美元现金"
+              "text": "C. 低价代缴房租"
             }, {
-              "text": "A.6000美元现金"
+              "text": "D. 低价代购奢侈品"
+            }]
+          }, {
+            "text": "7、小明在美国旅游期间，以下哪些“便宜”不能占：",
+            "answer": [{
+              "text": "A. 帅哥美女搭讪提供“特殊”服务"
+            }, {
+              "text": "B. 街头有人搭讪，低价兜售新款高档手机"
+            }, {
+              "text": "C. 酒吧门口有人搭讪，低价兜售可卡因"
+            }, {
+              "text": "D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”"
             }]
           }]
         },
         "created": function created() {
           var _this2 = this;
 
+          owo.state.code = 0;
           this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
             infinite: false,
             onEndStack: function onEndStack() {
               console.log('最后了');
+              owo.go('four', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
             }
           }); // 获取总数
 
@@ -628,7 +840,114 @@ owo.script = {
             _this2.query('.page')[0].innerText = _this2.data.number + ' / ' + _this2.data.allNumber;
           }, 0);
         },
+        "inspect": function inspect(ind) {
+          var list = [];
+          var domList = this.query('.stack__item')[ind].getElementsByClassName('answer'); // console.log(domList)
+
+          for (var _ind = 0; _ind < domList.length; _ind++) {
+            var element = domList[_ind];
+
+            if (element.classList.contains('ischeck')) {
+              list.push(true);
+            } else {
+              list.push(false);
+            }
+          }
+
+          return list;
+        },
         "accept": function accept() {
+          // 计算分数
+          switch (this.data.number) {
+            case 1:
+              {
+                var check = this.inspect(0);
+
+                if (check[1] && check[2] && check[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 2:
+              {
+                var _check = this.inspect(1);
+
+                if (_check[1] || _check[2] || _check[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 3:
+              {
+                var _check2 = this.inspect(2);
+
+                if (_check2[2]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 4:
+              {
+                var _check3 = this.inspect(3);
+
+                if (_check3[0] && _check3[1] && _check3[2] && _check3[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 5:
+              {
+                var _check4 = this.inspect(4);
+
+                if (_check4[0] && _check4[1] && _check4[2] && _check4[3] && _check4[4]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 6:
+              {
+                var _check5 = this.inspect(5);
+
+                if (_check5[0] && _check5[1] && _check5[2] && _check5[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 7:
+              {
+                var _check6 = this.inspect(6);
+
+                if (_check6[0] && _check6[1] && _check6[2] && _check6[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 8:
+              {
+                var _check7 = this.inspect(7);
+
+                if (_check7[1] && _check7[2] && _check7[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+          }
+
           this.data.number++;
           this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber;
           this.data.yuda.accept();
@@ -638,14 +957,58 @@ owo.script = {
         },
         "checkItem": function checkItem(e) {
           var parentElement = this.$event.target.parentElement;
-          var answer = parentElement.querySelectorAll('.answer');
-          answer.forEach(function (element) {
-            element.classList.remove('ischeck');
-          });
-          this.$event.target.classList.add('ischeck');
+          var answer = parentElement.querySelectorAll('.answer'); // console.log(this.$event.target.classList.contains('ischeck'))
+
+          if (this.$event.target.classList.contains('ischeck')) {
+            this.$event.target.classList.remove('ischeck');
+          } else {
+            this.$event.target.classList.add('ischeck');
+          }
         },
         "prop": {}
       }
+    }
+  },
+  "four": {
+    "data": {},
+    "show": function show() {
+      // owo.go('two')
+      // changeDecorate(this.$el, 750, 1508)
+      // setTimeout(() => {
+      //   owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
+      // }, 2000)
+      // 不断地更换加载文字
+      owo.tool.animate('bounceIn', this.query('.icon-1')[0], 200);
+      owo.tool.animate('bounceIn', this.query('.icon-2')[0], 600);
+      owo.tool.animate('bounceIn', this.query('.icon-3')[0], 1000);
+      owo.tool.animate('bounceIn', this.query('.icon-4')[0], 1400);
+      setTimeout(function () {
+        owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
+      }, 1800);
+    }
+  },
+  "five": {
+    "data": {},
+    "created": function created() {
+      var _this3 = this;
+
+      // 根据不同的分数更换不同的样式
+      console.log(owo.state.code);
+
+      if (owo.state.code >= 8) {
+        this.$el.classList.add('lave3');
+      } else if (owo.state.code >= 5) {
+        this.$el.classList.add('lave2');
+      } else {
+        this.$el.classList.add('lave1');
+      }
+
+      changeDecorate(this.$el, 750, 1508);
+      setTimeout(function () {
+        _this3.query('.scroll-box')[0].style.height = '990px';
+      }, 800);
+      owo.tool.animate('fadeIn', this.query('.info-box')[0], 2800);
+      owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 2800);
     }
   }
 };</script>

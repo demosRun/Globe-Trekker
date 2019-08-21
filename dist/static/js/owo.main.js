@@ -1,4 +1,4 @@
-// Wed Aug 21 2019 15:03:58 GMT+0800 (GMT+08:00)
+// Wed Aug 21 2019 18:42:26 GMT+0800 (GMT+08:00)
 
 /* 方法合集 */
 var _owo = {
@@ -15,21 +15,23 @@ var _owo = {
   },
   /* 运行页面初始化方法 */
   runCreated: function (pageFunction) {
+    console.log(pageFunction)
     // 确保created事件只被执行一次
-    if (pageFunction["_isCreated"]) {
-      if (!pageFunction.show) return
-      pageFunction.show.apply(_owo.assign(pageFunction, {
-        data: pageFunction.data,
-        activePage: window.owo.activePage
-      }))
-    } else {
+    if (!pageFunction["_isCreated"]) {
       pageFunction["_isCreated"] = true
-      if (!pageFunction.created) return
-      pageFunction.created.apply(_owo.assign(pageFunction, {
-        data: pageFunction.data,
-        activePage: window.owo.activePage
-      }))
+      if (pageFunction.created) {
+        pageFunction.created.apply(_owo.assign(pageFunction, {
+          data: pageFunction.data,
+          activePage: window.owo.activePage
+        }))
+      }
     }
+    console.log(pageFunction)
+    if (!pageFunction.show) return
+    pageFunction.show.apply(_owo.assign(pageFunction, {
+      data: pageFunction.data,
+      activePage: window.owo.activePage
+    }))
   }
 }
 
@@ -438,10 +440,7 @@ _owo.handlePage = function (newPageFunction, entryDom) {
   /* 判断页面是否有自己的方法 */
   if (!newPageFunction) return
   // console.log(newPageFunction)
-  // 如果有created方法则执行
-  if (newPageFunction.created) {
-    _owo.runCreated(newPageFunction)
-  }
+  _owo.runCreated(newPageFunction)
   // debugger
   // 判断页面是否有下属模板,如果有运行所有模板的初始化方法
   for (var key in newPageFunction.template) {
