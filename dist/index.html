@@ -186,6 +186,18 @@ li {
   top: 0;
   background-position-x: 40px;
 }
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
 .card-switch[template="card"] {
   width: 100%;
   height: 100%;
@@ -331,6 +343,40 @@ li {
   background: linear-gradient(to right, #90a9e7, #6179d6);
 }
 
+[template="card"] .tips-title-bar {
+  height: 50px;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#e86350), to(#df3639));
+  background: -webkit-linear-gradient(left, #e86350, #df3639);
+  background: -o-linear-gradient(left, #e86350, #df3639);
+  background: linear-gradient(to right, #e86350, #df3639);
+}
+
+[template="card"] .tips-title-bar .left {
+  position: absolute;
+  height: 26px;
+  left: 10px;
+}
+
+[template="card"] .tips-title-bar .close {
+  position: absolute;
+  width: 25px;
+  right: 10px;
+}
+
 [template="card"] .next-button {
   width: 200px;
   margin: 0 auto;
@@ -338,6 +384,18 @@ li {
   bottom: 20px;
   left: 0;
   right: 0;
+}
+
+[template="card"] .ischeck.answer .check-box img {
+  display: block;
+}
+
+[template="card"] .answer-list .ischeck.answer {
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#99a8e1), to(#6c7bce));
+  background: -webkit-linear-gradient(left, #99a8e1, #6c7bce);
+  background: -o-linear-gradient(left, #99a8e1, #6c7bce);
+  background: linear-gradient(to right, #99a8e1, #6c7bce);
 }
 
 [template="card"] .answer-list .answer {
@@ -371,6 +429,17 @@ li {
   pointer-events: none;
 }
 
+[template="card"] .answer-list .check-box img {
+  width: 22px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  margin: auto;
+}
+
 [template="card"] .page {
   position: absolute;
   bottom: 7%;
@@ -387,6 +456,21 @@ li {
   background-image: url('./static/resource/page.png');
 }
 
+[template="card"] .tips-text-box {
+  margin: 20px;
+  word-break: break-all;
+}
+
+[template="card"] .tips-text-box p {
+  text-align: left;
+  line-height: 23px;
+}
+
+[template="card"] .tips-text-box .line {
+  border-bottom: 1px dotted #ccc;
+  margin: 8px 0;
+}
+
 </style>
     <!-- 附属css文件 -->
     <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
@@ -397,13 +481,13 @@ li {
     <!-- 页面区域 -->
     <div class="box one ox" template="one" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="start" src="./static/resource/start.png"></div><div class="text" font="FZZZHONGJW.TTF">loading...</div></div></div>
     <div class="box two ox" template="two" style="display: none;"><div class="safety"><img class="item button" src="./static/resource/two-button.png"><img class="item logo" src="./static/resource/two-logo.png"><img class="item text" src="./static/resource/two-text.png"><img class="item title" src="./static/resource/two-title.png"><img class="item people" src="./static/resource/people.png"><!-- 卷轴--><div class="scroll-box item"><div class="scroll-left scroll-bar"></div><div class="scroll"></div><div class="scroll-right scroll-bar"></div></div></div></div>
-    <div class="box three ox" template="three" style="display: none;"><div class="card-switch" template="card"><ul class="stack stack--yuda" id="stack_yuda">
-<li class="stack__item"><div class="title-bar">1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">2.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">3.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">4.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">5.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li></ul><div class="page">1 / 10</div></div></div>
+    <div class="box three ox" template="three" style="display: none;"><div class="card-switch" template="card"><ul class="stack stack--yuda" id="stack_yuda"><li class="stack__item tips"><div class="tips-title-bar"><img class="left" src="./static/resource/two-tip-title.png"><img class="close" src="./static/resource/two-tip-close.png" :click="reject"></div><div class="tips-text-box" font="FZZZHONGJW.TTF"><p>1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。</p><div class="line"></div><p>2.美国对入境携带礼品、烟、酒、药品、动植物制品等有严格规定，建议行前认真查阅了解，可参考<a href="http://newyork.chineseconsulate.org/chn//lgfw/mdlxzn/t1242318.htm">链接地址</a></p><div class="line"></div><p>3.美执法部门有权检查入境旅客所有电子产品，如美方认定其中包含违法（如：含有儿童色情内容）或显示与入境目的不符（如：持旅行签证来美，但社交软件聊天记录透露出来美打工、移民等倾向）的信息，将导致拒绝入境、遣返甚至追究法律责任。</p></div></li>
+<li class="stack__item"><div class="title-bar">1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">2.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">3.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">4.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">5.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>A.6000美元现金</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li></ul><div class="page">1 / 10</div></div></div>
     <!-- 框架script代码 --><script>"use strict";
 
 // 存储页面基本信息
@@ -456,6 +540,8 @@ owo.script = {
       "card": {
         "data": {
           "yuda": null,
+          "number": 1,
+          "allNumber": 0,
           "list": [{
             "text": "1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
             "answer": [{
@@ -528,19 +614,35 @@ owo.script = {
           }]
         },
         "created": function created() {
-          this.data.yuda = new Stack(document.getElementById('stack_yuda'));
+          var _this2 = this;
+
+          this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
+            infinite: false,
+            onEndStack: function onEndStack() {
+              console.log('最后了');
+            }
+          }); // 获取总数
+
+          setTimeout(function () {
+            _this2.data.allNumber = _this2.query('.stack__item').length;
+            _this2.query('.page')[0].innerText = _this2.data.number + ' / ' + _this2.data.allNumber;
+          }, 0);
         },
         "accept": function accept() {
+          this.data.number++;
+          this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber;
           this.data.yuda.accept();
         },
         "reject": function reject() {
           this.data.yuda.reject();
         },
-        "checkItem": function checkItem() {
+        "checkItem": function checkItem(e) {
           var parentElement = this.$event.target.parentElement;
           var answer = parentElement.querySelectorAll('.answer');
-          answer.forEach(function (element) {});
-          console.log(this.$event);
+          answer.forEach(function (element) {
+            element.classList.remove('ischeck');
+          });
+          this.$event.target.classList.add('ischeck');
         },
         "prop": {}
       }

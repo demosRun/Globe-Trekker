@@ -1,21 +1,36 @@
 <template lang="pug">
 .card-switch
   ul.stack.stack--yuda#stack_yuda
+    li.stack__item.tips
+      .tips-title-bar
+        img.left(src="@|two-tip-title.png|")
+        img.close(src="@|two-tip-close.png|", :click="reject")
+      .tips-text-box(font="FZZZHONGJW.TTF")
+        p 1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。
+        .line
+        p 2.美国对入境携带礼品、烟、酒、药品、动植物制品等有严格规定，建议行前认真查阅了解，可参考
+          a(href="http://newyork.chineseconsulate.org/chn//lgfw/mdlxzn/t1242318.htm") 链接地址
+        .line
+        p 3.美执法部门有权检查入境旅客所有电子产品，如美方认定其中包含违法（如：含有儿童色情内容）或显示与入境目的不符（如：持旅行签证来美，但社交软件聊天记录透露出来美打工、移民等倾向）的信息，将导致拒绝入境、遣返甚至追究法律责任。
     li.stack__item(:for="item in data.list")
       .title-bar {{item.text}}
       .answer-list
         .answer.answer-1(:touchend="checkItem")
           p {{item.answer[0].text}}
           .check-box
+            img(src="@|check.png|")
         .answer.answer-2(:touchend="checkItem")
           p {{item.answer[1].text}}
           .check-box
+            img(src="@|check.png|")
         .answer.answer-3(:touchend="checkItem")
           p {{item.answer[2].text}}
           .check-box
+            img(src="@|check.png|")
         .answer.answer-4(:touchend="checkItem")
           p {{item.answer[3].text}}
           .check-box
+            img(src="@|check.png|")
       img.next-button(src="@|next.png|", :click="accept")
   .page 1 / 10
     
@@ -25,6 +40,8 @@
   module.exports = {
     data: {
       yuda: null,
+      number: 1,
+      allNumber: 0,
       list: [
         {
           text: "1.小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有：",
@@ -134,21 +151,34 @@
       ]
     },
     created: function () {
-      this.data.yuda = new Stack(document.getElementById('stack_yuda'))
+      this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
+        infinite: false,
+        onEndStack: function () {
+          console.log('最后了')
+        }
+      })
+      // 获取总数
+      setTimeout(() => {
+        this.data.allNumber = this.query('.stack__item').length
+        this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
+      }, 0)
+      
     },
     accept: function () {
+      this.data.number++
+      this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
       this.data.yuda.accept()
     },
     reject: function () {
       this.data.yuda.reject()
     },
-    checkItem: function () {
+    checkItem: function (e) {
       const parentElement = this.$event.target.parentElement
       const answer = parentElement.querySelectorAll('.answer')
       answer.forEach(element => {
-        
+        element.classList.remove('ischeck')
       })
-      console.log(this.$event)
+      this.$event.target.classList.add('ischeck')
     }
   }
 </script>
@@ -263,7 +293,28 @@
   line-height: 20px;
   background: linear-gradient(to right, #90a9e7 , #6179d6);
 }
-
+.tips-title-bar {
+  height: 50px;
+  color: white;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 20px;
+  background: linear-gradient(to right, #e86350 , #df3639);
+  .left {
+    position: absolute;
+    height: 26px;
+    left: 10px;
+  }
+  .close {
+    position: absolute;
+    width: 25px;
+    right: 10px;
+  }
+}
 .next-button {
   width: 200px;
   margin: 0 auto;
@@ -272,7 +323,15 @@
   left: 0;
   right: 0;
 }
+.ischeck.answer .check-box img{
+  display: block;
+}
+
 .answer-list {
+  .ischeck.answer {
+    color: white;
+    background: linear-gradient(to right, #99a8e1, #6c7bce);
+  }
   .answer {
     height: 40px;
     background: linear-gradient(to right, #e5eaed, #b5c3dd);
@@ -297,6 +356,16 @@
     top: 5px;
     border-radius: 15px;
     pointer-events: none;
+    img {
+      width: 22px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: none;
+      margin: auto;
+    }
   }
 }
 .page {
@@ -313,5 +382,17 @@
   line-height: 21px;
   text-align: center;
   background-image: url('@|page.png|');
+}
+.tips-text-box {
+  margin: 20px;
+  word-break: break-all;
+  p {
+    text-align: left;
+    line-height: 23px;
+  }
+  .line {
+    border-bottom: 1px dotted #ccc;
+    margin: 8px 0;
+  }
 }
 </style>
