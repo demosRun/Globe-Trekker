@@ -20,15 +20,17 @@
     },
     created: function () {
       changeDecorate(this.$el, 750, 1508)
+      owo.tool.animate('fadeIn', this.query('.logo')[0], 200)
       owo.tool.animate('fadeIn', this.query('.text')[0], 200)
       owo.tool.animate('fadeInRight', this.query('.people')[0], 500)
       owo.tool.animate('fadeIn', this.query('.title')[0], 500)
+      owo.tool.animate('fadeIn', this.query('.button')[0], 500)
       setTimeout(() => {
         this.query('.scroll-box')[0].style.opacity = '1'
         this.query('.scroll-box')[0].style.width = '644px'
-      }, 800)
+      }, 1200)
       // 按钮脉冲效果
-      owo.tool.animate('pulse', this.query('.button')[0], 1000)
+      owo.tool.animate('pulse', this.query('.button')[0], 1600)
     }
   }
 </script>

@@ -1,6 +1,7 @@
 <template lang="pug">
 .box.five
   .safety
+    .overstep.item
     .scroll-box.item
       img.scroll-1(src="@|five-scroll-1.png|")
       img.scroll-2(src="@|five-scroll-1.png|")
@@ -38,8 +39,13 @@
     data: {
     },
     created: function () {
+      if (owo.state.overstep == undefined){
+        location.replace('')
+        return
+      }
       // 根据不同的分数更换不同的样式
-      console.log(owo.state.code)
+      this.query('.overstep')[0].innerText = `超越${owo.state.overstep}%玩家`
+      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 2800)
       if (owo.state.code >= 8) {
         this.$el.classList.add('lave3')
       } else if (owo.state.code >= 5) {
@@ -135,5 +141,12 @@
   .bottom-button {
     color: #cbbc5d;
   }
+}
+.overstep {
+  color: white;
+  top: 586px;
+  left: 484px;
+  z-index: 9;
+  font-size: 22px;
 }
 </style>

@@ -13,11 +13,36 @@
     data: {
     },
     created: function () {
-      // owo.go('two')
-      // changeDecorate(this.$el, 750, 1508)
-      setTimeout(() => {
-        owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
-      }, 2000)
+      const startIcon = this.query('.start')[0]
+      // 加载动画
+      var queue = new createjs.LoadQueue()
+      queue.loadManifest([
+        {src:"@|icon-1.png|"},
+        {src:"@|icon-2.png|"},
+        {src:"@|icon-3.png|"},
+        {src:"@|icon-4.png|"},
+        {src:"@|loading-bar.png|"},
+        {src:"@|page.png|"},
+        {src:"@|people.png|"},
+        {src:"@|scroll.png|"},
+        {src:"@|two-bg.jpg|"},
+        {src:"@|two-button.png|"},
+        {src:"@|two-logo.png|"},
+        {src:"@|two-text.png|"},
+        {src:"@|two-tip-close.png|"},
+        {src:"@|two-tip-title.png|"},
+        {src:"@|two-title.png|"},
+      ])
+      queue.on("progress", (event) => {
+        let left = queue.progress * 100 - 12
+        if (!left || left < 0) left = 0
+        startIcon.style.left = left + "%"
+      })
+      queue.on("complete", () => {
+        setTimeout(() => {
+          owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
+        }, 200)
+      })
       // 不断地更换加载文字
     }
   }

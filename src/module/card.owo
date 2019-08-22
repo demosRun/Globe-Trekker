@@ -166,10 +166,28 @@
             },
           ]
         },
+        {
+          text: "8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有",
+          answer: [
+            {
+              text: "A. 新购的2台笔记本电脑和2台高档相机",
+            },
+            {
+              text: "B. 合法购买的1盎司大麻",
+            },
+            {
+              text: "C. 1盒燕窝",
+            },
+            {
+              text: "D. 2磅车厘子",
+            },
+          ]
+        },
       ]
     },
     created: function () {
       owo.state.code = 0
+      owo.state.checkList = []
       this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
         infinite: false,
         onEndStack: function () {
@@ -198,11 +216,22 @@
       }
       return list
     },
+    setCheckList: function (check) {
+      let tempCheck = ''
+      if (check[0]) tempCheck += 'a'
+      if (check[1]) tempCheck += 'b'
+      if (check[2]) tempCheck += 'c'
+      if (check[3]) tempCheck += 'd'
+      if (check[4]) tempCheck += 'e'
+      owo.state.checkList.push(tempCheck)
+    },
     accept: function () {
       // 计算分数
       switch (this.data.number) {
+        
         case 1: {
           const check = this.inspect(0)
+          this.setCheckList(check)
           if (check[1] && check[2] && check[3]) {
             owo.state.code++
           }
@@ -210,6 +239,7 @@
         }
         case 2: {
           const check = this.inspect(1)
+          this.setCheckList(check)
           if (check[1] || check[2] || check[3]) {
             owo.state.code++
           }
@@ -217,6 +247,7 @@
         }
         case 3: {
           const check = this.inspect(2)
+          this.setCheckList(check)
           if (check[2]) {
             owo.state.code++
           }
@@ -224,6 +255,7 @@
         }
         case 4: {
           const check = this.inspect(3)
+          this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3]) {
             owo.state.code++
           }
@@ -231,6 +263,7 @@
         }
         case 5: {
           const check = this.inspect(4)
+          this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3] && check[4]) {
             owo.state.code++
           }
@@ -238,6 +271,7 @@
         }
         case 6: {
           const check = this.inspect(5)
+          this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3]) {
             owo.state.code++
           }
@@ -245,6 +279,7 @@
         }
         case 7: {
           const check = this.inspect(6)
+          this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3]) {
             owo.state.code++
           }
@@ -252,6 +287,7 @@
         }
         case 8: {
           const check = this.inspect(7)
+          this.setCheckList(check)
           if (check[1] && check[2] && check[3]) {
             owo.state.code++
           }

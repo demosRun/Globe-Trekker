@@ -16,19 +16,32 @@
     data: {
     },
     show: function () {
-      // owo.go('two')
-      // changeDecorate(this.$el, 750, 1508)
-      // setTimeout(() => {
-      //   owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
-      // }, 2000)
+      owo.state.overstep = 0
+      let str = ''
+      for (let ind = 0; ind < owo.state.checkList.length; ind++) {
+        str += `t${ind + 1}=${owo.state.checkList[ind]}&`
+      }
+      $.ajax({
+        url: 'http://littlepoll.people.com.cn/ati/diaocha.php/D/collect',
+        method: 'POST',
+        data: str,
+        success: function(res) {
+          const data = JSON.parse(res)
+          if (data['chaoyue'] && data['allpeople']) {
+            const sc = Math.ceil(parseInt(data['chaoyue']) / parseInt(data['allpeople']) * 100)
+            owo.state.overstep = sc
+          } else {
+            owo.state.overstep = 0
+          }
+          
+          owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
+        }
+      })
       // 不断地更换加载文字
       owo.tool.animate('bounceIn', this.query('.icon-1')[0], 200)
       owo.tool.animate('bounceIn', this.query('.icon-2')[0], 600)
       owo.tool.animate('bounceIn', this.query('.icon-3')[0], 1000)
       owo.tool.animate('bounceIn', this.query('.icon-4')[0], 1400)
-      setTimeout(() => {
-        owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
-      }, 1800)
     }
   }
 </script>

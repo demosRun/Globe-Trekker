@@ -1,4 +1,4 @@
-// Wed Aug 21 2019 18:42:26 GMT+0800 (GMT+08:00)
+// Thu Aug 22 2019 11:07:11 GMT+0800 (GMT+08:00)
 
 /* 方法合集 */
 var _owo = {
@@ -15,7 +15,7 @@ var _owo = {
   },
   /* 运行页面初始化方法 */
   runCreated: function (pageFunction) {
-    console.log(pageFunction)
+    // console.log(pageFunction)
     // 确保created事件只被执行一次
     if (!pageFunction["_isCreated"]) {
       pageFunction["_isCreated"] = true

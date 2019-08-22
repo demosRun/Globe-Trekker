@@ -668,6 +668,14 @@ li {
 .lave3.box.five .bottom-button {
   color: #cbbc5d;
 }
+
+.overstep {
+  color: white;
+  top: 586px;
+  left: 484px;
+  z-index: 9;
+  font-size: 22px;
+}
 </style>
     <!-- 附属css文件 -->
     <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
@@ -685,9 +693,10 @@ li {
 <li class="stack__item"><div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 开车超速被警察开了出庭通知，因日程原因未上庭</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
 <li class="stack__item"><div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 将未付款衣物放进自己口袋</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 付完款就将发票撕毁扔掉</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 用兄弟的信用卡刷卡消费</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
 <li class="stack__item"><div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 优惠换汇</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 打折缴纳学费</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 低价代缴房租</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 低价代购奢侈品</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
-<li class="stack__item"><div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 帅哥美女搭讪提供“特殊”服务</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 街头有人搭讪，低价兜售新款高档手机</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 酒吧门口有人搭讪，低价兜售可卡因</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li></ul><div class="page">1 / 10</div></div></div>
+<li class="stack__item"><div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 帅哥美女搭讪提供“特殊”服务</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 街头有人搭讪，低价兜售新款高档手机</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 酒吧门口有人搭讪，低价兜售可卡因</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li>
+<li class="stack__item"><div class="title-bar">8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div><div class="answer-list"><div class="answer answer-1" :touchend="checkItem"><p>A. 新购的2台笔记本电脑和2台高档相机</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-2" :touchend="checkItem"><p>B. 合法购买的1盎司大麻</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-3" :touchend="checkItem"><p>C. 1盒燕窝</p><div class="check-box"><img src="./static/resource/check.png"></div></div><div class="answer answer-4" :touchend="checkItem"><p>D. 2磅车厘子</p><div class="check-box"><img src="./static/resource/check.png"></div></div></div><img class="next-button" src="./static/resource/next.png" :click="accept"></li></ul><div class="page">1 / 10</div></div></div>
     <div class="box one ox" template="four" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="icon-1" src="./static/resource/icon-1.png"><img class="icon-2" src="./static/resource/icon-2.png"><img class="icon-3" src="./static/resource/icon-3.png"><img class="icon-4" src="./static/resource/icon-4.png"></div><div class="text" font="FZZZHONGJW.TTF">正在计算您的江湖指数.....</div></div></div>
-    <div class="box five ox" template="five" style="display: none;"><div class="safety"><div class="scroll-box item"><img class="scroll-1" src="./static/resource/five-scroll-1.png"><img class="scroll-2" src="./static/resource/five-scroll-1.png"><div class="info-box"><p><span>中国领事服务网：</span><a href="http://cs.mfa.gov.cn/">http://cs.mfa.gov.cn/</a></p><p><span>驻美国使馆：</span><a href="http://www.china-embassy.org/chn/">http://www.china-embassy.org/chn/</a></p><p><span>驻纽约总领馆：</span><a href="http://newyork.chineseconsulate.org/chn/">http://newyork.chineseconsulate.org/chn/</a></p><p><span>驻旧金山总领馆：</span><a href="http://www.chinaconsulatesf.org/chn/">http://www.chinaconsulatesf.org/chn/</a></p><p><span>驻洛杉矶总领馆：</span><a href="http://losangeles.china-consulate.org/chn/">http://losangeles.china-consulate.org/chn/</a></p><p><span>驻芝加哥总领馆：</span><a href="http://www.chinaconsulatechicago.org/chn/">http://www.chinaconsulatechicago.org/chn/</a></p><p><span>驻休斯敦总领馆：</span><a href="http://houston.china-consulate.org/chn/">http://houston.china-consulate.org/chn/</a></p><p class="bottom">美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。</p></div></div><div class="bottom-bar"><div class="bottom-button" font="FZZZHONGJW.TTF">查看答案</div><div class="bottom-button" font="FZZZHONGJW.TTF" :click="location.replace('')">再测一次</div><div class="bottom-button" font="FZZZHONGJW.TTF">点我转发</div></div></div></div>
+    <div class="box five ox" template="five" style="display: none;"><div class="safety"><div class="overstep item"></div><div class="scroll-box item"><img class="scroll-1" src="./static/resource/five-scroll-1.png"><img class="scroll-2" src="./static/resource/five-scroll-1.png"><div class="info-box"><p><span>中国领事服务网：</span><a href="http://cs.mfa.gov.cn/">http://cs.mfa.gov.cn/</a></p><p><span>驻美国使馆：</span><a href="http://www.china-embassy.org/chn/">http://www.china-embassy.org/chn/</a></p><p><span>驻纽约总领馆：</span><a href="http://newyork.chineseconsulate.org/chn/">http://newyork.chineseconsulate.org/chn/</a></p><p><span>驻旧金山总领馆：</span><a href="http://www.chinaconsulatesf.org/chn/">http://www.chinaconsulatesf.org/chn/</a></p><p><span>驻洛杉矶总领馆：</span><a href="http://losangeles.china-consulate.org/chn/">http://losangeles.china-consulate.org/chn/</a></p><p><span>驻芝加哥总领馆：</span><a href="http://www.chinaconsulatechicago.org/chn/">http://www.chinaconsulatechicago.org/chn/</a></p><p><span>驻休斯敦总领馆：</span><a href="http://houston.china-consulate.org/chn/">http://houston.china-consulate.org/chn/</a></p><p class="bottom">美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。</p></div></div><div class="bottom-bar"><div class="bottom-button" font="FZZZHONGJW.TTF">查看答案</div><div class="bottom-button" font="FZZZHONGJW.TTF" :click="location.replace('')">再测一次</div><div class="bottom-button" font="FZZZHONGJW.TTF">点我转发</div></div></div></div>
     <!-- 框架script代码 --><script>"use strict";
 
 // 存储页面基本信息
@@ -709,11 +718,50 @@ owo.script = {
   "one": {
     "data": {},
     "created": function created() {
-      // owo.go('two')
-      // changeDecorate(this.$el, 750, 1508)
-      setTimeout(function () {
-        owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
-      }, 2000); // 不断地更换加载文字
+      var startIcon = this.query('.start')[0]; // 加载动画
+
+      var queue = new createjs.LoadQueue();
+      queue.loadManifest([{
+        src: "./static/resource/icon-1.png"
+      }, {
+        src: "./static/resource/icon-2.png"
+      }, {
+        src: "./static/resource/icon-3.png"
+      }, {
+        src: "./static/resource/icon-4.png"
+      }, {
+        src: "./static/resource/loading-bar.png"
+      }, {
+        src: "./static/resource/page.png"
+      }, {
+        src: "./static/resource/people.png"
+      }, {
+        src: "./static/resource/scroll.png"
+      }, {
+        src: "./static/resource/two-bg.jpg"
+      }, {
+        src: "./static/resource/two-button.png"
+      }, {
+        src: "./static/resource/two-logo.png"
+      }, {
+        src: "./static/resource/two-text.png"
+      }, {
+        src: "./static/resource/two-tip-close.png"
+      }, {
+        src: "./static/resource/two-tip-title.png"
+      }, {
+        src: "./static/resource/two-title.png"
+      }]);
+      queue.on("progress", function (event) {
+        var left = queue.progress * 100 - 12;
+        if (!left || left < 0) left = 0;
+        startIcon.style.left = left + "%";
+      });
+      queue.on("complete", function () {
+        setTimeout(function () {
+          owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
+        }, 200);
+      }); // 不断地更换加载文字
     }
   },
   "two": {
@@ -722,15 +770,17 @@ owo.script = {
       var _this = this;
 
       changeDecorate(this.$el, 750, 1508);
+      owo.tool.animate('fadeIn', this.query('.logo')[0], 200);
       owo.tool.animate('fadeIn', this.query('.text')[0], 200);
       owo.tool.animate('fadeInRight', this.query('.people')[0], 500);
       owo.tool.animate('fadeIn', this.query('.title')[0], 500);
+      owo.tool.animate('fadeIn', this.query('.button')[0], 500);
       setTimeout(function () {
         _this.query('.scroll-box')[0].style.opacity = '1';
         _this.query('.scroll-box')[0].style.width = '644px';
-      }, 800); // 按钮脉冲效果
+      }, 1200); // 按钮脉冲效果
 
-      owo.tool.animate('pulse', this.query('.button')[0], 1000);
+      owo.tool.animate('pulse', this.query('.button')[0], 1600);
     }
   },
   "three": {
@@ -821,12 +871,24 @@ owo.script = {
             }, {
               "text": "D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”"
             }]
+          }, {
+            "text": "8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有",
+            "answer": [{
+              "text": "A. 新购的2台笔记本电脑和2台高档相机"
+            }, {
+              "text": "B. 合法购买的1盎司大麻"
+            }, {
+              "text": "C. 1盒燕窝"
+            }, {
+              "text": "D. 2磅车厘子"
+            }]
           }]
         },
         "created": function created() {
           var _this2 = this;
 
           owo.state.code = 0;
+          owo.state.checkList = [];
           this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
             infinite: false,
             onEndStack: function onEndStack() {
@@ -856,12 +918,22 @@ owo.script = {
 
           return list;
         },
+        "setCheckList": function setCheckList(check) {
+          var tempCheck = '';
+          if (check[0]) tempCheck += 'a';
+          if (check[1]) tempCheck += 'b';
+          if (check[2]) tempCheck += 'c';
+          if (check[3]) tempCheck += 'd';
+          if (check[4]) tempCheck += 'e';
+          owo.state.checkList.push(tempCheck);
+        },
         "accept": function accept() {
           // 计算分数
           switch (this.data.number) {
             case 1:
               {
                 var check = this.inspect(0);
+                this.setCheckList(check);
 
                 if (check[1] && check[2] && check[3]) {
                   owo.state.code++;
@@ -874,6 +946,8 @@ owo.script = {
               {
                 var _check = this.inspect(1);
 
+                this.setCheckList(_check);
+
                 if (_check[1] || _check[2] || _check[3]) {
                   owo.state.code++;
                 }
@@ -884,6 +958,8 @@ owo.script = {
             case 3:
               {
                 var _check2 = this.inspect(2);
+
+                this.setCheckList(_check2);
 
                 if (_check2[2]) {
                   owo.state.code++;
@@ -896,6 +972,8 @@ owo.script = {
               {
                 var _check3 = this.inspect(3);
 
+                this.setCheckList(_check3);
+
                 if (_check3[0] && _check3[1] && _check3[2] && _check3[3]) {
                   owo.state.code++;
                 }
@@ -906,6 +984,8 @@ owo.script = {
             case 5:
               {
                 var _check4 = this.inspect(4);
+
+                this.setCheckList(_check4);
 
                 if (_check4[0] && _check4[1] && _check4[2] && _check4[3] && _check4[4]) {
                   owo.state.code++;
@@ -918,6 +998,8 @@ owo.script = {
               {
                 var _check5 = this.inspect(5);
 
+                this.setCheckList(_check5);
+
                 if (_check5[0] && _check5[1] && _check5[2] && _check5[3]) {
                   owo.state.code++;
                 }
@@ -929,6 +1011,8 @@ owo.script = {
               {
                 var _check6 = this.inspect(6);
 
+                this.setCheckList(_check6);
+
                 if (_check6[0] && _check6[1] && _check6[2] && _check6[3]) {
                   owo.state.code++;
                 }
@@ -939,6 +1023,8 @@ owo.script = {
             case 8:
               {
                 var _check7 = this.inspect(7);
+
+                this.setCheckList(_check7);
 
                 if (_check7[1] && _check7[2] && _check7[3]) {
                   owo.state.code++;
@@ -972,19 +1058,35 @@ owo.script = {
   "four": {
     "data": {},
     "show": function show() {
-      // owo.go('two')
-      // changeDecorate(this.$el, 750, 1508)
-      // setTimeout(() => {
-      //   owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
-      // }, 2000)
-      // 不断地更换加载文字
+      owo.state.overstep = 0;
+      var str = '';
+
+      for (var ind = 0; ind < owo.state.checkList.length; ind++) {
+        str += "t".concat(ind + 1, "=").concat(owo.state.checkList[ind], "&");
+      }
+
+      $.ajax({
+        url: 'http://littlepoll.people.com.cn/ati/diaocha.php/D/collect',
+        method: 'POST',
+        data: str,
+        success: function success(res) {
+          var data = JSON.parse(res);
+
+          if (data['chaoyue'] && data['allpeople']) {
+            var sc = Math.ceil(parseInt(data['chaoyue']) / parseInt(data['allpeople']) * 100);
+            owo.state.overstep = sc;
+          } else {
+            owo.state.overstep = 0;
+          }
+
+          owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
+        }
+      }); // 不断地更换加载文字
+
       owo.tool.animate('bounceIn', this.query('.icon-1')[0], 200);
       owo.tool.animate('bounceIn', this.query('.icon-2')[0], 600);
       owo.tool.animate('bounceIn', this.query('.icon-3')[0], 1000);
       owo.tool.animate('bounceIn', this.query('.icon-4')[0], 1400);
-      setTimeout(function () {
-        owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft');
-      }, 1800);
     }
   },
   "five": {
@@ -992,8 +1094,14 @@ owo.script = {
     "created": function created() {
       var _this3 = this;
 
-      // 根据不同的分数更换不同的样式
-      console.log(owo.state.code);
+      if (owo.state.overstep == undefined) {
+        location.replace('');
+        return;
+      } // 根据不同的分数更换不同的样式
+
+
+      this.query('.overstep')[0].innerText = "\u8D85\u8D8A".concat(owo.state.overstep, "%\u73A9\u5BB6");
+      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 2800);
 
       if (owo.state.code >= 8) {
         this.$el.classList.add('lave3');
@@ -1019,10 +1127,12 @@ owo.script = {
 <!-- 调试-远程调试 -->
 <script src="./static/js/log.js" type="text/javascript" charset="UTF-8"></script>
 
+    <script src="http://tools.people.com.cn/libs/jquery/3.0.0/jquery-3.0.0.min.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/classie.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/dynamics.min.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/modernizr-custom.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/stack.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/preloadjs.js" type="text/javascript"  charset="UTF-8"></script>
   </body>
 </html>
