@@ -122,6 +122,8 @@
 				item.style.WebkitTransform = item.style.transform = 'translate3d(0px, 0px, ' + parseInt(-1 * 50 * i) + 'px)';
 			}
 			else {
+				item.style.opacity = 0;
+				item.classList.remove('stack__item--current')
 				item.style.WebkitTransform = item.style.transform = 'translate3d(0,0,-' + parseInt(this.options.visible * 50) + 'px)';
 			}
 		}
@@ -138,6 +140,7 @@
 	};
 
 	Stack.prototype.restart = function() {
+		this.current = 0
 		this.hasEnded = false;
 		this._init();
 	};

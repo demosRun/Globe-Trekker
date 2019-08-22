@@ -48,3 +48,7 @@ a {
 .safety .item {
   position: absolute;
 }
+
+.box {
+  background: linear-gradient(#b4c5ec, #e7e6ef);
+}

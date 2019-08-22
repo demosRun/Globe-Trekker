@@ -139,6 +139,10 @@ module.exports = {
       name: 'five',
       src: './src/page/five.owo'
     },
+    {
+      name: 'six',
+      src: './src/page/six.owo'
+    },
   ],
   // 调试模式配置
   dev: {

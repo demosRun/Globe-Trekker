@@ -32,6 +32,11 @@
         {src:"@|two-tip-close.png|"},
         {src:"@|two-tip-title.png|"},
         {src:"@|two-title.png|"},
+        {src:"@|click.mp3|"},
+        {src:"@|check.png|"},
+        {src:"@|cloud.png|"},
+        {src:"@|five-button.png|"},
+        {src:"@|five-scroll-1.png|"},
       ])
       queue.on("progress", (event) => {
         let left = queue.progress * 100 - 12
@@ -40,7 +45,7 @@
       })
       queue.on("complete", () => {
         setTimeout(() => {
-          owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
+          owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
         }, 200)
       })
       // 不断地更换加载文字

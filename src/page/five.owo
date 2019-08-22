@@ -3,8 +3,16 @@
   .safety
     .overstep.item
     .scroll-box.item
-      img.scroll-1(src="@|five-scroll-1.png|")
-      img.scroll-2(src="@|five-scroll-1.png|")
+      .scroll-1
+      .scroll-2
+      // 用户头像
+      img.user(src="@|user.png|")
+      // 星星
+      .stars.stars-1
+      .stars.stars-2
+      .stars.stars-3
+      .stars.stars-4
+      .stars.stars-5
       .info-box
         p
           span 中国领事服务网：
@@ -29,14 +37,16 @@
           a(href="http://houston.china-consulate.org/chn/") http://houston.china-consulate.org/chn/
         p.bottom 美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。
     .bottom-bar
-      .bottom-button(font="FZZZHONGJW.TTF") 查看答案
+      .bottom-button(font="FZZZHONGJW.TTF", :click="showAnswer") 查看答案
       .bottom-button(font="FZZZHONGJW.TTF", :click="location.replace('')") 再测一次
-      .bottom-button(font="FZZZHONGJW.TTF") 点我转发
+      .bottom-button(font="FZZZHONGJW.TTF", :click="switchShare") 点我转发
+  .share-box(:click="switchShare")
 </template>
 
 <script>
   module.exports = {
     data: {
+      showShare: false
     },
     created: function () {
       if (owo.state.overstep == undefined){
@@ -45,7 +55,7 @@
       }
       // 根据不同的分数更换不同的样式
       this.query('.overstep')[0].innerText = `超越${owo.state.overstep}%玩家`
-      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 2800)
+      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 800)
       if (owo.state.code >= 8) {
         this.$el.classList.add('lave3')
       } else if (owo.state.code >= 5) {
@@ -56,10 +66,26 @@
       changeDecorate(this.$el, 750, 1508)
       setTimeout(() => {
         this.query('.scroll-box')[0].style.height = '990px'
-      }, 800)
-      
-      owo.tool.animate('fadeIn', this.query('.info-box')[0], 2800)
-      owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 2800)
+      }, 100)
+      owo.tool.animate('fadeIn', this.query('.user')[0], 800)
+      owo.tool.animate('fadeIn', this.query('.info-box')[0], 800)
+      owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 800)
+      owo.tool.animate('bounceIn', this.query('.stars-1')[0], 1000)
+      owo.tool.animate('bounceIn', this.query('.stars-2')[0], 1100)
+      owo.tool.animate('bounceIn', this.query('.stars-3')[0], 1200)
+      owo.tool.animate('bounceIn', this.query('.stars-4')[0], 1300)
+      owo.tool.animate('bounceIn', this.query('.stars-5')[0], 1400)
+    },
+    switchShare: function () {
+      if (this.data.showShare) {
+        this.query('.share-box')[0].style.display = 'none'
+      } else {
+        this.query('.share-box')[0].style.display = 'block'
+      }
+      this.data.showShare = !this.data.showShare
+    },
+    showAnswer: function () {
+      owo.go('six', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
     }
   }
 </script>
@@ -76,20 +102,24 @@
     height: 73px;
     margin: auto;
     position: relative;
-    transition: height 2s;
+    transition: height 1s;
     background-image: url('@|five-scroll-box-1.png|');
   }
   .scroll-1 {
     width: 692px;
+    height: 44px;
     top: -7px;
     left: -40px;
     position: absolute;
+    background-image: url('@|five-scroll-1.png|');
   }
   .scroll-2 {
     width: 692px;
+    height: 44px;
     bottom: -7px;
     left: -40px;
     position: absolute;
+    background-image: url('@|five-scroll-1.png|');
   }
   .info-box {
     width: 80%;
@@ -131,6 +161,15 @@
   .bottom-button {
     color: #6d6d6d;
   }
+  .scroll-1 {
+    background-image: url('@|five-scroll-2.png|');
+  }
+  .scroll-2 {
+    background-image: url('@|five-scroll-2.png|');
+  }
+  .stars-3 {
+    background-image: url('@|stars-active.png|');
+  }
 }
 
 .lave3.box.five {
@@ -141,12 +180,70 @@
   .bottom-button {
     color: #cbbc5d;
   }
+  .scroll-1 {
+    background-image: url('@|five-scroll-3.png|');
+  }
+  .scroll-2 {
+    background-image: url('@|five-scroll-3.png|');
+  }
+  .stars-3 {
+    background-image: url('@|stars-active.png|');
+  }
+  .stars-4 {
+    background-image: url('@|stars-active.png|');
+  }
+  .stars-5 {
+    background-image: url('@|stars-active.png|');
+  }
 }
 .overstep {
   color: white;
   top: 586px;
-  left: 484px;
+  left: 480px;
   z-index: 9;
   font-size: 22px;
+}
+.share-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: 90% 5%;
+  background-image: url('@|share-mask.png|');
+}
+.user {
+  width: 145px;
+  top: 344px;
+  left: 228px;
+  position: absolute;
+}
+.stars {
+  width: 37px;
+  height: 34px;
+  top: 290px;
+  position: absolute;
+  margin: auto;
+  background-image: url('@|stars.png|');
+}
+.stars-1 {
+  left: 207px;
+  background-image: url('@|stars-active.png|');
+}
+.stars-2 {
+  left: 245px;
+  background-image: url('@|stars-active.png|');
+}
+.stars-3 {
+  left: 0;
+  right: 0;
+}
+.stars-4 {
+  right: 245px;
+}
+.stars-5 {
+  right: 205px;
 }
 </style>

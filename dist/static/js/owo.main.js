@@ -1,4 +1,4 @@
-// Thu Aug 22 2019 11:07:11 GMT+0800 (GMT+08:00)
+// Thu Aug 22 2019 18:29:45 GMT+0800 (GMT+08:00)
 
 /* 方法合集 */
 var _owo = {
@@ -175,7 +175,7 @@ _owo.showPage = function() {
   参数2: 离开页面动画
   参数3: 进入页面动画
 */
-owo.go = function (pageName, inAnimation, outAnimation, backInAnimation, backOutAnimation, param, noBack) {
+owo.go = function (pageName, inAnimation, outAnimation, backInAnimation, backOutAnimation, noBack, param) {
   // console.log(owo.script[pageName])
   owo.script[pageName]._animation = {
     "in": inAnimation,
@@ -427,6 +427,34 @@ owo.tool.animate = function (name, dom, delay) {
       dom.style.animationDelay = 'unset'
     }
   }
+}/**
+ * 显示toast提示 不支持ie8
+ * @param  {number} text       显示的文字
+ * @param  {number} time       显示时长
+ */
+
+owo.tool.toast = (text, time) => {
+  if (window.owo.state.toastClock) {
+    clearTimeout(window.owo.state.toastClock)
+    hideToast()
+  }
+  if (time === undefined || time === null) {
+    // 默认2秒
+    time = 2000
+  }
+  const toast = document.createElement("div")
+  toast.setAttribute("id", "toast")
+  toast.setAttribute("class", "toast")
+  // 设置样式
+  toast.style.cssText = "position:fixed;z-index:999;background-color:rgba(0, 0, 0, 0.5);bottom:10%;line-height:40px;border-radius:10px;left:0;right:0;margin:0 auto;text-align:center;color:white;max-width:200px;padding:0 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"
+
+  toast.innerHTML = text
+  document.body.appendChild(toast)
+  function hideToast() {
+    document.getElementById('toast').outerHTML = ''
+    window.owo.state.toastClock = null
+  }
+  window.owo.state.toastClock = setTimeout(hideToast, time)
 }
 
 /* 运行页面所属的方法 */

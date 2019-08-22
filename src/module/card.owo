@@ -1,39 +1,255 @@
-<template lang="pug">
-.card-switch
-  ul.stack.stack--yuda#stack_yuda
-    //- li.stack__item.tips
-    //-   .tips-title-bar
-    //-     img.left(src="@|two-tip-title.png|")
-    //-     img.close(src="@|two-tip-close.png|", :click="reject")
-    //-   .tips-text-box(font="FZZZHONGJW.TTF")
-    //-     p 1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。
-    //-     .line
-    //-     p 2.美国对入境携带礼品、烟、酒、药品、动植物制品等有严格规定，建议行前认真查阅了解，可参考
-    //-       a(href="http://newyork.chineseconsulate.org/chn//lgfw/mdlxzn/t1242318.htm") 链接地址
-    //-     .line
-    //-     p 3.美执法部门有权检查入境旅客所有电子产品，如美方认定其中包含违法（如：含有儿童色情内容）或显示与入境目的不符（如：持旅行签证来美，但社交软件聊天记录透露出来美打工、移民等倾向）的信息，将导致拒绝入境、遣返甚至追究法律责任。
-    li.stack__item(:for="item in data.list")
-      .title-bar {{item.text}}
-      .answer-list
-        .answer.answer-1(:touchend="checkItem")
-          p {{item.answer[0].text}}
-          .check-box
-            img(src="@|check.png|")
-        .answer.answer-2(:touchend="checkItem")
-          p {{item.answer[1].text}}
-          .check-box
-            img(src="@|check.png|")
-        .answer.answer-3(:touchend="checkItem")
-          p {{item.answer[2].text}}
-          .check-box
-            img(src="@|check.png|")
-        .answer.answer-4(:touchend="checkItem")
-          p {{item.answer[3].text}}
-          .check-box
-            img(src="@|check.png|")
-      img.next-button(src="@|next.png|", :click="accept")
-  .page 1 / 10
-    
+<template>
+<div class="card-switch">
+  <ul class="stack stack--yuda" id="stack_yuda">
+    <li class="stack__item">
+      <div class="title-bar">1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 6000美元现金</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 一块妈妈刚做好的腊肉</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 知名老中医抓的调理中药</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 存有“情趣小电影”的平板电脑</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 接通人工服务</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 直接挂断电话</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 请教身边亲友如何处理</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 挂断电话并查询使馆电话号码去电核实</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 只要没超速就可以不用管，继续平稳行驶</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 立即靠边停车，下车并礼貌向警察询问情况</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 开车超速被警察开了出庭通知，因日程原因未上庭</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 将未付款衣物放进自己口袋</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 付完款就将发票撕毁扔掉</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 用兄弟的信用卡刷卡消费</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-5" :touchend="checkItem">
+          <p>E. 逛累了在商场椅子上睡一觉再继续扫货</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 优惠换汇</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 打折缴纳学费</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 低价代缴房租</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 低价代购奢侈品</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 帅哥美女搭讪提供“特殊”服务</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 街头有人搭讪，低价兜售新款高档手机</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 酒吧门口有人搭讪，低价兜售可卡因</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :touchend="checkItem">
+          <p>A. 新购的2台笔记本电脑和2台高档相机</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-2" :touchend="checkItem">
+          <p>B. 合法购买的1盎司大麻</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-3" :touchend="checkItem">
+          <p>C. 1盒燕窝</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+        <div class="answer answer-4" :touchend="checkItem">
+          <p>D. 2磅车厘子</p>
+          <div class="check-box">
+            <img src="@|check.png|">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :click="accept">下一题</div>
+    </li>
+  </ul>
+  <div class="page">1 / 10</div>
+</div>
 </template>
 
 <script>
@@ -41,149 +257,7 @@
     data: {
       yuda: null,
       number: 1,
-      allNumber: 0,
-      list: [
-        {
-          text: "1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:",
-          answer: [
-            {
-              text: "A. 6000美元现金"
-            },
-            {
-              text: "B. 一块妈妈刚做好的腊肉",
-            },
-            {
-              text: "C. 知名老中医抓的调理中药",
-              
-            },
-            {
-              text: "D. 存有“情趣小电影”的平板电脑",
-            },
-          ]
-        },
-        {
-          text: "2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：",
-          answer: [
-            {
-              text: "A. 接通人工服务"
-            },
-            {
-              text: "B. 直接挂断电话",
-            },
-            {
-              text: "C. 请教身边亲友如何处理",
-            },
-            {
-              text: "D. 挂断电话并查询使馆电话号码去电核实",
-            },
-          ]
-        },
-        {
-          text: "3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：",
-          answer: [
-            {
-              text: "A. 只要没超速就可以不用管，继续平稳行驶"
-            },
-            {
-              text: "B. 立即靠边停车，下车并礼貌向警察询问情况"
-            },
-            {
-              text: "C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理",
-            },
-            {
-              text: "D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查"
-            },
-          ]
-        },
-        {
-          text: "4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：",
-          answer: [
-            {
-              text: "A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭",
-            },
-            {
-              text: "B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子",
-            },
-            {
-              text: "C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言",
-            },
-            {
-              text: "D. 开车超速被警察开了出庭通知，因日程原因未上庭",
-            },
-          ]
-        },
-        {
-          text: "5、小明到美国某商场购物，以下行为不恰当的有：",
-          answer: [
-            {
-              text: "A. 将未付款衣物放进自己口袋",
-            },
-            {
-              text: "B. 付完款就将发票撕毁扔掉",
-            },
-            {
-              text: "C. 用兄弟的信用卡刷卡消费",
-            },
-            {
-              text: "D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”",
-            },
-            {
-              text: "E. 逛累了在商场椅子上睡一觉再继续扫货",
-            },
-          ]
-        },
-        {
-          text: "6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：",
-          answer: [
-            {
-              text: "A. 优惠换汇",
-            },
-            {
-              text: "B. 打折缴纳学费",
-            },
-            {
-              text: "C. 低价代缴房租",
-            },
-            {
-              text: "D. 低价代购奢侈品",
-            },
-          ]
-        },
-        {
-          text: "7、小明在美国旅游期间，以下哪些“便宜”不能占：",
-          answer: [
-            {
-              text: "A. 帅哥美女搭讪提供“特殊”服务",
-            },
-            {
-              text: "B. 街头有人搭讪，低价兜售新款高档手机",
-            },
-            {
-              text: "C. 酒吧门口有人搭讪，低价兜售可卡因",
-            },
-            {
-              text: "D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”",
-            },
-          ]
-        },
-        {
-          text: "8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有",
-          answer: [
-            {
-              text: "A. 新购的2台笔记本电脑和2台高档相机",
-            },
-            {
-              text: "B. 合法购买的1盎司大麻",
-            },
-            {
-              text: "C. 1盒燕窝",
-            },
-            {
-              text: "D. 2磅车厘子",
-            },
-          ]
-        },
-      ]
+      allNumber: 0
     },
     created: function () {
       owo.state.code = 0
@@ -192,7 +266,6 @@
         infinite: false,
         onEndStack: function () {
           console.log('最后了')
-          owo.go('four', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
         }
       })
       // 获取总数
@@ -200,23 +273,30 @@
         this.data.allNumber = this.query('.stack__item').length
         this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
       }, 0)
+      setTimeout(() => {
+        this.query('.next-button')[this.query('.next-button').length - 1].innerText = '查看我的等级'
+      }, 1000);
       
     },
     inspect: function (ind) {
       const list = []
       const domList = this.query('.stack__item')[ind].getElementsByClassName('answer')
+      let isCheck = false
       // console.log(domList)
       for (let ind = 0; ind < domList.length;  ind++) {
         const element = domList[ind]
         if (element.classList.contains('ischeck')) {
+          isCheck = true
           list.push(true)
         } else {
           list.push(false)
         }
       }
-      return list
+      if (isCheck) return list
+      else return null
     },
     setCheckList: function (check) {
+      
       let tempCheck = ''
       if (check[0]) tempCheck += 'a'
       if (check[1]) tempCheck += 'b'
@@ -226,11 +306,16 @@
       owo.state.checkList.push(tempCheck)
     },
     accept: function () {
+      new Audio("@|click.mp3|").play()
       // 计算分数
       switch (this.data.number) {
         
         case 1: {
           const check = this.inspect(0)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[1] && check[2] && check[3]) {
             owo.state.code++
@@ -239,6 +324,10 @@
         }
         case 2: {
           const check = this.inspect(1)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[1] || check[2] || check[3]) {
             owo.state.code++
@@ -247,6 +336,10 @@
         }
         case 3: {
           const check = this.inspect(2)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[2]) {
             owo.state.code++
@@ -255,6 +348,10 @@
         }
         case 4: {
           const check = this.inspect(3)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3]) {
             owo.state.code++
@@ -263,6 +360,10 @@
         }
         case 5: {
           const check = this.inspect(4)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3] && check[4]) {
             owo.state.code++
@@ -271,6 +372,10 @@
         }
         case 6: {
           const check = this.inspect(5)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3]) {
             owo.state.code++
@@ -279,6 +384,10 @@
         }
         case 7: {
           const check = this.inspect(6)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[0] && check[1] && check[2] && check[3]) {
             owo.state.code++
@@ -287,6 +396,10 @@
         }
         case 8: {
           const check = this.inspect(7)
+          if (check === null) {
+            owo.tool.toast('本题还没有进行作答哦!')
+            return
+          }
           this.setCheckList(check)
           if (check[1] && check[2] && check[3]) {
             owo.state.code++
@@ -295,6 +408,10 @@
         }
       }
       this.data.number++
+      if (this.data.number > this.data.allNumber) {
+        owo.go('four', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
+        return
+      }
       this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
       this.data.yuda.accept()
     },
@@ -302,6 +419,7 @@
       this.data.yuda.reject()
     },
     checkItem: function (e) {
+      new Audio("@|click.mp3|").play()
       const parentElement = this.$event.target.parentElement
       const answer = parentElement.querySelectorAll('.answer')
       // console.log(this.$event.target.classList.contains('ischeck'))
@@ -314,7 +432,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" original>
 .card-switch {
   width: 100%;
   height: 100%;
@@ -356,6 +474,10 @@
 	user-select: none;
   pointer-events: auto;
   box-shadow: 0px 0px 1px #d0cbcb;
+  background-image: url('@|cloud.png|');
+  background-size: 110% auto;
+  background-repeat: no-repeat;
+  background-position: 25% 78%;
 }
 
 /* Animations */
@@ -447,11 +569,29 @@
 }
 .next-button {
   width: 200px;
+  height: 32.25px;
+  background-size: 100% 100%;
   margin: 0 auto;
   position: absolute;
   bottom: 20px;
   left: 0;
   right: 0;
+  line-height: 31px;
+  color: white;
+  background-image: url('@|next.png|');
+}
+.explain-button {
+  width: 200px;
+  height: 32.25px;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  line-height: 31px;
+  color: white;
+  background-image: url('@|next.png|');
 }
 .ischeck.answer .check-box img{
   display: block;
@@ -465,7 +605,7 @@
   .answer {
     background: linear-gradient(to right, #e5eaed, #b5c3dd);
     border-radius: 20px;
-    margin: 20px 20px;
+    margin: 15px 20px;
     padding: 0 15px;
     cursor: pointer;
     position: relative;
@@ -516,7 +656,8 @@
   background-image: url('@|page.png|');
 }
 .tips-text-box {
-  margin: 20px;
+  margin: 20px 0;
+  padding: 0 20px;
   word-break: break-all;
   p {
     text-align: left;
@@ -526,5 +667,13 @@
     border-bottom: 1px dotted #ccc;
     margin: 8px 0;
   }
+}
+.subject {
+  width: 100%;
+  height: 100%;
+}
+.answer-list {
+  height: 75%;
+  overflow: auto;
 }
 </style>

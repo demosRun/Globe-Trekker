@@ -2,7 +2,7 @@
 .box.two
   //- 山背景
   .safety
-    img.item.button(src="@|two-button.png|", :click="owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')")
+    img.item.button(src="@|two-button.png|", :click="toThree")
     img.item.logo(src="@|two-logo.png|")
     img.item.text(src="@|two-text.png|")
     img.item.title(src="@|two-title.png|")
@@ -26,11 +26,16 @@
       owo.tool.animate('fadeIn', this.query('.title')[0], 500)
       owo.tool.animate('fadeIn', this.query('.button')[0], 500)
       setTimeout(() => {
+        this.query('.text')[0].style.animation = 'float 2s infinite alternate'
         this.query('.scroll-box')[0].style.opacity = '1'
         this.query('.scroll-box')[0].style.width = '644px'
       }, 1200)
       // 按钮脉冲效果
       owo.tool.animate('pulse', this.query('.button')[0], 1600)
+    },
+    toThree: function () {
+      new Audio("@|click.mp3|").play()
+      owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
     }
   }
 </script>
@@ -55,6 +60,16 @@
 .text {
   left: 92px;
   top: 239px;
+}
+@keyframes float {
+  from {
+    opacity: 0.7;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0px);
+  }
 }
 .people {
   left: 183.07px;

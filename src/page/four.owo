@@ -34,7 +34,7 @@
             owo.state.overstep = 0
           }
           
-          owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft')
+          owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
         }
       })
       // 不断地更换加载文字

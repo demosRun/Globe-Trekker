@@ -1,0 +1,17 @@
+<template lang="pug">
+.box.six
+  temple(name="card2", src="./src/module/card2.owo")
+</template>
+
+<script>
+  module.exports = {
+    data: {
+    },
+    created: function () {
+    }
+  }
+</script>
+
+<style lang="less">
+
+</style>
