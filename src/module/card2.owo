@@ -30,13 +30,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。</p>
@@ -79,13 +79,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1.接起电话凡是录音来电的即可判断是诈骗电话，接听人如按提示接通人工服务，上当受骗指数将飙升！近年来，针对在美侨胞、留学生，假冒中国大使馆、总领馆、银行、快递公司、水电公司等单位的电信诈骗活动高发频发，诈骗分子常以录音电话诱导接听人接通人工服务，再通过谎称当事人卷入有关“案件”等，逐步套取个人身份、账户等信息直至要求转账汇款。</p>
@@ -123,13 +123,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>在美国驾车遇警察拦截时应保持镇静，立即平稳靠边停车，双手放在方向盘上，不要主动下车或翻找证件，以免警方误认为具有攻击性或是翻找武器。积极配合警方执法，按指令行动。不要与警方发生争执，如认为其执法不公，可保存相关证据，事后进行投诉。</p>
@@ -165,13 +165,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1. 美国法律注重对妇女和儿童的保护，对妇女“动粗”或不当“体罚”小孩均可能导致警方介入。一旦案件进入司法程序，案件审理费时费力，当事人还可能面临严重法律后果。</p>
@@ -217,13 +217,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1. 在美国商场购物，未付款商品一定不要置于个人携带的口袋中，暂时存放也不行。不能将未付款商品带出商场外，以免被怀疑盗窃而给自己带来麻烦。结账时确保去除衣服等物品上的防盗装置，妥善保管购物发票，以备查验或作为售后服务凭证。</p>
@@ -263,13 +263,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1. 换汇务必通过银行或有正式牌照的金融机构等正规途径，私下换汇违反有关外汇管理规定，存在很大的法律和权益风险。</p>
@@ -309,13 +309,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1. 色情交易在美国绝大多数州均为非法，涉及儿童色情内容的更涉嫌犯罪！</p>
@@ -355,13 +355,13 @@
               </div>
             </div>
           </div>
-          <!-- <div class="explain-button" :click="explain">查看解释</div> -->
-          <!-- <div class="next-button" :click="accept">下一题</div> -->
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
         <div class="explain">
           <div class="tips-title-bar">
             <img class="left" src="@|two-tip-title.png|"/>
-            <img class="close" src="@|two-tip-close.png|" :click="close"/>
+            <img class="close" src="@|two-tip-close.png|" :tap="close"/>
           </div>
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1. 中国海关规定，在境外获取总值超过5000元人民币（含5000元）的个人自用物品，应主动申报并缴纳相应关税。携带新电脑、相机等电子产品回国入境时需申报并缴税。</p>

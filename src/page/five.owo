@@ -37,10 +37,10 @@
           a(href="http://houston.china-consulate.org/chn/") http://houston.china-consulate.org/chn/
         p.bottom 美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。
     .bottom-bar
-      .bottom-button(font="FZZZHONGJW.TTF", :click="showAnswer") 查看答案
-      .bottom-button(font="FZZZHONGJW.TTF", :click="location.replace('')") 再测一次
-      .bottom-button(font="FZZZHONGJW.TTF", :click="switchShare") 点我转发
-  .share-box(:click="switchShare")
+      .bottom-button(font="FZZZHONGJW.TTF", :tap="showAnswer") 查看答案
+      .bottom-button(font="FZZZHONGJW.TTF", :tap="location.replace('')") 再测一次
+      .bottom-button(font="FZZZHONGJW.TTF", :tap="switchShare") 点我转发
+  .share-box(:tap="switchShare")
 </template>
 
 <script>

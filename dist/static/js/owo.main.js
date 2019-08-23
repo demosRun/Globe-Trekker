@@ -1,4 +1,4 @@
-// Thu Aug 22 2019 18:29:45 GMT+0800 (GMT+08:00)
+// Fri Aug 23 2019 14:12:44 GMT+0800 (GMT+08:00)
 
 /* 方法合集 */
 var _owo = {
@@ -26,7 +26,7 @@ var _owo = {
         }))
       }
     }
-    console.log(pageFunction)
+    // console.log(pageFunction)
     if (!pageFunction.show) return
     pageFunction.show.apply(_owo.assign(pageFunction, {
       data: pageFunction.data,
@@ -35,6 +35,60 @@ var _owo = {
   }
 }
 
+// 判断是否为手机
+_owo.isMobi = navigator.userAgent.toLowerCase().match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null
+
+_owo.bindEvent = function (eventName, eventFor, tempDom, templateName) {
+  // 处理事件 使用bind防止闭包
+  tempDom["on" + eventName] = function(event) {
+    // 复制eventFor防止污染
+    let eventForCopy = this.eventFor
+    // 判断页面是否有自己的方法
+    var newPageFunction = window.owo.script[window.owo.activePage]
+    // console.log(this.attributes)
+    if (templateName && templateName !== owo.activePage) {
+      // 如果模板注册到newPageFunction中，那么证明模板没有script那么直接使用eval执行
+      if (newPageFunction.template) newPageFunction = newPageFunction.template[templateName]
+    }
+    // 待优化可以单独提出来
+    // 取出参数
+    var parameterArr = []
+    var parameterList = eventForCopy.match(/[^\(\)]+(?=\))/g)
+    
+    if (parameterList && parameterList.length > 0) {
+      // 参数列表
+      parameterArr = parameterList[0].split(',')
+      // 进一步处理参数
+      
+      for (var i = 0; i < parameterArr.length; i++) {
+        var parameterValue = parameterArr[i].replace(/(^\s*)|(\s*$)/g, "")
+        // console.log(parameterValue)
+        // 判断参数是否为一个字符串
+        
+        if (parameterValue.charAt(0) === '"' && parameterValue.charAt(parameterValue.length - 1) === '"') {
+          parameterArr[i] = parameterValue.substring(1, parameterValue.length - 1)
+        }
+        if (parameterValue.charAt(0) === "'" && parameterValue.charAt(parameterValue.length - 1) === "'") {
+          parameterArr[i] = parameterValue.substring(1, parameterValue.length - 1)
+        }
+        // console.log(parameterArr[i])
+      }
+    }
+    eventForCopy = this.eventFor.replace(/\(.*\)/, '')
+    // console.log(newPageFunction, eventForCopy)
+    // 如果有方法,则运行它
+    if (newPageFunction && newPageFunction[eventForCopy]) {
+      // 绑定window.owo对象
+      newPageFunction.$event = event
+      newPageFunction[eventForCopy].apply(newPageFunction, parameterArr)
+    } else {
+      // 如果没有此方法则交给浏览器引擎尝试运行
+      eval(this.eventFor)
+    }
+  }.bind({
+    eventFor
+  })
+}
 
 /* owo事件处理 */
 // 参数1: 当前正在处理的dom节点
@@ -62,56 +116,14 @@ _owo.handleEvent = function (tempDom, templateName) {
             }
             break
           }
+          case 'tap': {
+            // 根据手机和PC做不同处理
+            if (_owo.isMobi) _owo.bindEvent('touchend', eventFor, tempDom, templateName)
+            else _owo.bindEvent('click', eventFor, tempDom, templateName)
+            break
+          }
           default: {
-            // 处理事件 使用bind防止闭包
-            tempDom["on" + eventName] = function(event) {
-              // 复制eventFor防止污染
-              let eventForCopy = this.eventFor
-              // 判断页面是否有自己的方法
-              var newPageFunction = window.owo.script[window.owo.activePage]
-              // console.log(this.attributes)
-              if (templateName && templateName !== owo.activePage) {
-                // 如果模板注册到newPageFunction中，那么证明模板没有script那么直接使用eval执行
-                if (newPageFunction.template) newPageFunction = newPageFunction.template[templateName]
-              }
-              // 待优化可以单独提出来
-              // 取出参数
-              var parameterArr = []
-              var parameterList = eventForCopy.match(/[^\(\)]+(?=\))/g)
-              
-              if (parameterList && parameterList.length > 0) {
-                // 参数列表
-                parameterArr = parameterList[0].split(',')
-                // 进一步处理参数
-                
-                for (var i = 0; i < parameterArr.length; i++) {
-                  var parameterValue = parameterArr[i].replace(/(^\s*)|(\s*$)/g, "")
-                  // console.log(parameterValue)
-                  // 判断参数是否为一个字符串
-                  
-                  if (parameterValue.charAt(0) === '"' && parameterValue.charAt(parameterValue.length - 1) === '"') {
-                    parameterArr[i] = parameterValue.substring(1, parameterValue.length - 1)
-                  }
-                  if (parameterValue.charAt(0) === "'" && parameterValue.charAt(parameterValue.length - 1) === "'") {
-                    parameterArr[i] = parameterValue.substring(1, parameterValue.length - 1)
-                  }
-                  // console.log(parameterArr[i])
-                }
-              }
-              eventForCopy = this.eventFor.replace(/\(.*\)/, '')
-              // console.log(newPageFunction, eventForCopy)
-              // 如果有方法,则运行它
-              if (newPageFunction && newPageFunction[eventForCopy]) {
-                // 绑定window.owo对象
-                newPageFunction.$event = event
-                newPageFunction[eventForCopy].apply(newPageFunction, parameterArr)
-              } else {
-                // 如果没有此方法则交给浏览器引擎尝试运行
-                eval(this.eventFor)
-              }
-            }.bind({
-              eventFor
-            })
+            _owo.bindEvent(eventName, eventFor, tempDom, templateName)
           }
         }
       }
