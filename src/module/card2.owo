@@ -385,6 +385,18 @@
       allNumber: 0
     },
     created: function () {
+      // 左右滑动
+      owo.tool.touch({
+        el: this.$el,
+        end: (e) => {
+          if (e.swipe[0] < 100) {
+            if (this.data.yuda) this.data.yuda.reject()
+            setTimeout(() => {
+              this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
+            }, 2000)
+          }
+        }
+      })
       owo.state.checkList = []
       this.data.yuda = new Stack(document.getElementById('stack_yuda2'), {
         infinite: false

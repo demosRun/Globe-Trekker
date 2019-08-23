@@ -46,12 +46,12 @@
   background-size: 100% 100%;
 }
 .button {
-  left: 218px;
-  top: 1266px;
+  left: 170px;
+  top: 1307px;
 }
 .logo {
   left: 488px;
-  top: 146px;
+  top: 100px;
 }
 .title {
   left: 118px;

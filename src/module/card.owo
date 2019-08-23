@@ -541,8 +541,8 @@
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 26px;
   background: linear-gradient(to right, #90a9e7 , #6179d6);
 }
 .tips-title-bar {
@@ -673,7 +673,7 @@
   height: 100%;
 }
 .answer-list {
-  height: 75%;
+  height: 65%;
   overflow: auto;
 }
 </style>
