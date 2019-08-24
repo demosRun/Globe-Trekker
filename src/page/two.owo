@@ -1,5 +1,7 @@
 <template lang="pug">
 .box.two
+  // 云
+  img.item.clould(src="@|clould.png|")
   //- 山背景
   .safety
     img.item.button(src="@|two-button.png|", :tap="toThree")
@@ -7,6 +9,7 @@
     img.item.text(src="@|two-text.png|")
     img.item.title(src="@|two-title.png|")
     img.item.people(src="@|people.png|")
+    
     // 卷轴
     .scroll-box.item
       .scroll-left.scroll-bar
@@ -28,7 +31,7 @@
       setTimeout(() => {
         this.query('.text')[0].style.animation = 'float 2s infinite alternate'
         this.query('.scroll-box')[0].style.opacity = '1'
-        this.query('.scroll-box')[0].style.width = '644px'
+        this.query('.scroll-box')[0].style.width = '729px'
       }, 1200)
       // 按钮脉冲效果
       owo.tool.animate('pulse', this.query('.button')[0], 1600)
@@ -81,7 +84,7 @@
   margin: auto;
   top: 870px;
   width: 0;
-  height: 398px;
+  height: 454px;
   opacity: 0;
   transition: width 1s;
   .scroll {
@@ -102,6 +105,21 @@
     right: 0;
     top: 0;
     background-position-x: 40px;
+  }
+}
+.clould {
+  position: absolute;
+  width: 149%;
+  left: -34%;
+  top: 0;
+  animation: floatx 2s infinite alternate;
+}
+@keyframes floatx {
+  from {
+    transform: translateX(5px);
+  }
+  to {
+    transform: translateX(-5px);
   }
 }
 </style>

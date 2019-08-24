@@ -1,761 +1,2212 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <title>页面</title>
+    <!-- 页面的元信息 -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="filetype" content="1"/>
+    <meta name="publishedtype" content="1"/>
+    <meta name="pagetype" content="2"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-orientation" content="portrait"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="browsermode" content="application"/>
+    <meta name="x5-page-mode" content="app"/>
+    <!-- 页面主样式文件 -->
+<style>
+body, html, .ox {
+  padding: 0;
+  margin: 0;
+}
 
-<head>
-  <title>页面</title>
-  <!-- 页面的元信息 -->
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1" />
-  <meta name="format-detection" content="telephone=no, email=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
-  <meta name="renderer" content="webkit" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="filetype" content="1" />
-  <meta name="publishedtype" content="1" />
-  <meta name="pagetype" content="2" />
-  <meta name="screen-orientation" content="portrait" />
-  <meta name="x5-orientation" content="portrait" />
-  <meta name="full-screen" content="yes" />
-  <meta name="x5-fullscreen" content="true" />
-  <meta name="browsermode" content="application" />
-  <meta name="x5-page-mode" content="app" />
-  <!-- 页面主样式文件 -->
-  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.main.tyyhr2v5dgh.css">
-  <!-- 附属css文件 -->
-  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-  <link rel="stylesheet" href="./static/css/owo.animation.tyyhr2v5dgh.css">
-  <link rel="stylesheet" href="./static/css/owo.animate.tyyhr2v5dgh.css">
-</head>
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  -o-animation-duration: 1s;
+     animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+     animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
 
-<body>
-  <!-- 页面区域 -->
-  <div class="box one ox" template="one" style="display: none;">
-    <div class="loading-box">
-      <div class="loading-bar">
-        <img class="start" src="./static/resource/start.png">
+a:link, a:visited {
+  text-decoration: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+.box[template="one"] {
+  background: -webkit-gradient(linear, left top, left bottom, from(#b4c5ec), to(#e7e6ef));
+  background: -webkit-linear-gradient(#b4c5ec, #e7e6ef);
+  background: -o-linear-gradient(#b4c5ec, #e7e6ef);
+  background: linear-gradient(#b4c5ec, #e7e6ef);
+}
+
+[template="one"] .loading-bar {
+  width: 100%;
+  height: 35px;
+  position: relative;
+  background-size: 100%;
+  background-image: url('./static/resource/loading-bar.png');
+}
+
+[template="one"] .loading-box {
+  position: absolute;
+  width: 287px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+[template="one"] .text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+[template="one"] .start {
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.box[template="two"] {
+  background: url('./static/resource/two-bg.jpg');
+  background-size: 100% 100%;
+}
+
+[template="two"] .button {
+  left: 170px;
+  top: 1307px;
+}
+
+[template="two"] .logo {
+  left: 488px;
+  top: 100px;
+}
+
+[template="two"] .title {
+  left: 118px;
+  top: 835px;
+}
+
+[template="two"] .text {
+  left: 92px;
+  top: 239px;
+}
+
+@-webkit-keyframes float {
+  from {
+    opacity: 0.7;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+
+  to {
+    opacity: 0.9;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-o-keyframes float {
+  from {
+    opacity: 0.7;
+    -o-transform: translateY(5px);
+       transform: translateY(5px);
+  }
+
+  to {
+    opacity: 0.9;
+    -o-transform: translateY(0px);
+       transform: translateY(0px);
+  }
+}
+
+@keyframes float {
+  from {
+    opacity: 0.7;
+    -webkit-transform: translateY(5px);
+         -o-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+
+  to {
+    opacity: 0.9;
+    -webkit-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+[template="two"] .people {
+  left: 183.07px;
+  top: 341.34px;
+}
+
+[template="two"] .scroll-box {
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 870px;
+  width: 0;
+  height: 454px;
+  opacity: 0;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+
+[template="two"] .scroll-box .scroll {
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  height: 100%;
+  background-position: center;
+  background-image: url('./static/resource/scroll.png');
+}
+
+[template="two"] .scroll-box .scroll-bar {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  background-image: url('./static/resource/scroll.png');
+}
+
+[template="two"] .scroll-box .scroll-right {
+  right: 0;
+  top: 0;
+  background-position-x: 40px;
+}
+
+[template="two"] .clould {
+  position: absolute;
+  width: 149%;
+  left: -34%;
+  top: 0;
+  -webkit-animation: floatx 2s infinite alternate;
+       -o-animation: floatx 2s infinite alternate;
+          animation: floatx 2s infinite alternate;
+}
+
+@-webkit-keyframes floatx {
+  from {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+
+  to {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+
+@-o-keyframes floatx {
+  from {
+    -o-transform: translateX(5px);
+       transform: translateX(5px);
+  }
+
+  to {
+    -o-transform: translateX(-5px);
+       transform: translateX(-5px);
+  }
+}
+
+@keyframes floatx {
+  from {
+    -webkit-transform: translateX(5px);
+         -o-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+
+  to {
+    -webkit-transform: translateX(-5px);
+         -o-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+.card-switch {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stack {
+  z-index: 1000;
+  width: 90%;
+  height: 80%;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.stack__item {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: auto;
+  -webkit-box-shadow: 0px 0px 1px #d0cbcb;
+          box-shadow: 0px 0px 1px #d0cbcb;
+  background-image: url('./static/resource/cloud.png');
+  background-size: 110% auto;
+  background-repeat: no-repeat;
+  background-position: 25% 78%;
+}
+
+/* Animations */
+
+.stack__item--reject,
+.stack__item--accept {
+  pointer-events: none;
+}
+
+/***********************************************/
+
+/******************** yuda *********************/
+
+/***********************************************/
+
+.stack--yuda .stack__item--reject {
+  -webkit-animation: yudaReject 0.5s forwards;
+  -o-animation: yudaReject 0.5s forwards;
+     animation: yudaReject 0.5s forwards;
+}
+
+@-webkit-keyframes yudaReject {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+@-o-keyframes yudaReject {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+@keyframes yudaReject {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+.stack--yuda .stack__item--accept {
+  -webkit-animation: yudaAccept 0.5s forwards;
+  -o-animation: yudaAccept 0.5s forwards;
+     animation: yudaAccept 0.5s forwards;
+  -webkit-transform-origin: 50% 300%;
+  -o-transform-origin: 50% 300%;
+     transform-origin: 50% 300%;
+}
+
+@-webkit-keyframes yudaAccept {
+  to {
+    opacity: 0;
+    -webkit-transform: rotate3d(0, 0, 1, 20deg);
+    transform: rotate3d(0, 0, 1, 20deg);
+  }
+}
+
+@-o-keyframes yudaAccept {
+  to {
+    opacity: 0;
+    -webkit-transform: rotate3d(0, 0, 1, 20deg);
+    transform: rotate3d(0, 0, 1, 20deg);
+  }
+}
+
+@keyframes yudaAccept {
+  to {
+    opacity: 0;
+    -webkit-transform: rotate3d(0, 0, 1, 20deg);
+    transform: rotate3d(0, 0, 1, 20deg);
+  }
+}
+
+.title-bar {
+  padding: 10px;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  font-size: 18px;
+  line-height: 26px;
+  background: -webkit-gradient(linear, left top, right top, from(#90a9e7), to(#6179d6));
+  background: -webkit-linear-gradient(left, #90a9e7, #6179d6);
+  background: -o-linear-gradient(left, #90a9e7, #6179d6);
+  background: linear-gradient(to right, #90a9e7, #6179d6);
+}
+
+.tips-title-bar {
+  height: 50px;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#e86350), to(#df3639));
+  background: -webkit-linear-gradient(left, #e86350, #df3639);
+  background: -o-linear-gradient(left, #e86350, #df3639);
+  background: linear-gradient(to right, #e86350, #df3639);
+}
+
+.tips-title-bar .left {
+  position: absolute;
+  height: 26px;
+  left: 10px;
+}
+
+.tips-title-bar .close {
+  position: absolute;
+  width: 25px;
+  right: 10px;
+}
+
+.next-button {
+  width: 200px;
+  height: 38px;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  line-height: 38px;
+  color: white;
+  font-size: 18px;
+  background-image: url('./static/resource/next.png');
+}
+
+.explain-button {
+  width: 200px;
+  height: 32.25px;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  line-height: 31px;
+  color: white;
+  background-image: url('./static/resource/next.png');
+}
+
+.ischeck.answer .check-box img {
+  display: block;
+}
+
+.answer-list .ischeck.answer {
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#99a8e1), to(#6c7bce));
+  background: -webkit-linear-gradient(left, #99a8e1, #6c7bce);
+  background: -o-linear-gradient(left, #99a8e1, #6c7bce);
+  background: linear-gradient(to right, #99a8e1, #6c7bce);
+}
+
+.answer-list .answer {
+  background: -webkit-gradient(linear, left top, right top, from(#e5eaed), to(#b5c3dd));
+  background: -webkit-linear-gradient(left, #e5eaed, #b5c3dd);
+  background: -o-linear-gradient(left, #e5eaed, #b5c3dd);
+  background: linear-gradient(to right, #e5eaed, #b5c3dd);
+  border-radius: 20px;
+  margin: 15px 20px;
+  padding: 0 15px;
+  cursor: pointer;
+  position: relative;
+  padding-right: 45px;
+}
+
+.answer-list p {
+  line-height: 30px;
+  text-align: left;
+  font-weight: bold;
+  pointer-events: none;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.answer-list .check-box {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.answer-list .check-box img {
+  width: 22px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  margin: auto;
+}
+
+.page {
+  position: absolute;
+  bottom: 3%;
+  width: 256px;
+  height: 21px;
+  background-position: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  line-height: 21px;
+  text-align: center;
+  background-image: url('./static/resource/page.png');
+}
+
+.tips-text-box {
+  margin: 20px 0;
+  padding: 0 20px;
+  word-break: break-all;
+}
+
+.tips-text-box p {
+  text-align: left;
+  line-height: 23px;
+}
+
+.tips-text-box .line {
+  border-bottom: 1px dotted #ccc;
+  margin: 8px 0;
+}
+
+.subject {
+  width: 100%;
+  height: 100%;
+}
+
+.answer-list {
+  height: 65%;
+  overflow: auto;
+}
+
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+.box[template="four"] {
+  background: -webkit-gradient(linear, left top, left bottom, from(#b4c5ec), to(#e7e6ef));
+  background: -webkit-linear-gradient(#b4c5ec, #e7e6ef);
+  background: -o-linear-gradient(#b4c5ec, #e7e6ef);
+  background: linear-gradient(#b4c5ec, #e7e6ef);
+}
+
+[template="four"] .loading-bar {
+  width: 100%;
+  height: 35px;
+  position: relative;
+  background-size: 100%;
+  background-image: url('./static/resource/loading-bar.png');
+}
+
+[template="four"] .loading-bar img {
+  position: absolute;
+  height: 24px;
+}
+
+[template="four"] .loading-bar .icon-1 {
+  left: 34%;
+  top: 7px;
+}
+
+[template="four"] .loading-bar .icon-2 {
+  left: 43%;
+  top: 7px;
+}
+
+[template="four"] .loading-bar .icon-3 {
+  left: 52%;
+  top: 6px;
+  height: 22px;
+}
+
+[template="four"] .loading-bar .icon-4 {
+  left: 61%;
+  height: 20px;
+  top: 8px;
+}
+
+[template="four"] .loading-box {
+  position: absolute;
+  width: 287px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+[template="four"] .text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+[template="four"] .start {
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+.box.five {
+  background: #e39f89;
+}
+
+.box.five .scroll-box {
+  width: 610px;
+  height: 990px;
+  left: 0;
+  right: 0;
+  top: 10%;
+  height: 73px;
+  margin: auto;
+  position: relative;
+  -webkit-transition: height 1s;
+  -o-transition: height 1s;
+  transition: height 1s;
+  background-image: url('./static/resource/five-scroll-box-1.png');
+}
+
+.box.five .scroll-1 {
+  width: 692px;
+  height: 44px;
+  top: -7px;
+  left: -40px;
+  position: absolute;
+  background-image: url('./static/resource/five-scroll-1.png');
+}
+
+.box.five .scroll-2 {
+  width: 692px;
+  height: 44px;
+  bottom: -7px;
+  left: -40px;
+  position: absolute;
+  background-image: url('./static/resource/five-scroll-1.png');
+}
+
+.box.five .info-box {
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 670px;
+  position: absolute;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #404040;
+}
+
+.box.five .info-box .bottom {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.box.five .bottom-button {
+  width: 233px;
+  height: 73px;
+  text-align: center;
+  line-height: 70px;
+  font-size: 25px;
+  background-image: url('./static/resource/five-button.png');
+}
+
+.box.five .bottom-bar {
+  position: absolute;
+  top: 1240px;
+  left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lave2.box.five {
+  background-color: #898989;
+}
+
+.lave2.box.five .scroll-box {
+  background-image: url('./static/resource/five-scroll-box-2.png');
+}
+
+.lave2.box.five .bottom-button {
+  color: #6d6d6d;
+}
+
+.lave2.box.five .scroll-1 {
+  background-image: url('./static/resource/five-scroll-2.png');
+}
+
+.lave2.box.five .scroll-2 {
+  background-image: url('./static/resource/five-scroll-2.png');
+}
+
+.lave2.box.five .stars-3 {
+  background-image: url('./static/resource/stars-active.png');
+}
+
+.lave3.box.five {
+  background-color: #f1d371;
+}
+
+.lave3.box.five .scroll-box {
+  background-image: url('./static/resource/five-scroll-box-3.png');
+}
+
+.lave3.box.five .bottom-button {
+  color: #cbbc5d;
+}
+
+.lave3.box.five .scroll-1 {
+  background-image: url('./static/resource/five-scroll-3.png');
+}
+
+.lave3.box.five .scroll-2 {
+  background-image: url('./static/resource/five-scroll-3.png');
+}
+
+.lave3.box.five .stars-3 {
+  background-image: url('./static/resource/stars-active.png');
+}
+
+.lave3.box.five .stars-4 {
+  background-image: url('./static/resource/stars-active.png');
+}
+
+.lave3.box.five .stars-5 {
+  background-image: url('./static/resource/stars-active.png');
+}
+
+.overstep {
+  color: white;
+  top: 586px;
+  left: 480px;
+  z-index: 9;
+  font-size: 22px;
+}
+
+.share-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: 90% 5%;
+  background-image: url('./static/resource/share-mask.png');
+}
+
+.user {
+  width: 145px;
+  top: 344px;
+  left: 228px;
+  position: absolute;
+}
+
+.stars {
+  width: 37px;
+  height: 34px;
+  top: 290px;
+  position: absolute;
+  margin: auto;
+  background-image: url('./static/resource/stars.png');
+}
+
+.stars-1 {
+  left: 207px;
+  background-image: url('./static/resource/stars-active.png');
+}
+
+.stars-2 {
+  left: 245px;
+  background-image: url('./static/resource/stars-active.png');
+}
+
+.stars-3 {
+  left: 0;
+  right: 0;
+}
+
+.stars-4 {
+  right: 245px;
+}
+
+.stars-5 {
+  right: 205px;
+}
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+          [font="FZZZHONGJW.TTF"] {
+            font-family: 'FZZZHONGJW';
+          }
+          @font-face {
+            font-family: 'FZZZHONGJW';
+            src: url('./static/font/FZZZHONGJW.eot');
+            src: url('./static/font/FZZZHONGJW.eot?#iefix') format('embedded-opentype'),
+              url('./static/font/FZZZHONGJW.woff') format('woff'),
+              url('./static/font/FZZZHONGJW.ttf')  format('truetype'),
+              url('./static/font/FZZZHONGJW.svg#MicrosoftYaHei') format('svg');
+          }
+        
+[template="card2"] .explain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 999;
+  display: none;
+  background-image: url(./static/resource/cloud.png);
+  background-size: 110% auto;
+  background-repeat: no-repeat;
+  background-position: 25% 78%;
+}
+
+[template="card2"] .explain .tips-text-box {
+  overflow: auto;
+  height: calc(100% - 90px);
+}
+
+[template="card2"] .info {
+  font-size: 12px;
+  color: #999;
+  position: absolute;
+  right: 5%;
+  top: 82%;
+  text-align: right;
+}
+
+[template="card2"] .stack {
+  z-index: 1000;
+  width: 90%;
+  height: 70%;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+  bottom: unset;
+  margin: auto;
+}
+
+[template="card2"] .page {
+  bottom: 4%;
+}
+
+</style>
+    <!-- 附属css文件 -->
+    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+    <link rel="stylesheet" href="./static/css/owo.animation.css">
+    <link rel="stylesheet" href="./static/css/owo.animate.css">
+  </head>
+  <body>
+    <!-- 页面区域 -->
+    <div class="box one ox" template="one" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="start" src="./static/resource/start.png"></div><div class="text" font="FZZZHONGJW.TTF">loading...</div></div></div>
+    <div class="box two ox" template="two" style="display: none;"><!-- 云--><img class="item clould" src="./static/resource/clould.png"><div class="safety"><img class="item button" src="./static/resource/two-button.png" :tap="toThree"><img class="item logo" src="./static/resource/two-logo.png"><img class="item text" src="./static/resource/two-text.png"><img class="item title" src="./static/resource/two-title.png"><img class="item people" src="./static/resource/people.png"><!-- 卷轴--><div class="scroll-box item"><div class="scroll-left scroll-bar"></div><div class="scroll"></div><div class="scroll-right scroll-bar"></div></div></div></div>
+    <div class="box three ox" template="three" style="display: none;"><div class="card-switch" template="card">
+  <ul class="stack stack--yuda" id="stack_yuda">
+    <li class="stack__item">
+      <div class="title-bar">1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 6000美元现金</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 一块妈妈刚做好的腊肉</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 知名老中医抓的调理中药</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 存有“情趣小电影”的平板电脑</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
       </div>
-      <div class="text" font="FZZZHONGJW.TTF">loading...</div>
-    </div>
-  </div>
-  <div class="box two ox" template="two" style="display: none;">
-    <div class="safety">
-      <img class="item button" src="./static/resource/two-button.png" :tap="toThree">
-      <img class="item logo" src="./static/resource/two-logo.png">
-      <img class="item text" src="./static/resource/two-text.png">
-      <img class="item title" src="./static/resource/two-title.png">
-      <img class="item people" src="./static/resource/people.png"><!-- 卷轴-->
-      <div class="scroll-box item">
-        <div class="scroll-left scroll-bar"></div>
-        <div class="scroll"></div>
-        <div class="scroll-right scroll-bar"></div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 接通人工服务</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 直接挂断电话</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 请教身边亲友如何处理</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 挂断电话并查询使馆电话号码去电核实</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="box three ox" template="three" style="display: none;">
-    <div class="card-switch" template="card">
-      <ul class="stack stack--yuda" id="stack_yuda">
-        <li class="stack__item">
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 只要没超速就可以不用管，继续平稳行驶</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 立即靠边停车，下车并礼貌向警察询问情况</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 开车超速被警察开了出庭通知，因日程原因未上庭</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 将未付款衣物放进自己口袋</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 付完款就将发票撕毁扔掉</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 用兄弟的信用卡刷卡消费</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-5" :tap="checkItem">
+          <p>E. 逛累了在商场椅子上睡一觉再继续扫货</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 优惠换汇</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 打折缴纳学费</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 低价代缴房租</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 低价代购奢侈品</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 帅哥美女搭讪提供“特殊”服务</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 街头有人搭讪，低价兜售新款高档手机</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 酒吧门口有人搭讪，低价兜售可卡因</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+    <li class="stack__item">
+      <div class="title-bar">8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div>
+      <div class="answer-list">
+        <div class="answer answer-1" :tap="checkItem">
+          <p>A. 新购的2台笔记本电脑和2台高档相机</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-2" :tap="checkItem">
+          <p>B. 合法购买的1盎司大麻</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-3" :tap="checkItem">
+          <p>C. 1盒燕窝</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+        <div class="answer answer-4" :tap="checkItem">
+          <p>D. 2磅车厘子</p>
+          <div class="check-box">
+            <img src="./static/resource/check.png">
+          </div>
+        </div>
+      </div>
+      <div class="next-button" :tap="accept">下一题</div>
+    </li>
+  </ul>
+  <div class="page">1 / 10</div>
+</div></div>
+    <div class="box one ox" template="four" style="display: none;"><div class="loading-box"><div class="loading-bar"><img class="icon-1" src="./static/resource/icon-1.png"><img class="icon-2" src="./static/resource/icon-2.png"><img class="icon-3" src="./static/resource/icon-3.png"><img class="icon-4" src="./static/resource/icon-4.png"></div><div class="text" font="FZZZHONGJW.TTF">正在计算您的江湖指数.....</div></div></div>
+    <div class="box five ox" template="five" style="display: none;"><div class="safety"><div class="overstep item"></div><div class="scroll-box item"><div class="scroll-1"></div><div class="scroll-2"></div><!-- 用户头像--><img class="user" src="./static/resource/user.png"><!-- 星星--><div class="stars stars-1"></div><div class="stars stars-2"></div><div class="stars stars-3"></div><div class="stars stars-4"></div><div class="stars stars-5"></div><div class="info-box"><p><span>中国领事服务网：</span><a href="http://cs.mfa.gov.cn/">http://cs.mfa.gov.cn/</a></p><p><span>驻美国使馆：</span><a href="http://www.china-embassy.org/chn/">http://www.china-embassy.org/chn/</a></p><p><span>驻纽约总领馆：</span><a href="http://newyork.chineseconsulate.org/chn/">http://newyork.chineseconsulate.org/chn/</a></p><p><span>驻旧金山总领馆：</span><a href="http://www.chinaconsulatesf.org/chn/">http://www.chinaconsulatesf.org/chn/</a></p><p><span>驻洛杉矶总领馆：</span><a href="http://losangeles.china-consulate.org/chn/">http://losangeles.china-consulate.org/chn/</a></p><p><span>驻芝加哥总领馆：</span><a href="http://www.chinaconsulatechicago.org/chn/">http://www.chinaconsulatechicago.org/chn/</a></p><p><span>驻休斯敦总领馆：</span><a href="http://houston.china-consulate.org/chn/">http://houston.china-consulate.org/chn/</a></p><p class="bottom">美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。</p></div></div><div class="bottom-bar"><div class="bottom-button" font="FZZZHONGJW.TTF" :tap="showAnswer">查看答案</div><div class="bottom-button" font="FZZZHONGJW.TTF" :tap="location.replace('')">再测一次</div><div class="bottom-button" font="FZZZHONGJW.TTF" :tap="switchShare">点我转发</div></div></div><div class="share-box" :tap="switchShare"></div></div>
+    <div class="box six ox" template="six" style="display: none;"><div class="card-switch" template="card2">
+    <ul class="stack stack--yuda" id="stack_yuda2">
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1">
               <p>A. 6000美元现金</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 一块妈妈刚做好的腊肉</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 知名老中医抓的调理中药</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 存有“情趣小电影”的平板电脑</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。</p>
+            <div class="line"></div>
+            <p>
+              2.美国对入境携带礼品、烟、酒、药品、动植物制品等有严格规定，建议行前认真查阅了解，可参考
+              <a href="http://newyork.chineseconsulate.org/chn//lgfw/mdlxzn/t1242318.htm">链接地址</a>
+            </p>
+            <div class="line"></div>
+            <p>3.美执法部门有权检查入境旅客所有电子产品，如美方认定其中包含违法（如：含有儿童色情内容）或显示与入境目的不符（如：持旅行签证来美，但社交软件聊天记录透露出来美打工、移民等倾向）的信息，将导致拒绝入境、遣返甚至追究法律责任。</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1">
               <p>A. 接通人工服务</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 直接挂断电话</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 请教身边亲友如何处理</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 挂断电话并查询使馆电话号码去电核实</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1.接起电话凡是录音来电的即可判断是诈骗电话，接听人如按提示接通人工服务，上当受骗指数将飙升！近年来，针对在美侨胞、留学生，假冒中国大使馆、总领馆、银行、快递公司、水电公司等单位的电信诈骗活动高发频发，诈骗分子常以录音电话诱导接听人接通人工服务，再通过谎称当事人卷入有关“案件”等，逐步套取个人身份、账户等信息直至要求转账汇款。</p>
+            <div class="line"></div>
+            <p>2.对声称来自银行、快递公司、水电公司甚至中国大使馆的电话要注意加强甄别。可疑来电或录音来电应直接挂断，事后可主动查询并联系相关单位核实处理。切记不在接听电话时轻易透露个人重要信息！更不要转账汇款！！！</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1">
               <p>A. 只要没超速就可以不用管，继续平稳行驶</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2">
               <p>B. 立即靠边停车，下车并礼貌向警察询问情况</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4">
               <p>D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>在美国驾车遇警察拦截时应保持镇静，立即平稳靠边停车，双手放在方向盘上，不要主动下车或翻找证件，以免警方误认为具有攻击性或是翻找武器。积极配合警方执法，按指令行动。不要与警方发生争执，如认为其执法不公，可保存相关证据，事后进行投诉。</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1 ischeck">
               <p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 开车超速被警察开了出庭通知，因日程原因未上庭</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1. 美国法律注重对妇女和儿童的保护，对妇女“动粗”或不当“体罚”小孩均可能导致警方介入。一旦案件进入司法程序，案件审理费时费力，当事人还可能面临严重法律后果。</p>
+            <div class="line"></div>
+            <p>2. 说话（开玩笑）要懂得边界，绝不可随意说出威胁他人或公共安全的语言，避免无心之失导致不必要的麻烦。</p>
+            <div class="line"></div>
+            <p>3. 如被警察开具出庭通知，务必严肃对待。如不愿耽误余下行程，可考虑委托律师协助处理，但不能置之不理，否则将承担相应法律责任。</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1 ischeck">
               <p>A. 将未付款衣物放进自己口袋</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 付完款就将发票撕毁扔掉</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 用兄弟的信用卡刷卡消费</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-5" :tap="checkItem">
+            <div class="answer answer-5 ischeck">
               <p>E. 逛累了在商场椅子上睡一觉再继续扫货</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1. 在美国商场购物，未付款商品一定不要置于个人携带的口袋中，暂时存放也不行。不能将未付款商品带出商场外，以免被怀疑盗窃而给自己带来麻烦。结账时确保去除衣服等物品上的防盗装置，妥善保管购物发票，以备查验或作为售后服务凭证。</p>
+            <div class="line"></div>
+            <p>2. 信用卡仅限本人使用，使用他人信用卡属违法行为，伪造、盗刷信用卡更是犯罪。切记，不要使用别人的信用卡，不要使用来历不明的信用卡，信用卡只能“刷我的卡”！</p>
+            <div class="line"></div>
+            <p>3. 文明出行，快乐购物，人人都是形象大使，注意维护中国公民良好形象哦！</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1 ischeck">
               <p>A. 优惠换汇</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 打折缴纳学费</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 低价代缴房租</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 低价代购奢侈品</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1. 换汇务必通过银行或有正式牌照的金融机构等正规途径，私下换汇违反有关外汇管理规定，存在很大的法律和权益风险。</p>
+            <div class="line"></div>
+            <p>2. 低价代购/代缴费”骗局多！“代购”人员往往通过盗取公民身份信息，伪造他人的信用卡或购物卡，再以“商家限购”、“每人只能购买一次”等为由，通过网络招募兼职人员代为刷卡购物（通常都是购买价格高昂的奢侈品），许诺事后付给一定佣金。<br>无论替人代购还是寻求代购服务均为非法！图一时方便或便宜不仅容易上当受骗而“财物两空”，还可能因所涉资金来源非法、盗刷信用卡等问题卷入“洗钱”、“信用卡欺诈”犯罪，导致严重后果。</p>
+            <div class="line"></div>
+            <p>3. 切记，天上不会掉馅饼，切莫轻信或参与“打折缴费”、“优惠换汇”、“低价代购”，确保财产安全！</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1 ischeck">
               <p>A. 帅哥美女搭讪提供“特殊”服务</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 街头有人搭讪，低价兜售新款高档手机</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 酒吧门口有人搭讪，低价兜售可卡因</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-        <li class="stack__item">
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
+        </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1. 色情交易在美国绝大多数州均为非法，涉及儿童色情内容的更涉嫌犯罪！</p>
+            <div class="line"></div>
+            <p>2. 知情并购买“赃物”属违法犯罪！</p>
+            <div class="line"></div>
+            <p>3. 看似天上掉的“馅饼”，其实很可能是当地执法部门钓鱼执法的“陷阱”！如果无法证明自己没有违法犯罪的主观意愿，往往很难推翻执法部门通过钓鱼执法取得的证据而导致麻烦缠身。出门在外，切记遵纪守法、洁身自好！</p>
+          </div>
+        </div>
+      </li>
+      <li class="stack__item">
+        <div class="subject">
           <div class="title-bar">8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div>
           <div class="answer-list">
-            <div class="answer answer-1" :tap="checkItem">
+            <div class="answer answer-1 ischeck">
               <p>A. 新购的2台笔记本电脑和2台高档相机</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-2" :tap="checkItem">
+            <div class="answer answer-2 ischeck">
               <p>B. 合法购买的1盎司大麻</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-3" :tap="checkItem">
+            <div class="answer answer-3 ischeck">
               <p>C. 1盒燕窝</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
-            <div class="answer answer-4" :tap="checkItem">
+            <div class="answer answer-4 ischeck">
               <p>D. 2磅车厘子</p>
               <div class="check-box">
                 <img src="./static/resource/check.png">
               </div>
             </div>
           </div>
-          <div class="next-button" :tap="accept">下一题</div>
-        </li>
-      </ul>
-      <div class="page">1 / 10</div>
-    </div>
-  </div>
-  <div class="box one ox" template="four" style="display: none;">
-    <div class="loading-box">
-      <div class="loading-bar">
-        <img class="icon-1" src="./static/resource/icon-1.png">
-        <img class="icon-2" src="./static/resource/icon-2.png">
-        <img class="icon-3" src="./static/resource/icon-3.png">
-        <img class="icon-4" src="./static/resource/icon-4.png">
-      </div>
-      <div class="text" font="FZZZHONGJW.TTF">正在计算您的江湖指数.....</div>
-    </div>
-  </div>
-  <div class="box five ox" template="five" style="display: none;">
-    <div class="safety">
-      <div class="overstep item"></div>
-      <div class="scroll-box item">
-        <div class="scroll-1"></div>
-        <div class="scroll-2"></div><!-- 用户头像-->
-        <img class="user" src="./static/resource/user.png"><!-- 星星-->
-        <div class="stars stars-1"></div>
-        <div class="stars stars-2"></div>
-        <div class="stars stars-3"></div>
-        <div class="stars stars-4"></div>
-        <div class="stars stars-5"></div>
-        <div class="info-box">
-          <p>
-            <span>中国领事服务网：</span>
-            <a href="http://cs.mfa.gov.cn/">http://cs.mfa.gov.cn/</a>
-          </p>
-          <p>
-            <span>驻美国使馆：</span>
-            <a href="http://www.china-embassy.org/chn/">http://www.china-embassy.org/chn/</a>
-          </p>
-          <p>
-            <span>驻纽约总领馆：</span>
-            <a href="http://newyork.chineseconsulate.org/chn/">http://newyork.chineseconsulate.org/chn/</a>
-          </p>
-          <p>
-            <span>驻旧金山总领馆：</span>
-            <a href="http://www.chinaconsulatesf.org/chn/">http://www.chinaconsulatesf.org/chn/</a>
-          </p>
-          <p>
-            <span>驻洛杉矶总领馆：</span>
-            <a href="http://losangeles.china-consulate.org/chn/">http://losangeles.china-consulate.org/chn/</a>
-          </p>
-          <p>
-            <span>驻芝加哥总领馆：</span>
-            <a href="http://www.chinaconsulatechicago.org/chn/">http://www.chinaconsulatechicago.org/chn/</a>
-          </p>
-          <p>
-            <span>驻休斯敦总领馆：</span>
-            <a href="http://houston.china-consulate.org/chn/">http://houston.china-consulate.org/chn/</a>
-          </p>
-          <p class="bottom">美东地区中国公民如需领事协助，可拨打驻纽约总领馆领事保护专线电话：212-6953125。外交部全球领事保护与服务应急呼叫中心电话：+86-10-12308或+86-10-59913991。</p>
+          <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
+          <!-- <div class="next-button" :tap="accept">下一题</div> -->
         </div>
-      </div>
-      <div class="bottom-bar">
-        <div class="bottom-button" font="FZZZHONGJW.TTF" :tap="showAnswer">查看答案</div>
-        <div class="bottom-button" font="FZZZHONGJW.TTF" :tap="location.replace('')">再测一次</div>
-        <div class="bottom-button" font="FZZZHONGJW.TTF" :tap="switchShare">点我转发</div>
-      </div>
+        <div class="explain">
+          <div class="tips-title-bar">
+            <img class="left" src="./static/resource/two-tip-title.png">
+            <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
+          </div>
+          <div class="tips-text-box" font="FZZZHONGJW.TTF">
+            <p>1. 中国海关规定，在境外获取总值超过5000元人民币（含5000元）的个人自用物品，应主动申报并缴纳相应关税。携带新电脑、相机等电子产品回国入境时需申报并缴税。</p>
+            <div class="line"></div>
+            <p>2. 美国少数州虽然施行娱乐大麻合法化，但大麻在中国仍属毒品！携带大麻入境中国涉嫌走私毒品犯罪！<br>特别提醒，即使在美国少数娱乐大麻合法的州，大麻销售消费均有严格限制，且美联邦仍将大麻列为管制类毒品，跨州携带大麻等行为均为非法！划重点：美东地区的康涅狄格、新罕布什尔、新泽西、纽约、俄亥俄、宾夕法尼亚、罗德岛、佛蒙特等州仍明令禁止娱乐大麻！</p>
+            <div class="line"></div>
+            <p>3. 水果、燕窝等均属不能携带入境中国物品。回国前，建议仔细查阅中国海关相关规定，确保携带物品合法合规。</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="page">1 / 10</div>
+    <!-- 提示信息 -->
+    <div class="info">
+      向上滑动查看解释<br>向左滑动查看下一题
     </div>
-    <div class="share-box" :tap="switchShare"></div>
-  </div>
-  <div class="box six ox" template="six" style="display: none;">
-    <div class="card-switch" template="card2">
-      <ul class="stack stack--yuda" id="stack_yuda2">
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div>
-            <div class="answer-list">
-              <div class="answer answer-1">
-                <p>A. 6000美元现金</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 一块妈妈刚做好的腊肉</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 知名老中医抓的调理中药</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 存有“情趣小电影”的平板电脑</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1.个人或共同旅行的家庭入境美国携带现金超过1万美元需向美海关申报，未如实申报可能被追究民事或刑事责任。</p>
-              <div class="line"></div>
-              <p>
-                2.美国对入境携带礼品、烟、酒、药品、动植物制品等有严格规定，建议行前认真查阅了解，可参考
-                <a href="http://newyork.chineseconsulate.org/chn//lgfw/mdlxzn/t1242318.htm">链接地址</a>
-              </p>
-              <div class="line"></div>
-              <p>3.美执法部门有权检查入境旅客所有电子产品，如美方认定其中包含违法（如：含有儿童色情内容）或显示与入境目的不符（如：持旅行签证来美，但社交软件聊天记录透露出来美打工、移民等倾向）的信息，将导致拒绝入境、遣返甚至追究法律责任。</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div>
-            <div class="answer-list">
-              <div class="answer answer-1">
-                <p>A. 接通人工服务</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 直接挂断电话</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 请教身边亲友如何处理</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 挂断电话并查询使馆电话号码去电核实</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1.接起电话凡是录音来电的即可判断是诈骗电话，接听人如按提示接通人工服务，上当受骗指数将飙升！近年来，针对在美侨胞、留学生，假冒中国大使馆、总领馆、银行、快递公司、水电公司等单位的电信诈骗活动高发频发，诈骗分子常以录音电话诱导接听人接通人工服务，再通过谎称当事人卷入有关“案件”等，逐步套取个人身份、账户等信息直至要求转账汇款。</p>
-              <div class="line"></div>
-              <p>2.对声称来自银行、快递公司、水电公司甚至中国大使馆的电话要注意加强甄别。可疑来电或录音来电应直接挂断，事后可主动查询并联系相关单位核实处理。切记不在接听电话时轻易透露个人重要信息！更不要转账汇款！！！</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div>
-            <div class="answer-list">
-              <div class="answer answer-1">
-                <p>A. 只要没超速就可以不用管，继续平稳行驶</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2">
-                <p>B. 立即靠边停车，下车并礼貌向警察询问情况</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 立即靠边停车，将双手放在方向盘上并等待警察前来处理</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4">
-                <p>D. 立即靠边停车，赶紧从抽屉里翻出驾照、行驶证备查</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>在美国驾车遇警察拦截时应保持镇静，立即平稳靠边停车，双手放在方向盘上，不要主动下车或翻找证件，以免警方误认为具有攻击性或是翻找武器。积极配合警方执法，按指令行动。不要与警方发生争执，如认为其执法不公，可保存相关证据，事后进行投诉。</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div>
-            <div class="answer-list">
-              <div class="answer answer-1 ischeck">
-                <p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 小孩淘气不听话，小明夫妇气急之下轮番拍打、教训熊孩子</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 与人发生纠纷，情急之下使用“你等着瞧”、“同归于尽”等语言</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 开车超速被警察开了出庭通知，因日程原因未上庭</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1. 美国法律注重对妇女和儿童的保护，对妇女“动粗”或不当“体罚”小孩均可能导致警方介入。一旦案件进入司法程序，案件审理费时费力，当事人还可能面临严重法律后果。</p>
-              <div class="line"></div>
-              <p>2. 说话（开玩笑）要懂得边界，绝不可随意说出威胁他人或公共安全的语言，避免无心之失导致不必要的麻烦。</p>
-              <div class="line"></div>
-              <p>3. 如被警察开具出庭通知，务必严肃对待。如不愿耽误余下行程，可考虑委托律师协助处理，但不能置之不理，否则将承担相应法律责任。</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div>
-            <div class="answer-list">
-              <div class="answer answer-1 ischeck">
-                <p>A. 将未付款衣物放进自己口袋</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 付完款就将发票撕毁扔掉</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 用兄弟的信用卡刷卡消费</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 排队结账时“眼观六路”，哪个队人少随时快速“切换”</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-5 ischeck">
-                <p>E. 逛累了在商场椅子上睡一觉再继续扫货</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1. 在美国商场购物，未付款商品一定不要置于个人携带的口袋中，暂时存放也不行。不能将未付款商品带出商场外，以免被怀疑盗窃而给自己带来麻烦。结账时确保去除衣服等物品上的防盗装置，妥善保管购物发票，以备查验或作为售后服务凭证。</p>
-              <div class="line"></div>
-              <p>2. 信用卡仅限本人使用，使用他人信用卡属违法行为，伪造、盗刷信用卡更是犯罪。切记，不要使用别人的信用卡，不要使用来历不明的信用卡，信用卡只能“刷我的卡”！</p>
-              <div class="line"></div>
-              <p>3. 文明出行，快乐购物，人人都是形象大使，注意维护中国公民良好形象哦！</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div>
-            <div class="answer-list">
-              <div class="answer answer-1 ischeck">
-                <p>A. 优惠换汇</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 打折缴纳学费</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 低价代缴房租</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 低价代购奢侈品</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1. 换汇务必通过银行或有正式牌照的金融机构等正规途径，私下换汇违反有关外汇管理规定，存在很大的法律和权益风险。</p>
-              <div class="line"></div>
-              <p>2. 低价代购/代缴费”骗局多！“代购”人员往往通过盗取公民身份信息，伪造他人的信用卡或购物卡，再以“商家限购”、“每人只能购买一次”等为由，通过网络招募兼职人员代为刷卡购物（通常都是购买价格高昂的奢侈品），许诺事后付给一定佣金。<br>无论替人代购还是寻求代购服务均为非法！图一时方便或便宜不仅容易上当受骗而“财物两空”，还可能因所涉资金来源非法、盗刷信用卡等问题卷入“洗钱”、“信用卡欺诈”犯罪，导致严重后果。</p>
-              <div class="line"></div>
-              <p>3. 切记，天上不会掉馅饼，切莫轻信或参与“打折缴费”、“优惠换汇”、“低价代购”，确保财产安全！</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div>
-            <div class="answer-list">
-              <div class="answer answer-1 ischeck">
-                <p>A. 帅哥美女搭讪提供“特殊”服务</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 街头有人搭讪，低价兜售新款高档手机</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 酒吧门口有人搭讪，低价兜售可卡因</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 发现一个免费“情趣小电影”网站，进入浏览“儿童图片”</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1. 色情交易在美国绝大多数州均为非法，涉及儿童色情内容的更涉嫌犯罪！</p>
-              <div class="line"></div>
-              <p>2. 知情并购买“赃物”属违法犯罪！</p>
-              <div class="line"></div>
-              <p>3. 看似天上掉的“馅饼”，其实很可能是当地执法部门钓鱼执法的“陷阱”！如果无法证明自己没有违法犯罪的主观意愿，往往很难推翻执法部门通过钓鱼执法取得的证据而导致麻烦缠身。出门在外，切记遵纪守法、洁身自好！</p>
-            </div>
-          </div>
-        </li>
-        <li class="stack__item">
-          <div class="subject">
-            <div class="title-bar">8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div>
-            <div class="answer-list">
-              <div class="answer answer-1 ischeck">
-                <p>A. 新购的2台笔记本电脑和2台高档相机</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-2 ischeck">
-                <p>B. 合法购买的1盎司大麻</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-3 ischeck">
-                <p>C. 1盒燕窝</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-              <div class="answer answer-4 ischeck">
-                <p>D. 2磅车厘子</p>
-                <div class="check-box">
-                  <img src="./static/resource/check.png">
-                </div>
-              </div>
-            </div>
-            <!-- <div class="explain-button" :tap="explain">查看解释</div> -->
-            <!-- <div class="next-button" :tap="accept">下一题</div> -->
-          </div>
-          <div class="explain">
-            <div class="tips-title-bar">
-              <img class="left" src="./static/resource/two-tip-title.png">
-              <img class="close" src="./static/resource/two-tip-close.png" :tap="close">
-            </div>
-            <div class="tips-text-box" font="FZZZHONGJW.TTF">
-              <p>1. 中国海关规定，在境外获取总值超过5000元人民币（含5000元）的个人自用物品，应主动申报并缴纳相应关税。携带新电脑、相机等电子产品回国入境时需申报并缴税。</p>
-              <div class="line"></div>
-              <p>2. 美国少数州虽然施行娱乐大麻合法化，但大麻在中国仍属毒品！携带大麻入境中国涉嫌走私毒品犯罪！<br>特别提醒，即使在美国少数娱乐大麻合法的州，大麻销售消费均有严格限制，且美联邦仍将大麻列为管制类毒品，跨州携带大麻等行为均为非法！划重点：美东地区的康涅狄格、新罕布什尔、新泽西、纽约、俄亥俄、宾夕法尼亚、罗德岛、佛蒙特等州仍明令禁止娱乐大麻！</p>
-              <div class="line"></div>
-              <p>3. 水果、燕窝等均属不能携带入境中国物品。回国前，建议仔细查阅中国海关相关规定，确保携带物品合法合规。</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="page">1 / 10</div>
-    </div>
-  </div>
-  <!-- 框架script文件 -->
-  <script src="./static/js/owo.main.tyyhr2v5dgh.js" type="text/javascript" charset="UTF-8"></script>
+  </div></div>
+    <!-- 框架script代码 --><script>"use strict";
 
-  <script src="http://tools.people.com.cn/libs/jquery/3.0.0/jquery-3.0.0.min.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/classie.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/dynamics.min.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/modernizr-custom.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/stack.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/preloadjs.js" type="text/javascript" charset="UTF-8"></script>
-</body>
+// 存储页面基本信息
+var owo = {
+  // 页面默认入口 如果没有设置 则取第一个页面为默认页面
+  entry: "one",
+  // 全局方法变量
+  tool: {},
+  // 框架状态变量
+  state: {}
+};
+/*
+  存储每个页面的函数
+  键名：页面名称
+  键值：方法列表
+*/
 
+owo.script = {
+  "one": {
+    "data": {},
+    "created": function created() {
+      var startIcon = this.query('.start')[0]; // 加载动画
+
+      var queue = new createjs.LoadQueue();
+      queue.loadManifest([{
+        src: "./static/resource/icon-1.png"
+      }, {
+        src: "./static/resource/icon-2.png"
+      }, {
+        src: "./static/resource/icon-3.png"
+      }, {
+        src: "./static/resource/icon-4.png"
+      }, {
+        src: "./static/resource/loading-bar.png"
+      }, {
+        src: "./static/resource/page.png"
+      }, {
+        src: "./static/resource/people.png"
+      }, {
+        src: "./static/resource/scroll.png"
+      }, {
+        src: "./static/resource/two-bg.jpg"
+      }, {
+        src: "./static/resource/two-button.png"
+      }, {
+        src: "./static/resource/two-logo.png"
+      }, {
+        src: "./static/resource/two-text.png"
+      }, {
+        src: "./static/resource/two-tip-close.png"
+      }, {
+        src: "./static/resource/two-tip-title.png"
+      }, {
+        src: "./static/resource/two-title.png"
+      }, {
+        src: "./static/resource/click.mp3"
+      }, {
+        src: "./static/resource/check.png"
+      }, {
+        src: "./static/resource/cloud.png"
+      }, {
+        src: "./static/resource/five-button.png"
+      }, {
+        src: "./static/resource/five-scroll-1.png"
+      }]);
+      queue.on("progress", function (event) {
+        var left = queue.progress * 100 - 12;
+        if (!left || left < 0) left = 0;
+        startIcon.style.left = left + "%";
+      });
+      queue.on("complete", function () {
+        setTimeout(function () {
+          owo.go('two', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+        }, 200);
+      }); // 不断地更换加载文字
+    }
+  },
+  "two": {
+    "data": {},
+    "created": function created() {
+      var _this = this;
+
+      changeDecorate(this.$el, 750, 1508);
+      owo.tool.animate('fadeIn', this.query('.logo')[0], 200);
+      owo.tool.animate('fadeIn', this.query('.text')[0], 200);
+      owo.tool.animate('fadeInRight', this.query('.people')[0], 500);
+      owo.tool.animate('fadeIn', this.query('.title')[0], 500);
+      owo.tool.animate('fadeIn', this.query('.button')[0], 500);
+      setTimeout(function () {
+        _this.query('.text')[0].style.animation = 'float 2s infinite alternate';
+        _this.query('.scroll-box')[0].style.opacity = '1';
+        _this.query('.scroll-box')[0].style.width = '729px';
+      }, 1200); // 按钮脉冲效果
+
+      owo.tool.animate('pulse', this.query('.button')[0], 1600);
+    },
+    "toThree": function toThree() {
+      new Audio("./static/resource/click.mp3").play();
+      owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+    }
+  },
+  "three": {
+    "data": {},
+    "created": function created() {},
+    "template": {
+      "card": {
+        "data": {
+          "yuda": null,
+          "number": 1,
+          "allNumber": 0
+        },
+        "created": function created() {
+          var _this2 = this;
+
+          owo.state.code = 0;
+          owo.state.checkList = [];
+          this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
+            infinite: false,
+            onEndStack: function onEndStack() {
+              console.log('最后了');
+            }
+          }); // 获取总数
+
+          setTimeout(function () {
+            _this2.data.allNumber = _this2.query('.stack__item').length;
+            _this2.query('.page')[0].innerText = _this2.data.number + ' / ' + _this2.data.allNumber;
+          }, 0);
+          setTimeout(function () {
+            _this2.query('.next-button')[_this2.query('.next-button').length - 1].innerText = '查看我的等级';
+          }, 1000); // 左滑下一个
+          // 左右滑动
+
+          owo.tool.touch({
+            el: this.$el,
+            end: function end(e) {
+              console.log(e.swipe); // 向左滑动
+
+              if (e.swipe[0] > 100) {
+                if (_this2.data.yuda) _this2.data.yuda.accept();
+              }
+            }
+          });
+        },
+        "inspect": function inspect(ind) {
+          var list = [];
+          var domList = this.query('.stack__item')[ind].getElementsByClassName('answer');
+          var isCheck = false; // console.log(domList)
+
+          for (var _ind = 0; _ind < domList.length; _ind++) {
+            var element = domList[_ind];
+
+            if (element.classList.contains('ischeck')) {
+              isCheck = true;
+              list.push(true);
+            } else {
+              list.push(false);
+            }
+          }
+
+          if (isCheck) return list;else return null;
+        },
+        "setCheckList": function setCheckList(check) {
+          var tempCheck = '';
+          if (check[0]) tempCheck += 'a';
+          if (check[1]) tempCheck += 'b';
+          if (check[2]) tempCheck += 'c';
+          if (check[3]) tempCheck += 'd';
+          if (check[4]) tempCheck += 'e';
+          owo.state.checkList.push(tempCheck);
+        },
+        "accept": function accept() {
+          new Audio("./static/resource/click.mp3").play(); // 计算分数
+
+          switch (this.data.number) {
+            case 1:
+              {
+                var check = this.inspect(0);
+
+                if (check === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(check);
+
+                if (check[1] && check[2] && check[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 2:
+              {
+                var _check = this.inspect(1);
+
+                if (_check === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check);
+
+                if (_check[1] || _check[2] || _check[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 3:
+              {
+                var _check2 = this.inspect(2);
+
+                if (_check2 === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check2);
+
+                if (_check2[2]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 4:
+              {
+                var _check3 = this.inspect(3);
+
+                if (_check3 === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check3);
+
+                if (_check3[0] && _check3[1] && _check3[2] && _check3[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 5:
+              {
+                var _check4 = this.inspect(4);
+
+                if (_check4 === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check4);
+
+                if (_check4[0] && _check4[1] && _check4[2] && _check4[3] && _check4[4]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 6:
+              {
+                var _check5 = this.inspect(5);
+
+                if (_check5 === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check5);
+
+                if (_check5[0] && _check5[1] && _check5[2] && _check5[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 7:
+              {
+                var _check6 = this.inspect(6);
+
+                if (_check6 === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check6);
+
+                if (_check6[0] && _check6[1] && _check6[2] && _check6[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+
+            case 8:
+              {
+                var _check7 = this.inspect(7);
+
+                if (_check7 === null) {
+                  owo.tool.toast('本题还没有进行作答哦!');
+                  return;
+                }
+
+                this.setCheckList(_check7);
+
+                if (_check7[1] && _check7[2] && _check7[3]) {
+                  owo.state.code++;
+                }
+
+                break;
+              }
+          }
+
+          this.data.number++;
+
+          if (this.data.number > this.data.allNumber) {
+            owo.go('four', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+            return;
+          }
+
+          this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber;
+          this.data.yuda.accept();
+        },
+        "reject": function reject() {
+          this.data.yuda.reject();
+        },
+        "checkItem": function checkItem(e) {
+          new Audio("./static/resource/click.mp3").play();
+          var parentElement = this.$event.target.parentElement;
+          var answer = parentElement.querySelectorAll('.answer'); // console.log(this.$event.target.classList.contains('ischeck'))
+
+          if (this.$event.target.classList.contains('ischeck')) {
+            this.$event.target.classList.remove('ischeck');
+          } else {
+            this.$event.target.classList.add('ischeck');
+          }
+        },
+        "prop": {}
+      }
+    }
+  },
+  "four": {
+    "data": {},
+    "show": function show() {
+      owo.state.overstep = 0;
+      var str = '';
+
+      for (var ind = 0; ind < owo.state.checkList.length; ind++) {
+        str += "t".concat(ind + 1, "=").concat(owo.state.checkList[ind], "&");
+      }
+
+      $.ajax({
+        url: 'http://littlepoll.people.com.cn/ati/diaocha.php/D/collect',
+        method: 'POST',
+        data: str,
+        success: function success(res) {
+          var data = JSON.parse(res);
+
+          if (data['chaoyue'] && data['allpeople']) {
+            var sc = Math.ceil(parseInt(data['chaoyue']) / parseInt(data['allpeople']) * 100);
+            owo.state.overstep = sc;
+          } else {
+            owo.state.overstep = 0;
+          }
+
+          owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+        }
+      }); // 不断地更换加载文字
+
+      owo.tool.animate('bounceIn', this.query('.icon-1')[0], 200);
+      owo.tool.animate('bounceIn', this.query('.icon-2')[0], 600);
+      owo.tool.animate('bounceIn', this.query('.icon-3')[0], 1000);
+      owo.tool.animate('bounceIn', this.query('.icon-4')[0], 1400);
+    }
+  },
+  "five": {
+    "data": {
+      "showShare": false
+    },
+    "created": function created() {
+      var _this3 = this;
+
+      if (owo.state.overstep == undefined) {
+        location.replace('');
+        return;
+      } // 根据不同的分数更换不同的样式
+
+
+      this.query('.overstep')[0].innerText = "\u8D85\u8D8A".concat(owo.state.overstep, "%\u73A9\u5BB6");
+      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 800);
+
+      if (owo.state.code >= 8) {
+        this.$el.classList.add('lave3');
+      } else if (owo.state.code >= 5) {
+        this.$el.classList.add('lave2');
+      } else {
+        this.$el.classList.add('lave1');
+      }
+
+      changeDecorate(this.$el, 750, 1508);
+      setTimeout(function () {
+        _this3.query('.scroll-box')[0].style.height = '990px';
+      }, 800);
+      owo.tool.animate('fadeIn', this.query('.user')[0], 1800);
+      owo.tool.animate('fadeIn', this.query('.info-box')[0], 1800);
+      owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 1800);
+      owo.tool.animate('bounceIn', this.query('.stars-1')[0], 2000);
+      owo.tool.animate('bounceIn', this.query('.stars-2')[0], 2100);
+      owo.tool.animate('bounceIn', this.query('.stars-3')[0], 2200);
+      owo.tool.animate('bounceIn', this.query('.stars-4')[0], 2300);
+      owo.tool.animate('bounceIn', this.query('.stars-5')[0], 2400);
+    },
+    "switchShare": function switchShare() {
+      if (this.data.showShare) {
+        this.query('.share-box')[0].style.display = 'none';
+      } else {
+        this.query('.share-box')[0].style.display = 'block';
+      }
+
+      this.data.showShare = !this.data.showShare;
+    },
+    "showAnswer": function showAnswer() {
+      owo.go('six', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+    }
+  },
+  "six": {
+    "data": {},
+    "created": function created() {},
+    "template": {
+      "card2": {
+        "data": {
+          "yuda": null,
+          "number": 1,
+          "allNumber": 0
+        },
+        "created": function created() {
+          var _this4 = this;
+
+          // 左右滑动
+          owo.tool.touch({
+            el: this.$el,
+            end: function end(e) {
+              console.log(e.swipe); // 向左滑动
+
+              if (e.swipe[0] < -100) {
+                if (_this4.data.yuda) _this4.data.yuda.reject();
+              } else if (e.swipe[1] < -100) {
+                _this4.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block';
+              } else if (e.swipe[1] > 100) {
+                _this4.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'none';
+              }
+            }
+          });
+          owo.state.checkList = [];
+          this.data.yuda = new Stack(document.getElementById('stack_yuda2'), {
+            infinite: false
+          }); // setTimeout(() => {
+          //   this.query('.next-button')[this.query('.next-button').length - 1].innerText = '返回我的等级'
+          // }, 1000);
+        },
+        "show": function show() {
+          var _this5 = this;
+
+          this.data.number = 1; // 获取总数
+
+          setTimeout(function () {
+            _this5.data.allNumber = _this5.query('.stack__item').length;
+            _this5.query('.page')[0].innerText = _this5.data.number + ' / ' + _this5.data.allNumber;
+          }, 0);
+          var domList = this.query('.explain');
+          domList.forEach(function (element) {
+            element.style.display = 'none';
+          });
+          this.data.yuda.restart();
+        },
+        "accept": function accept() {
+          new Audio("./static/resource/click.mp3").play();
+          this.data.number++;
+
+          if (this.data.number > this.data.allNumber) {
+            owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+            return;
+          }
+
+          this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber;
+          this.data.yuda.accept();
+        },
+        "reject": function reject() {
+          this.data.yuda.reject();
+        },
+        "explain": function explain() {
+          console.log(this);
+        },
+        "close": function close() {
+          new Audio("./static/resource/click.mp3").play();
+          this.data.number++;
+
+          if (this.data.number > this.data.allNumber) {
+            owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
+            return;
+          }
+
+          this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber;
+          this.data.yuda.reject();
+        },
+        "prop": {}
+      }
+    }
+  }
+};</script>
+<!-- 框架script文件 -->
+<script src="./static/js/owo.main.js" type="text/javascript" charset="UTF-8"></script>
+<!-- 调试-热刷新代码 -->
+<script src="./static/js/autoReload.js" type="text/javascript" charset="UTF-8"></script>
+<!-- 调试-远程调试 -->
+<script src="./static/js/log.js" type="text/javascript" charset="UTF-8"></script>
+
+    <script src="http://tools.people.com.cn/libs/jquery/3.0.0/jquery-3.0.0.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/classie.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/dynamics.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/modernizr-custom.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/stack.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/preloadjs.js" type="text/javascript"  charset="UTF-8"></script>
+  </body>
 </html>

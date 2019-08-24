@@ -276,7 +276,18 @@
       setTimeout(() => {
         this.query('.next-button')[this.query('.next-button').length - 1].innerText = '查看我的等级'
       }, 1000);
-      
+      // 左滑下一个
+      // 左右滑动
+      owo.tool.touch({
+        el: this.$el,
+        end: (e) => {
+          console.log(e.swipe)
+          // 向左滑动
+          if (e.swipe[0] > 100) {
+            if (this.data.yuda) this.data.yuda.accept()
+          }
+        }
+      })
     },
     inspect: function (ind) {
       const list = []
@@ -440,8 +451,8 @@
 }
 .stack {
   z-index: 1000;
-  width: 80%;
-  height: 70%;
+  width: 90%;
+  height: 80%;
   padding: 0;
   list-style: none;
   pointer-events: none;
@@ -541,7 +552,7 @@
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 26px;
   background: linear-gradient(to right, #90a9e7 , #6179d6);
 }
@@ -569,15 +580,16 @@
 }
 .next-button {
   width: 200px;
-  height: 32.25px;
+  height: 38px;
   background-size: 100% 100%;
   margin: 0 auto;
   position: absolute;
   bottom: 20px;
   left: 0;
   right: 0;
-  line-height: 31px;
+  line-height: 38px;
   color: white;
+  font-size: 18px;
   background-image: url('@|next.png|');
 }
 .explain-button {
@@ -609,15 +621,15 @@
     padding: 0 15px;
     cursor: pointer;
     position: relative;
-    padding-right: 35px;
+    padding-right: 45px;
   }
   p {
-    line-height: 20px;
+    line-height: 30px;
     text-align: left;
     font-weight: bold;
     pointer-events: none;
-    font-size: 14px;
-    padding: 10px 0;
+    font-size: 16px;
+    padding: 5px 0;
   }
   .check-box {
     width: 30px;
@@ -642,7 +654,7 @@
 }
 .page {
   position: absolute;
-  bottom: 7%;
+  bottom: 3%;
   width: 256px;
   height: 21px;
   background-position: center;

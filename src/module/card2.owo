@@ -374,6 +374,10 @@
       </li>
     </ul>
     <div class="page">1 / 10</div>
+    <!-- 提示信息 -->
+    <div class="info">
+      向上滑动查看解释<br/>向左滑动查看下一题
+    </div>
   </div>
 </template>
 
@@ -389,11 +393,14 @@
       owo.tool.touch({
         el: this.$el,
         end: (e) => {
-          if (e.swipe[0] < 100) {
+          console.log(e.swipe)
+          // 向左滑动
+          if (e.swipe[0] < -100) {
             if (this.data.yuda) this.data.yuda.reject()
-            setTimeout(() => {
-              this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
-            }, 2000)
+          } else if (e.swipe[1] < -100) {
+            this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
+          } else if (e.swipe[1] > 100) {
+            this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'none'
           }
         }
       })
@@ -418,9 +425,6 @@
         element.style.display = 'none'
       })
       this.data.yuda.restart()
-      setTimeout(() => {
-        this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
-      }, 2000)
     },
     accept: function () {
       new Audio("@|click.mp3|").play()
@@ -449,9 +453,6 @@
       }
       this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
       this.data.yuda.reject()
-      setTimeout(() => {
-        this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
-      }, 2000)
     }
   }
 </script>
@@ -475,5 +476,30 @@
     overflow: auto;
     height: calc(100% - 90px);
   }
+}
+.info {
+  font-size: 12px;
+  color: #999;
+  position: absolute;
+  right: 5%;
+  top: 82%;
+  text-align: right;
+}
+.stack {
+  z-index: 1000;
+  width: 90%;
+  height: 70%;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+  bottom: unset;
+  margin: auto;
+}
+.page {
+  bottom: 4%;
 }
 </style>
