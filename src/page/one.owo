@@ -37,6 +37,7 @@
         {src:"@|cloud.png|"},
         {src:"@|five-button.png|"},
         {src:"@|five-scroll-1.png|"},
+        {src:"@|bg.mp3|"},
       ])
       queue.on("progress", (event) => {
         let left = queue.progress * 100 - 12

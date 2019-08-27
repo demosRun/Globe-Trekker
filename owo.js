@@ -89,10 +89,6 @@ module.exports = {
       src: "./src/main.js"
     },
     {
-      name: "classie",
-      src: "./src/resource/classie.js"
-    },
-    {
       name: "dynamics.min",
       src: "./src/resource/dynamics.min.js"
     },

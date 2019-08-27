@@ -7,6 +7,8 @@
       .scroll-2
       // 用户头像
       img.user(src="@|user.png|")
+      // 云
+      img.cloud2(src="@|cloud2.png|")
       // 星星
       .stars.stars-1
       .stars.stars-2
@@ -66,13 +68,18 @@
       } else {
         this.$el.classList.add('lave1')
       }
-      changeDecorate(this.$el, 750, 1508)
+      changeDecorate(this.$el, 750, 1308)
       setTimeout(() => {
         this.query('.scroll-box')[0].style.height = '990px'
       }, 800)
       owo.tool.animate('fadeIn', this.query('.user')[0], 1800)
       owo.tool.animate('fadeIn', this.query('.info-text')[0], 1800)
       owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 1800)
+      // 出现云
+      owo.tool.animate('bounceIn', this.query('.cloud2')[0], 2000)
+      setTimeout(() => {
+        this.query('.cloud2')[0].style.animation = 'floatx 1s infinite alternate'
+      }, 1000)
       owo.tool.animate('bounceIn', this.query('.stars-1')[0], 2000)
       owo.tool.animate('bounceIn', this.query('.stars-2')[0], 2100)
       owo.tool.animate('bounceIn', this.query('.stars-3')[0], 2200)
@@ -115,7 +122,7 @@
     height: 990px;
     left: 0;
     right: 0;
-    top: 10%;
+    top: 8%;
     height: 73px;
     margin: auto;
     position: relative;
@@ -172,7 +179,7 @@
   }
   .bottom-bar {
     position: absolute;
-    top: 1240px;
+    top: 1168px;
     left: 30px;
     display: flex;
   }
@@ -225,7 +232,7 @@
 }
 .overstep {
   color: darkmagenta;
-  top: 648px;
+  top: 603px;
   left: 480px;
   z-index: 9;
   font-size: 22px;
@@ -278,6 +285,21 @@
   right: 40px;
   bottom: 40px;
   font-size: 24px;
-  color: #333;
+  color: #666;
+}
+
+@keyframes floatx {
+  from {
+    transform: translateX(5px);
+  }
+  to {
+    transform: translateX(-5px);
+  }
+}
+
+.cloud2 {
+  position: absolute;
+  left: 84px;
+  top: 84px;
 }
 </style>

@@ -37,6 +37,8 @@
       owo.tool.animate('pulse', this.query('.button')[0], 1600)
     },
     toThree: function () {
+      owo.state.bgMusic = new Audio("@|bg.mp3|")
+      owo.state.bgMusic.play()
       new Audio("@|click.mp3|").play()
       owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
     }
@@ -50,14 +52,16 @@
 }
 .button {
   left: 170px;
-  top: 1307px;
+  top: 1368px;
 }
 .logo {
   left: 488px;
   top: 100px;
 }
 .title {
-  left: 118px;
+  left: 0;
+  right: 0;
+  margin: auto;
   top: 835px;
 }
 .text {
@@ -82,7 +86,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  top: 870px;
+  top: 910px;
   width: 0;
   height: 454px;
   opacity: 0;

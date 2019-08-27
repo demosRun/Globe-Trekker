@@ -115,6 +115,8 @@
 		// the items
 		for(var i = 0; i < this.itemsTotal; ++i) {
 			var item = this.items[i];
+			// 设置index属性
+			item.setAttribute("ind", i)
 			if( i < this.options.visible ) {
 				item.style.opacity = 1;
 				item.style.pointerEvents = 'auto';
@@ -128,7 +130,7 @@
 			}
 		}
 
-		classie.add(this.items[this.current], 'stack__item--current');
+		this.items[this.current].classList.add('stack__item--current')
 	};
 
 	Stack.prototype.reject = function(callback) {
@@ -139,49 +141,22 @@
 		this._next('accept', callback);
 	};
 
+	Stack.prototype.back = function(callback) {
+		this._last('accept', callback);
+	};
+
 	Stack.prototype.restart = function() {
 		this.current = 0
 		this.hasEnded = false;
 		this._init();
 	};
 
-	Stack.prototype._next = function(action, callback) {
-		if( this.isAnimating || ( !this.options.infinite && this.hasEnded ) ) return;
-		this.isAnimating = true;
-
-		// current item
-		var currentItem = this.items[this.current];
-		classie.remove(currentItem, 'stack__item--current');
-
-		// add animation class
-		classie.add(currentItem, action === 'accept' ? 'stack__item--accept' : 'stack__item--reject');
-
+	Stack.prototype.moveCard = function () {
 		var self = this;
-		onEndAnimation(currentItem, function() {
-			// reset current item
-			currentItem.style.opacity = 0;
-			currentItem.style.pointerEvents = 'none';
-			currentItem.style.zIndex = -1;
-			currentItem.style.WebkitTransform = currentItem.style.transform = 'translate3d(0px, 0px, -' + parseInt(self.options.visible * 50) + 'px)';
-
-			classie.remove(currentItem, action === 'accept' ? 'stack__item--accept' : 'stack__item--reject');
-
-			self.items[self.current].style.zIndex = self.options.visible + 1;
-			self.isAnimating = false;
-
-			if( callback ) callback();
-			
-			if( !self.options.infinite && self.current === 0 ) {
-				self.hasEnded = true;
-				// callback
-				self.options.onEndStack(self);
-			}
-		});
-
+		var maxIndex = this.options.visible < this.itemsTotal ? this.options.visible : this.itemsTotal
 		// set style for the other items
-		for(var i = 0; i < this.itemsTotal; ++i) {
-			if( i >= this.options.visible ) break;
-
+		for(var i = 0; i < maxIndex; ++i) {
+			// 判断是否设置了无限
 			if( !this.options.infinite ) {
 				if( this.current + i >= this.itemsTotal - 1 ) break;
 				var pos = this.current + i + 1;
@@ -190,17 +165,16 @@
 				var pos = this.current + i < this.itemsTotal - 1 ? this.current + i + 1 : i - (this.itemsTotal - this.current - 1);
 			}
 
-			var item = this.items[pos],
-				// stack items animation
-				animateStackItems = function(item, i) {
-					item.style.pointerEvents = 'auto';
-					item.style.opacity = 1;
-					item.style.zIndex = parseInt(self.options.visible - i);
-					
-					dynamics.animate(item, {
-						translateZ : parseInt(-1 * 50 * i)
-					}, self.options.stackItemsAnimation);
-				};
+			var item = this.items[pos]
+			function animateStackItems (item, i) {
+				item.style.pointerEvents = 'auto';
+				item.style.opacity = 1;
+				item.style.zIndex = parseInt(self.options.visible - i);
+				
+				dynamics.animate(item, {
+					translateZ : parseInt(-1 * 50 * i)
+				}, self.options.stackItemsAnimation);
+			}
 
 			setTimeout(function(item,i) {
 				return function() {
@@ -234,10 +208,74 @@
 				};
 			}(item,i), this.options.stackItemsAnimationDelay);
 		}
+	}
+
+	Stack.prototype._next = function(action, callback) {
+		if( this.isAnimating || ( !this.options.infinite && this.hasEnded ) ) return;
+		this.isAnimating = true;
+		// current item
+		var currentItem = this.items[this.current];
+		currentItem.classList.remove('stack__item--current')
+		// add animation class
+		currentItem.classList.add(action === 'accept' ? 'stack__item--accept' : 'stack__item--reject')
+		var self = this;
+		onEndAnimation(currentItem, function() {
+			// reset current item
+			currentItem.style.opacity = 0;
+			currentItem.style.pointerEvents = 'none';
+			currentItem.style.zIndex = -1;
+			currentItem.style.WebkitTransform = currentItem.style.transform = 'translate3d(0px, 0px, -' + parseInt(self.options.visible * 50) + 'px)';
+
+			currentItem.classList.remove(action === 'accept' ? 'stack__item--accept' : 'stack__item--reject')
+
+			self.items[self.current].style.zIndex = self.options.visible + 1;
+			self.isAnimating = false;
+
+			if( callback ) callback();
+			
+			if( !self.options.infinite && self.current === 0 ) {
+				self.hasEnded = true;
+				// callback
+				self.options.onEndStack(self);
+			}
+		});
+
+		this.moveCard()
 
 		// update current
 		this.current = this.current < this.itemsTotal - 1 ? this.current + 1 : 0;
-		classie.add(this.items[this.current], 'stack__item--current');
+		this.items[this.current].classList.add('stack__item--current')
+	}
+
+	Stack.prototype._last = function(action, callback) {
+		if( this.isAnimating || ( !this.options.infinite && this.hasEnded ) ) return;
+		this.isAnimating = true;
+
+		// 当前卡片
+		var currentItem = this.items[this.current];
+		currentItem.classList.remove('stack__item--current')
+		
+		
+		// add animation class
+		
+		var lastIndex = this.current <= 0 ? this.itemsTotal - 2 : this.current - 2
+		
+		this.items[lastIndex + 1].classList.remove('stack__item--current')
+		this.items[lastIndex + 1].style.transform = ''
+		this.items[lastIndex + 1].style.opacity = '0'
+		this.items[lastIndex + 1].style.zIndex = '5'
+		this.items[lastIndex + 1].classList.add('stack-item-reject-back')
+		onEndAnimation(this.items[lastIndex + 1], () => {
+			this.items[lastIndex + 1].classList.remove('stack-item-reject-back')
+			this.current = lastIndex
+			this.moveCard()
+			this.current++
+			this.isAnimating = false
+			setTimeout(() => {
+				this.items[lastIndex + 1].style.zIndex = '4'
+			}, 100)
+		})
+		
 	}
 
 	window.Stack = Stack;

@@ -502,24 +502,35 @@
 /***********************************************/
 
 .stack--yuda .stack__item--reject {
-	-webkit-animation: yudaReject 0.5s forwards;
-	animation: yudaReject 0.5s forwards;
+  -webkit-animation: yudaReject 0.5s forwards;
+  -o-animation: yudaReject 0.5s forwards;
+     animation: yudaReject 0.5s forwards;
 }
 
-@-webkit-keyframes yudaReject {
-	to {
-		opacity: 0;
-		-webkit-transform: translate3d(0,200px,0);
-		transform: translate3d(0,200px,0);
-	}
+.stack--yuda .stack-item-reject-back {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 200px, 0);
+  transform: translate3d(0, 200px, 0);
+  -webkit-animation: yudaRejectBack 0.5s forwards;
+  -o-animation: yudaRejectBack 0.5s forwards;
+     animation: yudaRejectBack 0.5s forwards;
 }
 
 @keyframes yudaReject {
-	to {
-		opacity: 0;
-		-webkit-transform: translate3d(0,200px,0);
-		transform: translate3d(0,200px,0);
-	}
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+
+@keyframes yudaRejectBack {
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .stack--yuda .stack__item--accept {
@@ -665,6 +676,8 @@
   background-repeat: no-repeat;
   line-height: 21px;
   text-align: center;
+  font-size: 20px;
+  font-weight: bold;
   background-image: url('@|page.png|');
 }
 .tips-text-box {
@@ -686,6 +699,6 @@
 }
 .answer-list {
   height: 65%;
-  overflow-y: scroll;
+  overflow: auto;
 }
 </style>

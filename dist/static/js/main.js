@@ -1,9 +1,3 @@
-// 解决ios:active触摸不变色
-document.body.addEventListener('touchstart',function(){})
-document.addEventListener('touchmove', function(e) {
-  e.preventDefault()
-}, { passive: false })
-
 
 function changeDecorate($el, deviseW, deviseH) {
   if (!$el) return;
@@ -12,7 +6,7 @@ function changeDecorate($el, deviseW, deviseH) {
   var sw = document.body.offsetWidth / deviseW;
   var sh = document.body.offsetHeight / deviseH;
   ms = sw > sh ? sh : sw; // 获取页面安全区
-
+  console.log(sw, sh)
   var safety = $el.querySelectorAll('.safety')[0]
   if (!safety) {
     console.error('没有找到安全区元素!')
