@@ -398,7 +398,7 @@
             if (this.data.yuda) this.reject()
           } else if (e.swipe[0] > 100) {
             console.log('后退!')
-            if (this.data.yuda) this.data.yuda.back()
+            if (this.data.yuda) this.back()
           } else if (e.swipe[1] < -100) {
             this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
           } else if (e.swipe[1] > 100) {
@@ -443,6 +443,16 @@
       this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
       this.data.yuda.accept()
     },
+    back: function () {
+      if (this.data.number <= 1) {
+        this.data.number = 1
+        owo.tool.toast('已经是第一题了!')
+        return
+      }
+      this.data.number--
+      this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
+      this.data.yuda.pick()
+    },
     reject: function () {
       // console.log('sdsd')
       this.data.number++
@@ -452,7 +462,7 @@
       }
       // console.log(this.query('.page')[0].innerText)
       this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
-      this.data.yuda.reject()
+      this.data.yuda.accept()
     },
     explain: function () {
       console.log(this)

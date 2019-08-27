@@ -12,25 +12,15 @@
 
 	'use strict';
 
-	var support = { animations : Modernizr.cssanimations },
-		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
-		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+	var animEndEventName = 'animationend',
 		onEndAnimation = function( el, callback ) {
 			var onEndCallbackFn = function( ev ) {
-				if( support.animations ) {
-					if( ev.target != this ) return;
-					this.removeEventListener( animEndEventName, onEndCallbackFn );
-				}
+				if( ev.target != this ) return;
+				this.removeEventListener( animEndEventName, onEndCallbackFn );
 				if( callback && typeof callback === 'function' ) { callback.call(); }
 			};
-			if( support.animations ) {
-				el.addEventListener( animEndEventName, onEndCallbackFn );
-			}
-			else {
-				onEndCallbackFn();
-			}
-		};
-
+			el.addEventListener( animEndEventName, onEndCallbackFn )
+		}
 	function extend( a, b ) {
 		for( var key in b ) { 
 			if( b.hasOwnProperty( key ) ) {
@@ -142,8 +132,12 @@
 	};
 
 	Stack.prototype.back = function(callback) {
-		this._last('accept', callback);
+		this._last('back', callback);
 	};
+
+	Stack.prototype.pick = function(callback) {
+		this._last('pick', callback);
+	}
 
 	Stack.prototype.restart = function() {
 		this.current = 0
@@ -247,6 +241,7 @@
 		this.items[this.current].classList.add('stack__item--current')
 	}
 
+	// 上一个
 	Stack.prototype._last = function(action, callback) {
 		if( this.isAnimating || ( !this.options.infinite && this.hasEnded ) ) return;
 		this.isAnimating = true;
@@ -259,23 +254,22 @@
 		// add animation class
 		
 		var lastIndex = this.current <= 0 ? this.itemsTotal - 2 : this.current - 2
-		
-		this.items[lastIndex + 1].classList.remove('stack__item--current')
-		this.items[lastIndex + 1].style.transform = ''
-		this.items[lastIndex + 1].style.opacity = '0'
-		this.items[lastIndex + 1].style.zIndex = '5'
-		this.items[lastIndex + 1].classList.add('stack-item-reject-back')
-		onEndAnimation(this.items[lastIndex + 1], () => {
-			this.items[lastIndex + 1].classList.remove('stack-item-reject-back')
+		var activeItem = this.items[lastIndex + 1]
+		activeItem.classList.remove('stack__item--current')
+		activeItem.style.transform = ''
+		activeItem.style.opacity = '0'
+		activeItem.style.zIndex = '5'
+		activeItem.classList.add('stack-item-' + action)
+		onEndAnimation(activeItem, () => {
 			this.current = lastIndex
 			this.moveCard()
 			this.current++
-			this.isAnimating = false
 			setTimeout(() => {
-				this.items[lastIndex + 1].style.zIndex = '4'
+				activeItem.classList.remove('stack-item-' + action)
+				activeItem.style.zIndex = '4'
+				this.isAnimating = false
 			}, 100)
 		})
-		
 	}
 
 	window.Stack = Stack;

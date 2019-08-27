@@ -220,6 +220,9 @@
   .scroll-2 {
     background-image: url('@|five-scroll-3.png|');
   }
+  .stars-2 {
+    background-image: url('@|stars-active.png|');
+  }
   .stars-3 {
     background-image: url('@|stars-active.png|');
   }

@@ -1,4 +1,4 @@
-// Tue Aug 27 2019 18:55:36 GMT+0800 (GMT+08:00)
+// Wed Aug 28 2019 00:15:38 GMT+0800 (GMT+08:00)
 
 /* 方法合集 */
 var _owo = {
@@ -42,7 +42,7 @@ _owo.bindEvent = function (eventName, eventFor, tempDom, templateName) {
   // 处理事件 使用bind防止闭包
   tempDom["on" + eventName] = function(event) {
     // 复制eventFor防止污染
-    let eventForCopy = this.eventFor
+    var eventForCopy = this.eventFor
     // 判断页面是否有自己的方法
     var newPageFunction = window.owo.script[window.owo.activePage]
     // console.log(this.attributes)

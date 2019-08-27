@@ -80,10 +80,10 @@ module.exports = {
   ],
   // 使用到的外部脚本清单
   scriptList: [
-    {
-      name: "jquery1.11.0",
-      src: "http://tools.people.com.cn/libs/jquery/3.0.0/jquery-3.0.0.min.js"
-    },
+    // {
+    //   name: "jquery1.11.0",
+    //   src: "http://tools.people.com.cn/libs/jquery/3.0.0/jquery-3.0.0.min.js"
+    // },
     {
       name: "main",
       src: "./src/main.js"
@@ -91,10 +91,6 @@ module.exports = {
     {
       name: "dynamics.min",
       src: "./src/resource/dynamics.min.js"
-    },
-    {
-      name: "modernizr-custom",
-      src: "./src/resource/modernizr-custom.js"
     },
     {
       name: "stack",

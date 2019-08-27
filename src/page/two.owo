@@ -38,6 +38,7 @@
     },
     toThree: function () {
       owo.state.bgMusic = new Audio("@|bg.mp3|")
+      owo.state.bgMusic.loop = true
       owo.state.bgMusic.play()
       new Audio("@|click.mp3|").play()
       owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
