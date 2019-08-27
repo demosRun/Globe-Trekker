@@ -13,6 +13,9 @@
       .stars.stars-3
       .stars.stars-4
       .stars.stars-5
+      // 提示上滑
+      span.info-text 上滑显示总领馆联系方式
+      // 第二页
       .info-box
         p
           span 中国领事服务网：
@@ -55,7 +58,7 @@
       }
       // 根据不同的分数更换不同的样式
       this.query('.overstep')[0].innerText = `超越${owo.state.overstep}%玩家`
-      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 800)
+      owo.tool.animate('bounceInRight', this.query('.overstep')[0], 1800)
       if (owo.state.code >= 8) {
         this.$el.classList.add('lave3')
       } else if (owo.state.code >= 5) {
@@ -68,13 +71,27 @@
         this.query('.scroll-box')[0].style.height = '990px'
       }, 800)
       owo.tool.animate('fadeIn', this.query('.user')[0], 1800)
-      owo.tool.animate('fadeIn', this.query('.info-box')[0], 1800)
+      owo.tool.animate('fadeIn', this.query('.info-text')[0], 1800)
       owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 1800)
       owo.tool.animate('bounceIn', this.query('.stars-1')[0], 2000)
       owo.tool.animate('bounceIn', this.query('.stars-2')[0], 2100)
       owo.tool.animate('bounceIn', this.query('.stars-3')[0], 2200)
       owo.tool.animate('bounceIn', this.query('.stars-4')[0], 2300)
       owo.tool.animate('bounceIn', this.query('.stars-5')[0], 2400)
+      // 左右滑动
+      owo.tool.touch({
+        el: this.$el,
+        end: (e) => {
+          console.log(e.swipe)
+          // 上下滑动
+          if (e.swipe[1] < -100) {
+            this.query('.info-box')[0].style.opacity = 1
+          }
+          if (e.swipe[1] > 100) {
+            this.query('.info-box')[0].style.opacity = 0
+          }
+        }
+      })
     },
     switchShare: function () {
       if (this.data.showShare) {
@@ -122,20 +139,27 @@
     background-image: url('@|five-scroll-1.png|');
   }
   .info-box {
-    width: 80%;
+    width: 510px;
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 670px;
+    height: 880px;
+    top: 36px;
     position: absolute;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 26px;
+    line-height: 49px;
+    word-break: break-all;
     font-weight: bold;
     color: #404040;
+    padding: 20px;
+    opacity: 0;
+    background-color: white;
+    transition: opacity 0.8s;
+    z-index: 999;
     .bottom {
       margin-top: 20px;
-      font-size: 18px;
-      line-height: 30px;
+      font-size: 26px;
+      line-height: 45px;
     }
   }
   .bottom-button {
@@ -167,6 +191,9 @@
   .scroll-2 {
     background-image: url('@|five-scroll-2.png|');
   }
+  .stars-2 {
+    background-image: url('@|stars-active.png|');
+  }
   .stars-3 {
     background-image: url('@|stars-active.png|');
   }
@@ -197,8 +224,8 @@
   }
 }
 .overstep {
-  color: white;
-  top: 586px;
+  color: darkmagenta;
+  top: 648px;
   left: 480px;
   z-index: 9;
   font-size: 22px;
@@ -216,14 +243,14 @@
 }
 .user {
   width: 145px;
-  top: 344px;
+  top: 408px;
   left: 228px;
   position: absolute;
 }
 .stars {
   width: 37px;
   height: 34px;
-  top: 290px;
+  top: 360px;
   position: absolute;
   margin: auto;
   background-image: url('@|stars.png|');
@@ -234,7 +261,7 @@
 }
 .stars-2 {
   left: 245px;
-  background-image: url('@|stars-active.png|');
+  background-image: url('@|stars.png|');
 }
 .stars-3 {
   left: 0;
@@ -245,5 +272,12 @@
 }
 .stars-5 {
   right: 205px;
+}
+.info-text {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  font-size: 24px;
+  color: #333;
 }
 </style>

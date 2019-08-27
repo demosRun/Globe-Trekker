@@ -393,10 +393,10 @@
       owo.tool.touch({
         el: this.$el,
         end: (e) => {
-          console.log(e.swipe)
+          // console.log(e.swipe)
           // 向左滑动
           if (e.swipe[0] < -100) {
-            if (this.data.yuda) this.data.yuda.reject()
+            if (this.data.yuda) this.reject()
           } else if (e.swipe[1] < -100) {
             this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
           } else if (e.swipe[1] > 100) {
@@ -406,7 +406,11 @@
       })
       owo.state.checkList = []
       this.data.yuda = new Stack(document.getElementById('stack_yuda2'), {
-        infinite: false
+        infinite: false,
+        onEndStack: function () {
+          console.log('最后了')
+          owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
+        }
       })
       // setTimeout(() => {
       //   this.query('.next-button')[this.query('.next-button').length - 1].innerText = '返回我的等级'
@@ -438,6 +442,16 @@
       this.data.yuda.accept()
     },
     reject: function () {
+      // console.log('sdsd')
+      new Audio("@|click.mp3|").play()
+
+      this.data.number++
+      if (this.data.number > this.data.allNumber) {
+        owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
+        return
+      }
+      // console.log(this.query('.page')[0].innerText)
+      this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber
       this.data.yuda.reject()
     },
     explain: function () {
@@ -473,7 +487,7 @@
   background-repeat: no-repeat;
   background-position: 25% 78%;
   .tips-text-box {
-    overflow: auto;
+    overflow-y: scroll;
     height: calc(100% - 90px);
   }
 }

@@ -686,6 +686,6 @@
 }
 .answer-list {
   height: 65%;
-  overflow: auto;
+  overflow-y: scroll;
 }
 </style>
