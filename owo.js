@@ -86,6 +86,7 @@ module.exports = {
     },
     {
       name: "main",
+      resource: true,
       src: "./src/main.js"
     },
     {

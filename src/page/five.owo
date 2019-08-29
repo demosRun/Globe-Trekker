@@ -70,7 +70,7 @@
       }
       changeDecorate(this.$el, 750, 1308)
       setTimeout(() => {
-        this.query('.scroll-box')[0].style.height = '990px'
+        this.query('.scroll-box')[0].style.height = '1000px'
       }, 800)
       owo.tool.animate('fadeIn', this.query('.user')[0], 1800)
       owo.tool.animate('fadeIn', this.query('.info-text')[0], 1800)
@@ -121,7 +121,7 @@
   background: #e39f89;
   .scroll-box {
     width: 610px;
-    height: 990px;
+    height: 1000px;
     left: 0;
     right: 0;
     top: 8%;
@@ -176,7 +176,7 @@
     height: 73px;
     text-align: center;
     line-height: 73px;
-    font-size: 31px;
+    font-size: 34px;
     background-image: url('@|five-button.png|');
   }
   .bottom-bar {
@@ -236,9 +236,9 @@
   }
 }
 .overstep {
-  color: darkmagenta;
-  top: 603px;
-  left: 480px;
+  color: white;
+  top: 600px;
+  left: 494px;
   z-index: 9;
   font-size: 22px;
 }
@@ -255,14 +255,15 @@
 }
 .user {
   width: 145px;
-  top: 408px;
+  top: 405px;
   left: 228px;
   position: absolute;
+  border-radius: 75px;
 }
 .stars {
   width: 37px;
   height: 34px;
-  top: 360px;
+  top: 313px;
   position: absolute;
   margin: auto;
   background-image: url('@|stars.png|');
@@ -287,8 +288,8 @@
 }
 .info-text {
   position: absolute;
-  right: 40px;
-  bottom: 40px;
+  right: 65px;
+  bottom: 58px;
   font-size: 24px;
   color: #3F51B5;
   font-weight: bold;
