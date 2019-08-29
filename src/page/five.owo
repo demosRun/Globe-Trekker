@@ -74,11 +74,13 @@
       }, 800)
       owo.tool.animate('fadeIn', this.query('.user')[0], 1800)
       owo.tool.animate('fadeIn', this.query('.info-text')[0], 1800)
+      
       owo.tool.animate('fadeInUp', this.query('.bottom-bar')[0], 1800)
       // 出现云
       owo.tool.animate('bounceIn', this.query('.cloud2')[0], 2000)
       setTimeout(() => {
         this.query('.cloud2')[0].style.animation = 'floatx 1s infinite alternate'
+        this.query('.info-text')[0].style.animation = 'stars 1s linear infinite'
       }, 1000)
       owo.tool.animate('bounceIn', this.query('.stars-1')[0], 2000)
       owo.tool.animate('bounceIn', this.query('.stars-2')[0], 2100)
@@ -173,8 +175,8 @@
     width: 233px;
     height: 73px;
     text-align: center;
-    line-height: 70px;
-    font-size: 25px;
+    line-height: 73px;
+    font-size: 31px;
     background-image: url('@|five-button.png|');
   }
   .bottom-bar {
@@ -288,7 +290,8 @@
   right: 40px;
   bottom: 40px;
   font-size: 24px;
-  color: #666;
+  color: #3F51B5;
+  font-weight: bold;
 }
 
 @keyframes floatx {

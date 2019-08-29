@@ -502,11 +502,13 @@
 }
 .info {
   font-size: 12px;
-  color: #999;
+  color: #2196F3;
   position: absolute;
   right: 5%;
   top: 82%;
   text-align: right;
+  font-weight: bold;
+  animation: stars 1s linear infinite;
 }
 .stack {
   z-index: 1000;
@@ -524,5 +526,9 @@
 }
 .page {
   bottom: 4%;
+}
+.answer-list {
+  height: 84%;
+  overflow: auto;
 }
 </style>

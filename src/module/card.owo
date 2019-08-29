@@ -430,6 +430,8 @@
       this.data.yuda.reject()
     },
     checkItem: function (e) {
+      console.log(this.$event.timeStamp)
+      if (this.$event.timeStamp > 300) return
       new Audio("@|click.mp3|").play()
       const parentElement = this.$event.target.parentElement
       const answer = parentElement.querySelectorAll('.answer')
@@ -452,7 +454,7 @@
 .stack {
   z-index: 1000;
   width: 90%;
-  height: 80%;
+  height: 85%;
   padding: 0;
   list-style: none;
   pointer-events: none;
@@ -630,19 +632,19 @@
   .answer {
     background: linear-gradient(to right, #e5eaed, #b5c3dd);
     border-radius: 20px;
-    margin: 15px 20px;
+    margin: 10px 20px;
     padding: 0 15px;
     cursor: pointer;
     position: relative;
     padding-right: 45px;
   }
   p {
-    line-height: 30px;
+    line-height: 24px;
     text-align: left;
     font-weight: bold;
     pointer-events: none;
     font-size: 16px;
-    padding: 5px 0;
+    padding: 8px 0;
   }
   .check-box {
     width: 30px;
@@ -667,7 +669,7 @@
 }
 .page {
   position: absolute;
-  bottom: 3%;
+  bottom: 2%;
   width: 256px;
   height: 21px;
   background-position: center;

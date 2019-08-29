@@ -48,7 +48,9 @@
 
 <style lang="less">
 .box {
-  background: linear-gradient(#b4c5ec,#e7e6ef);
+  background-image: url('@|four-bg.png|');
+  background-size: 108% 101%;
+  background-position: center;
 }
 .loading-bar {
   width: 100%;
@@ -58,25 +60,25 @@
   background-image: url('@|loading-bar.png|');
   img {
     position: absolute;
-    height: 24px;
+    height: 29px;
   }
   .icon-1 {
     left: 34%;
-    top: 7px;
+    top: 6px;
   }
   .icon-2 {
     left: 43%;
-    top: 7px;
+    top: 6px;
   }
   .icon-3 {
     left: 52%;
-    top: 6px;
-    height: 22px;
+    top: 5px;
+    height: 27px;
   }
   .icon-4 {
     left: 61%;
-    height: 20px;
-    top: 8px;
+    height: 24px;
+    top: 7px;
   }
 }
 .loading-box {
@@ -92,8 +94,8 @@
 .text {
   text-align: center;
   color: white;
-  font-size: 14px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 60px;
 }
 .start {
   height: 70%;

@@ -289,7 +289,7 @@ li {
 .stack {
   z-index: 1000;
   width: 90%;
-  height: 80%;
+  height: 85%;
   padding: 0;
   list-style: none;
   pointer-events: none;
@@ -573,7 +573,7 @@ li {
   background: -o-linear-gradient(left, #e5eaed, #b5c3dd);
   background: linear-gradient(to right, #e5eaed, #b5c3dd);
   border-radius: 20px;
-  margin: 15px 20px;
+  margin: 10px 20px;
   padding: 0 15px;
   cursor: pointer;
   position: relative;
@@ -581,12 +581,12 @@ li {
 }
 
 .answer-list p {
-  line-height: 30px;
+  line-height: 24px;
   text-align: left;
   font-weight: bold;
   pointer-events: none;
   font-size: 16px;
-  padding: 5px 0;
+  padding: 8px 0;
 }
 
 .answer-list .check-box {
@@ -613,7 +613,7 @@ li {
 
 .page {
   position: absolute;
-  bottom: 3%;
+  bottom: 2%;
   width: 256px;
   height: 21px;
   background-position: center;
@@ -668,10 +668,9 @@ li {
           }
         
 .box[template="four"] {
-  background: -webkit-gradient(linear, left top, left bottom, from(#b4c5ec), to(#e7e6ef));
-  background: -webkit-linear-gradient(#b4c5ec, #e7e6ef);
-  background: -o-linear-gradient(#b4c5ec, #e7e6ef);
-  background: linear-gradient(#b4c5ec, #e7e6ef);
+  background-image: url('./static/resource/four-bg.png');
+  background-size: 108% 101%;
+  background-position: center;
 }
 
 [template="four"] .loading-bar {
@@ -684,29 +683,29 @@ li {
 
 [template="four"] .loading-bar img {
   position: absolute;
-  height: 24px;
+  height: 29px;
 }
 
 [template="four"] .loading-bar .icon-1 {
   left: 34%;
-  top: 7px;
+  top: 6px;
 }
 
 [template="four"] .loading-bar .icon-2 {
   left: 43%;
-  top: 7px;
+  top: 6px;
 }
 
 [template="four"] .loading-bar .icon-3 {
   left: 52%;
-  top: 6px;
-  height: 22px;
+  top: 5px;
+  height: 27px;
 }
 
 [template="four"] .loading-bar .icon-4 {
   left: 61%;
-  height: 20px;
-  top: 8px;
+  height: 24px;
+  top: 7px;
 }
 
 [template="four"] .loading-box {
@@ -723,8 +722,8 @@ li {
 [template="four"] .text {
   text-align: center;
   color: white;
-  font-size: 14px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 60px;
 }
 
 [template="four"] .start {
@@ -839,8 +838,8 @@ li {
   width: 233px;
   height: 73px;
   text-align: center;
-  line-height: 70px;
-  font-size: 25px;
+  line-height: 73px;
+  font-size: 31px;
   background-image: url('./static/resource/five-button.png');
 }
 
@@ -981,7 +980,8 @@ li {
   right: 40px;
   bottom: 40px;
   font-size: 24px;
-  color: #666;
+  color: #3F51B5;
+  font-weight: bold;
 }
 
 @keyframes floatx {
@@ -1122,11 +1122,15 @@ li {
 
 [template="card2"] .info {
   font-size: 12px;
-  color: #999;
+  color: #2196F3;
   position: absolute;
   right: 5%;
   top: 82%;
   text-align: right;
+  font-weight: bold;
+  -webkit-animation: stars 1s linear infinite;
+       -o-animation: stars 1s linear infinite;
+          animation: stars 1s linear infinite;
 }
 
 [template="card2"] .stack {
@@ -1146,6 +1150,11 @@ li {
 
 [template="card2"] .page {
   bottom: 4%;
+}
+
+[template="card2"] .answer-list {
+  height: 84%;
+  overflow: auto;
 }
 
 </style>
@@ -2125,6 +2134,8 @@ owo.script = {
           this.data.yuda.reject();
         },
         "checkItem": function checkItem(e) {
+          console.log(this.$event.timeStamp);
+          if (this.$event.timeStamp > 300) return;
           new Audio("./static/resource/click.mp3").play();
           var parentElement = this.$event.target.parentElement;
           var answer = parentElement.querySelectorAll('.answer'); // console.log(this.$event.target.classList.contains('ischeck'))
@@ -2208,6 +2219,7 @@ owo.script = {
       owo.tool.animate('bounceIn', this.query('.cloud2')[0], 2000);
       setTimeout(function () {
         _this3.query('.cloud2')[0].style.animation = 'floatx 1s infinite alternate';
+        _this3.query('.info-text')[0].style.animation = 'stars 1s linear infinite';
       }, 1000);
       owo.tool.animate('bounceIn', this.query('.stars-1')[0], 2000);
       owo.tool.animate('bounceIn', this.query('.stars-2')[0], 2100);
