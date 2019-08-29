@@ -52,3 +52,25 @@ a {
 .box {
   background: linear-gradient(#b4c5ec, #e7e6ef);
 }
+
+@keyframes stars {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(156, 156, 156, .6);
+}

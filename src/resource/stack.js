@@ -256,6 +256,8 @@
 		var lastIndex = this.current <= 0 ? this.itemsTotal - 2 : this.current - 2
 		var activeItem = this.items[lastIndex + 1]
 		activeItem.classList.remove('stack__item--current')
+		console.log(lastIndex)
+		activeItem.classList.add('stack__item--current')
 		activeItem.style.transform = ''
 		activeItem.style.opacity = '0'
 		activeItem.style.zIndex = '5'
