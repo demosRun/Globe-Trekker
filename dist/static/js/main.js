@@ -23,9 +23,61 @@ function changeDecorate($el, deviseW, deviseH) {
     safety.style.left = -deviseW / 2 * (1 - sw) + "px"
   }
 }
+
 // 微信加载完毕自动播放音乐
 document.addEventListener("WeixinJSBridgeReady", function () {
   var music = new Audio("./static/resource/bg.mp3")
   music.loop = true
   music.play()
 }, false)
+
+// 判断是否微信登陆
+function isWeiXin() {
+  var ua = window.navigator.userAgent.toLowerCase();
+  if (/micromessenger/.test(ua)) {
+    return true;
+  }
+  return false;
+}
+ 
+var isOnline = /people(\.com)?\.cn/.test(location.href)
+
+  // 仅在微信上使用微信授权， 其他的平台例如 微博， 不要使用授权
+  if (isWeiXin() && isOnline) {
+
+      // 仅仅线上获取昵称
+      getUserinfo()
+  }
+
+/** 获取用户信息 */
+
+function getUserinfo() {
+  // 测试地址,  redirect_uri=http://bbs1.people.com.cn/wb/wxBaseInfo421594.action 需要修改为新申请的授权地址
+  var url =
+    'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx020d85a0aef80286&redirect_uri=http://bbs1.people.com.cn/wb/wxBaseInfo429449.action&response_type=code&scope=snsapi_userinfo#wechat_redirect';
+  var _location = window.location.href;
+
+  function getParams(str) {
+    var reg = /([^&?#]+)=([^&?#]+)/g;
+    var obj = {};
+    str.replace(reg, function () {
+      obj[arguments[1]] = arguments[2];
+    })
+    return obj;
+  }
+
+  var params = getParams(_location);
+
+  if (params.name) {
+    // 获取微信昵称和头像
+    window.wxName = wxName = decodeURIComponent(params.name);
+    window.wxFace = wxFace = decodeURIComponent(params.face);
+
+    if (window.wxFace) {
+      $('.user')[0].src = window.wxFace
+    }
+
+  } else {
+    window.location.href = url;
+  }
+}

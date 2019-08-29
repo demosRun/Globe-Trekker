@@ -237,8 +237,8 @@
 }
 .overstep {
   color: white;
-  top: 603px;
-  left: 480px;
+  top: 600px;
+  left: 494px;
   z-index: 9;
   font-size: 22px;
 }
@@ -255,9 +255,10 @@
 }
 .user {
   width: 145px;
-  top: 408px;
+  top: 405px;
   left: 228px;
   position: absolute;
+  border-radius: 75px;
 }
 .stars {
   width: 37px;
