@@ -430,8 +430,6 @@
       this.data.yuda.reject()
     },
     checkItem: function (e) {
-      console.log(this.$event.timeStamp)
-      if (this.$event.timeStamp > 300) return
       new Audio("@|click.mp3|").play()
       const parentElement = this.$event.target.parentElement
       const answer = parentElement.querySelectorAll('.answer')

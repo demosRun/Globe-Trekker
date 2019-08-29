@@ -190,6 +190,8 @@
   background-color: #898989;
   .scroll-box {
     background-image: url('@|five-scroll-box-2.png|');
+    background-position-x: -28px;
+    background-position-y: -2px;
   }
   .bottom-button {
     color: #6d6d6d;
@@ -238,7 +240,7 @@
 .overstep {
   color: white;
   top: 600px;
-  left: 494px;
+  left: 480px;
   z-index: 9;
   font-size: 22px;
 }
@@ -289,7 +291,7 @@
 .info-text {
   position: absolute;
   right: 65px;
-  bottom: 58px;
+  bottom: 50px;
   font-size: 24px;
   color: #3F51B5;
   font-weight: bold;
