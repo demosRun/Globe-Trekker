@@ -326,9 +326,31 @@ li {
   -webkit-box-shadow: 0px 0px 1px #d0cbcb;
           box-shadow: 0px 0px 1px #d0cbcb;
   background-image: url('./static/resource/cloud.png');
-  background-size: 110% auto;
-  background-repeat: no-repeat;
-  background-position: 25% 78%;
+  background-size: 100% auto;
+  background-position-x: 0;
+  background-position-y: 72%;
+  -webkit-animation: floatX 10s linear infinite;
+       -o-animation: floatX 10s linear infinite;
+          animation: floatX 10s linear infinite;
+  background-repeat-y: no-repeat;
+}
+
+@-webkit-keyframes floatX {
+  to {
+    background-position-x: 500px;
+  }
+}
+
+@-o-keyframes floatX {
+  to {
+    background-position-x: 500px;
+  }
+}
+
+@keyframes floatX {
+  to {
+    background-position-x: 500px;
+  }
 }
 
 /* Animations */
@@ -775,7 +797,7 @@ li {
 
 .box.five .scroll-box {
   width: 610px;
-  height: 990px;
+  height: 1000px;
   left: 0;
   right: 0;
   top: 8%;
@@ -839,7 +861,7 @@ li {
   height: 73px;
   text-align: center;
   line-height: 73px;
-  font-size: 31px;
+  font-size: 34px;
   background-image: url('./static/resource/five-button.png');
 }
 
@@ -917,7 +939,7 @@ li {
 }
 
 .overstep {
-  color: darkmagenta;
+  color: white;
   top: 603px;
   left: 480px;
   z-index: 9;
@@ -946,7 +968,7 @@ li {
 .stars {
   width: 37px;
   height: 34px;
-  top: 360px;
+  top: 313px;
   position: absolute;
   margin: auto;
   background-image: url('./static/resource/stars.png');
@@ -977,8 +999,8 @@ li {
 
 .info-text {
   position: absolute;
-  right: 40px;
-  bottom: 40px;
+  right: 65px;
+  bottom: 58px;
   font-size: 24px;
   color: #3F51B5;
   font-weight: bold;
@@ -1112,12 +1134,23 @@ li {
   background-image: url(./static/resource/cloud.png);
   background-size: 110% auto;
   background-repeat: no-repeat;
-  background-position: 25% 78%;
+  background-position-x: 0;
+  background-position-y: 72%;
+  -webkit-animation: floatX 10s linear infinite;
+       -o-animation: floatX 10s linear infinite;
+          animation: floatX 10s linear infinite;
+  background-repeat-y: no-repeat;
 }
 
 [template="card2"] .explain .tips-text-box {
   overflow: auto;
   height: calc(100% - 90px);
+}
+
+@keyframes floatX {
+  to {
+    background-position-x: 500px;
+  }
 }
 
 [template="card2"] .info {
@@ -1796,7 +1829,7 @@ li {
     <div class="page">1 / 10</div>
     <!-- 提示信息 -->
     <div class="info">
-      向上滑动查看解释<br>向左滑动查看下一题<br>向右滑动查看上一题
+      向上滑动查看解释<br>向右滑动查看下一题<br>向左滑动查看上一题
     </div>
   </div></div>
     <!-- 框架script代码 --><script>"use strict";
@@ -1939,7 +1972,7 @@ owo.script = {
               console.log(e.swipe); // 向左滑动
 
               if (e.swipe[0] > 100) {
-                if (_this2.data.yuda) _this2.data.yuda.accept();
+                _this2.accept();
               }
             }
           });
@@ -2210,7 +2243,7 @@ owo.script = {
 
       changeDecorate(this.$el, 750, 1308);
       setTimeout(function () {
-        _this3.query('.scroll-box')[0].style.height = '990px';
+        _this3.query('.scroll-box')[0].style.height = '1000px';
       }, 800);
       owo.tool.animate('fadeIn', this.query('.user')[0], 1800);
       owo.tool.animate('fadeIn', this.query('.info-text')[0], 1800);
@@ -2275,10 +2308,10 @@ owo.script = {
               // console.log(e.swipe)
               // 向左滑动
               if (e.swipe[0] < -100) {
-                if (_this4.data.yuda) _this4.reject();
-              } else if (e.swipe[0] > 100) {
                 console.log('后退!');
                 if (_this4.data.yuda) _this4.back();
+              } else if (e.swipe[0] > 100) {
+                if (_this4.data.yuda) _this4.reject();
               } else if (e.swipe[1] < -100) {
                 _this4.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block';
               } else if (e.swipe[1] > 100) {
@@ -2374,6 +2407,7 @@ owo.script = {
 <!-- 调试-远程调试 -->
 <script src="./static/js/log.js" type="text/javascript" charset="UTF-8"></script>
 
+    <script src="./static/js/jquery3.0.0.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/dynamics.min.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/stack.js" type="text/javascript"  charset="UTF-8"></script>

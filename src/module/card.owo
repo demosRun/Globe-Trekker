@@ -284,7 +284,7 @@
           console.log(e.swipe)
           // 向左滑动
           if (e.swipe[0] > 100) {
-            if (this.data.yuda) this.data.yuda.accept()
+            this.accept()
           }
         }
       })
@@ -488,9 +488,17 @@
   pointer-events: auto;
   box-shadow: 0px 0px 1px #d0cbcb;
   background-image: url('@|cloud.png|');
-  background-size: 110% auto;
-  background-repeat: no-repeat;
-  background-position: 25% 78%;
+  background-size: 100% auto;
+  background-position-x: 0;
+  background-position-y: 72%;
+  animation: floatX 10s linear infinite;
+  background-repeat-y: no-repeat;
+}
+
+@keyframes floatX {
+  to {
+    background-position-x: 500px;
+  }
 }
 
 /* Animations */
