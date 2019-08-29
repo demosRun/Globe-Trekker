@@ -23,3 +23,9 @@ function changeDecorate($el, deviseW, deviseH) {
     safety.style.left = -deviseW / 2 * (1 - sw) + "px"
   }
 }
+// 微信加载完毕自动播放音乐
+document.addEventListener("WeixinJSBridgeReady", function () {
+  var music = new Audio("./static/resource/bg.mp3")
+  music.loop = true
+  music.play()
+}, false)

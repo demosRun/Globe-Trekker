@@ -37,9 +37,6 @@
       owo.tool.animate('pulse', this.query('.button')[0], 1600)
     },
     toThree: function () {
-      owo.state.bgMusic = new Audio("@|bg.mp3|")
-      owo.state.bgMusic.loop = true
-      owo.state.bgMusic.play()
       new Audio("@|click.mp3|").play()
       owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)
     }
@@ -63,11 +60,11 @@
   left: 0;
   right: 0;
   margin: auto;
-  top: 835px;
+  top: 755px;
 }
 .text {
-  left: 92px;
-  top: 239px;
+  left: 185px;
+  top: 295px;
 }
 @keyframes float {
   from {
@@ -80,14 +77,14 @@
   }
 }
 .people {
-  left: 183.07px;
-  top: 341.34px;
+  left: 248.07px;
+  top: 386.34px;
 }
 .scroll-box {
   left: 0;
   right: 0;
   margin: auto;
-  top: 910px;
+  top: 866px;
   width: 0;
   height: 454px;
   opacity: 0;
