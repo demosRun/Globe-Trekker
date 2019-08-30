@@ -375,7 +375,7 @@
     <div class="page">1 / 10</div>
     <!-- 提示信息 -->
     <div class="info">
-      向上滑动查看解释<br/>向右滑动查看下一题<br/>向左滑动查看上一题
+      向上滑动查看解释<br/>向左滑动查看下一题<br/>向右滑动查看上一题
     </div>
   </div>
 </template>
@@ -395,11 +395,12 @@
           // console.log(e.swipe)
           // 向左滑动
           if (e.swipe[0] < -100) {
+            
+            
+            if (this.data.yuda) this.reject()
+          } else if (e.swipe[0] > 100) {
             console.log('后退!')
             if (this.data.yuda) this.back()
-            
-          } else if (e.swipe[0] > 100) {
-            if (this.data.yuda) this.reject()
           } else if (e.swipe[1] < -100) {
             this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block'
           } else if (e.swipe[1] > 100) {
@@ -410,6 +411,7 @@
       owo.state.checkList = []
       this.data.yuda = new Stack(document.getElementById('stack_yuda2'), {
         infinite: false,
+        interval: 0,
         onEndStack: function () {
           console.log('最后了')
           owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true)

@@ -16,7 +16,7 @@
       .stars.stars-4
       .stars.stars-5
       // 提示上滑
-      span.info-text 上滑显示总领馆联系方式
+      span.info-text 上划显示驻美使领馆联系方式
       // 第二页
       .info-box
         p

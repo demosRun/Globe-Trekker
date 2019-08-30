@@ -48,6 +48,8 @@
 		perspective: 1000,
 		// stack's perspective origin
 		perspectiveOrigin : '50% -50%',
+		// 间隙
+		interval: 50,
 		// number of visible items in the stack
 		visible : 3,
 		// infinite navigation
@@ -111,12 +113,12 @@
 				item.style.opacity = 1;
 				item.style.pointerEvents = 'auto';
 				item.style.zIndex = i === 0 ? parseInt(this.options.visible + 1) : parseInt(this.options.visible - i);
-				item.style.WebkitTransform = item.style.transform = 'translate3d(0px, 0px, ' + parseInt(-1 * 50 * i) + 'px)';
+				item.style.WebkitTransform = item.style.transform = 'translate3d(0px, 0px, ' + parseInt(-1 * this.options.interval * i) + 'px)';
 			}
 			else {
 				item.style.opacity = 0;
 				item.classList.remove('stack__item--current')
-				item.style.WebkitTransform = item.style.transform = 'translate3d(0,0,-' + parseInt(this.options.visible * 50) + 'px)';
+				item.style.WebkitTransform = item.style.transform = 'translate3d(0,0,-' + parseInt(this.options.visible * this.options.interval) + 'px)';
 			}
 		}
 
@@ -166,7 +168,7 @@
 				item.style.zIndex = parseInt(self.options.visible - i);
 				
 				dynamics.animate(item, {
-					translateZ : parseInt(-1 * 50 * i)
+					translateZ : parseInt(-1 * self.options.interval * i)
 				}, self.options.stackItemsAnimation);
 			}
 
@@ -188,7 +190,7 @@
 						}
 
 						// this one remains the same..
-						animProps.translateZ = parseInt(-1 * 50 * (i+1));
+						animProps.translateZ = parseInt(-1 * self.options.interval * (i+1));
 
 						preAnimation.animationSettings.complete = function() {
 							animateStackItems(item, i);
@@ -218,7 +220,7 @@
 			currentItem.style.opacity = 0;
 			currentItem.style.pointerEvents = 'none';
 			currentItem.style.zIndex = -1;
-			currentItem.style.WebkitTransform = currentItem.style.transform = 'translate3d(0px, 0px, -' + parseInt(self.options.visible * 50) + 'px)';
+			currentItem.style.WebkitTransform = currentItem.style.transform = 'translate3d(0px, 0px, -' + parseInt(self.options.visible * self.options.interval) + 'px)';
 
 			currentItem.classList.remove(action === 'accept' ? 'stack__item--accept' : 'stack__item--reject')
 
@@ -256,7 +258,7 @@
 		var lastIndex = this.current <= 0 ? this.itemsTotal - 2 : this.current - 2
 		var activeItem = this.items[lastIndex + 1]
 		activeItem.classList.remove('stack__item--current')
-		console.log(lastIndex)
+		// console.log(lastIndex)
 		activeItem.classList.add('stack__item--current')
 		activeItem.style.transform = ''
 		activeItem.style.opacity = '0'

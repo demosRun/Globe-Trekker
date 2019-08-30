@@ -264,6 +264,7 @@
       owo.state.checkList = []
       this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
         infinite: false,
+        interval: 0,
         onEndStack: function () {
           console.log('最后了')
         }
@@ -549,13 +550,13 @@
 @keyframes yudaAccept {
 	to {
 		opacity: 0;
-		transform: rotate3d(0,0,1,20deg);
+		transform: rotate3d(0, 0, 1, -20deg);
 	}
 }
 
 .stack--yuda .stack-item-pick {
   opacity: 0;
-  transform: translate3d(200px, 0, 0) rotate3d(0, 0, 1, 20deg);
+  transform: translate3d(-200px, 0, 0) rotate3d(0, 0, -1, 20deg);
   animation: yudaPick 0.5s forwards;
 }
 

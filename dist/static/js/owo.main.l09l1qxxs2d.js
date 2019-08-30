@@ -1,4 +1,4 @@
-// Fri Aug 30 2019 00:29:31 GMT+0800 (GMT+08:00)
+// Fri Aug 30 2019 16:35:39 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -117,6 +117,7 @@ owo.script = {
           owo.state.checkList = [];
           this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
             infinite: false,
+            interval: 0,
             onEndStack: function onEndStack() {
               console.log('最后了');
             }
@@ -469,10 +470,10 @@ owo.script = {
               // console.log(e.swipe)
               // 向左滑动
               if (e.swipe[0] < -100) {
+                if (_this4.data.yuda) _this4.reject();
+              } else if (e.swipe[0] > 100) {
                 console.log('后退!');
                 if (_this4.data.yuda) _this4.back();
-              } else if (e.swipe[0] > 100) {
-                if (_this4.data.yuda) _this4.reject();
               } else if (e.swipe[1] < -100) {
                 _this4.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block';
               } else if (e.swipe[1] > 100) {
@@ -483,6 +484,7 @@ owo.script = {
           owo.state.checkList = [];
           this.data.yuda = new Stack(document.getElementById('stack_yuda2'), {
             infinite: false,
+            interval: 0,
             onEndStack: function onEndStack() {
               console.log('最后了');
               owo.go('five', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
