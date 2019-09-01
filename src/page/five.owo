@@ -15,6 +15,16 @@
       .stars.stars-3
       .stars.stars-4
       .stars.stars-5
+      // 分数文字
+      .code-text
+        span 你
+        span 的
+        span 江
+        span 湖
+        span 指
+        span 数
+        span 是
+        span.bold-text 30分
       // 提示上滑
       span.info-text 上划显示驻美使领馆联系方式
       // 第二页
@@ -63,8 +73,10 @@
       owo.tool.animate('bounceInRight', this.query('.overstep')[0], 1800)
       if (owo.state.code >= 8) {
         this.$el.classList.add('lave3')
-      } else if (owo.state.code >= 5) {
+        this.query('.bold-text')[0].innerText = '100分'
+      } else if (owo.state.code > 5) {
         this.$el.classList.add('lave2')
+        this.query('.bold-text')[0].innerText = '60分'
       } else {
         this.$el.classList.add('lave1')
       }
@@ -87,20 +99,32 @@
       owo.tool.animate('bounceIn', this.query('.stars-3')[0], 2200)
       owo.tool.animate('bounceIn', this.query('.stars-4')[0], 2300)
       owo.tool.animate('bounceIn', this.query('.stars-5')[0], 2400)
-      // 左右滑动
-      owo.tool.touch({
-        el: this.$el,
-        end: (e) => {
-          console.log(e.swipe)
-          // 上下滑动
-          if (e.swipe[1] < -100) {
-            this.query('.info-box')[0].style.opacity = 1
+      // 文字出现
+      owo.tool.animate('bounceIn', this.query('.code-text span')[0], 2600)
+      owo.tool.animate('bounceIn', this.query('.code-text span')[1], 2700)
+      owo.tool.animate('bounceIn', this.query('.code-text span')[2], 2800)
+      owo.tool.animate('bounceIn', this.query('.code-text span')[3], 2900)
+      owo.tool.animate('bounceIn', this.query('.code-text span')[4], 3000)
+      owo.tool.animate('bounceIn', this.query('.code-text span')[5], 3100)
+      owo.tool.animate('bounceIn', this.query('.code-text span')[6], 3200)
+      owo.tool.animate('fadeIn', this.query('.code-text span')[7], 3800)
+      setTimeout(() => {
+        // 左右滑动
+        owo.tool.touch({
+          el: this.$el,
+          end: (e) => {
+            // console.log(e.swipe)
+            // 上下滑动
+            if (e.swipe[1] < -100) {
+              this.query('.info-box')[0].style.opacity = 1
+            }
+            if (e.swipe[1] > 100) {
+              this.query('.info-box')[0].style.opacity = 0
+            }
           }
-          if (e.swipe[1] > 100) {
-            this.query('.info-box')[0].style.opacity = 0
-          }
-        }
-      })
+        })
+      }, 0)
+      
     },
     switchShare: function () {
       if (this.data.showShare) {
@@ -310,5 +334,20 @@
   position: absolute;
   left: 84px;
   top: 84px;
+}
+.code-text {
+  font-size: 38px;
+  position: absolute;
+  text-align: center;
+  top: 360px;
+  left: 0;
+  right: 0;
+  span {
+    margin: 0 5px;
+  }
+  .bold-text {
+    font-weight: bold;
+    color: cornflowerblue;
+  }
 }
 </style>

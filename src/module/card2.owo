@@ -273,7 +273,7 @@
           <div class="tips-text-box" font="FZZZHONGJW.TTF">
             <p>1. 换汇务必通过银行或有正式牌照的金融机构等正规途径，私下换汇违反有关外汇管理规定，存在很大的法律和权益风险。</p>
             <div class="line"></div>
-            <p>2. 低价代购/代缴费”骗局多！“代购”人员往往通过盗取公民身份信息，伪造他人的信用卡或购物卡，再以“商家限购”、“每人只能购买一次”等为由，通过网络招募兼职人员代为刷卡购物（通常都是购买价格高昂的奢侈品），许诺事后付给一定佣金。<br/>无论替人代购还是寻求代购服务均为非法！图一时方便或便宜不仅容易上当受骗而“财物两空”，还可能因所涉资金来源非法、盗刷信用卡等问题卷入“洗钱”、“信用卡欺诈”犯罪，导致严重后果。</p>
+            <p>2. “低价代购/代缴费”骗局多！“代购”人员往往通过盗取公民身份信息，伪造他人的信用卡或购物卡，再以“商家限购”、“每人只能购买一次”等为由，通过网络招募兼职人员代为刷卡购物（通常都是购买价格高昂的奢侈品），许诺事后付给一定佣金。<br/>无论替人代购还是寻求代购服务均为非法！图一时方便或便宜不仅容易上当受骗而“财物两空”，还可能因所涉资金来源非法、盗刷信用卡等问题卷入“洗钱”、“信用卡欺诈”犯罪，导致严重后果。</p>
             <div class="line"></div>
             <p>3. 切记，天上不会掉馅饼，切莫轻信或参与“打折缴费”、“优惠换汇”、“低价代购”，确保财产安全！</p>
           </div>
@@ -499,8 +499,8 @@
   background-repeat: no-repeat;
   background-position-x: 0;
   background-position-y: 72%;
-  animation: floatX 10s linear infinite;
-  background-repeat-y: no-repeat;
+  // animation: floatX 10s linear infinite;
+  background-repeat: no-repeat;
   .tips-text-box {
     overflow: auto;
     height: calc(100% - 90px);

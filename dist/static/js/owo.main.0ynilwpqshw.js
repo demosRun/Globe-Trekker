@@ -1,4 +1,4 @@
-// Fri Aug 30 2019 17:53:46 GMT+0800 (GMT+08:00)
+// Sun Sep 01 2019 23:42:29 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -91,7 +91,7 @@ owo.script = {
       setTimeout(function () {
         _this.query('.text')[0].style.animation = 'float 2s infinite alternate';
         _this.query('.scroll-box')[0].style.opacity = '1';
-        _this.query('.scroll-box')[0].style.width = '729px';
+        _this.query('.scroll-box')[0].style.width = '767px';
       }, 1200); // 按钮脉冲效果
 
       owo.tool.animate('pulse', this.query('.button')[0], 1600);
@@ -117,7 +117,6 @@ owo.script = {
           owo.state.checkList = [];
           this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
             infinite: false,
-            interval: 0,
             onEndStack: function onEndStack() {
               console.log('最后了');
             }
@@ -203,7 +202,7 @@ owo.script = {
 
                 this.setCheckList(_check);
 
-                if (_check[1] || _check[2] || _check[3]) {
+                if (!_check[0] && (_check[1] || _check[2] || _check[3])) {
                   owo.state.code++;
                 }
 
@@ -221,7 +220,7 @@ owo.script = {
 
                 this.setCheckList(_check2);
 
-                if (_check2[2]) {
+                if (!_check2[0] && !_check2[1] && _check2[2] && !_check2[3]) {
                   owo.state.code++;
                 }
 
@@ -311,7 +310,7 @@ owo.script = {
 
                 this.setCheckList(_check7);
 
-                if (_check7[1] && _check7[2] && _check7[3]) {
+                if (!_check7[0] && _check7[1] && _check7[2] && _check7[3]) {
                   owo.state.code++;
                 }
 
@@ -398,8 +397,10 @@ owo.script = {
 
       if (owo.state.code >= 8) {
         this.$el.classList.add('lave3');
-      } else if (owo.state.code >= 5) {
+        this.query('.bold-text')[0].innerText = '100分';
+      } else if (owo.state.code > 5) {
         this.$el.classList.add('lave2');
+        this.query('.bold-text')[0].innerText = '60分';
       } else {
         this.$el.classList.add('lave1');
       }
@@ -421,22 +422,33 @@ owo.script = {
       owo.tool.animate('bounceIn', this.query('.stars-2')[0], 2100);
       owo.tool.animate('bounceIn', this.query('.stars-3')[0], 2200);
       owo.tool.animate('bounceIn', this.query('.stars-4')[0], 2300);
-      owo.tool.animate('bounceIn', this.query('.stars-5')[0], 2400); // 左右滑动
+      owo.tool.animate('bounceIn', this.query('.stars-5')[0], 2400); // 文字出现
 
-      owo.tool.touch({
-        el: this.$el,
-        end: function end(e) {
-          console.log(e.swipe); // 上下滑动
+      owo.tool.animate('bounceIn', this.query('.code-text span')[0], 2600);
+      owo.tool.animate('bounceIn', this.query('.code-text span')[1], 2700);
+      owo.tool.animate('bounceIn', this.query('.code-text span')[2], 2800);
+      owo.tool.animate('bounceIn', this.query('.code-text span')[3], 2900);
+      owo.tool.animate('bounceIn', this.query('.code-text span')[4], 3000);
+      owo.tool.animate('bounceIn', this.query('.code-text span')[5], 3100);
+      owo.tool.animate('bounceIn', this.query('.code-text span')[6], 3200);
+      owo.tool.animate('fadeIn', this.query('.code-text span')[7], 3800);
+      setTimeout(function () {
+        // 左右滑动
+        owo.tool.touch({
+          el: _this3.$el,
+          end: function end(e) {
+            // console.log(e.swipe)
+            // 上下滑动
+            if (e.swipe[1] < -100) {
+              _this3.query('.info-box')[0].style.opacity = 1;
+            }
 
-          if (e.swipe[1] < -100) {
-            _this3.query('.info-box')[0].style.opacity = 1;
+            if (e.swipe[1] > 100) {
+              _this3.query('.info-box')[0].style.opacity = 0;
+            }
           }
-
-          if (e.swipe[1] > 100) {
-            _this3.query('.info-box')[0].style.opacity = 0;
-          }
-        }
-      });
+        });
+      }, 0);
     },
     "switchShare": function switchShare() {
       if (this.data.showShare) {
@@ -1007,7 +1019,7 @@ owo.tool.animate = function (name, dom, delay) {
     dom.classList.remove(name)
     dom.classList.remove('owo-animated')
     if (delay) {
-      dom.style.animationDelay = 'unset'
+      dom.style.animationDelay = ''
     }
   }
 }

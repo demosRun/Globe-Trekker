@@ -31,7 +31,7 @@
       setTimeout(() => {
         this.query('.text')[0].style.animation = 'float 2s infinite alternate'
         this.query('.scroll-box')[0].style.opacity = '1'
-        this.query('.scroll-box')[0].style.width = '729px'
+        this.query('.scroll-box')[0].style.width = '767px'
       }, 1200)
       // 按钮脉冲效果
       owo.tool.animate('pulse', this.query('.button')[0], 1600)
@@ -84,9 +84,9 @@
   left: 0;
   right: 0;
   margin: auto;
-  top: 866px;
+  top: 820px;
   width: 0;
-  height: 454px;
+  height: 550px;
   opacity: 0;
   transition: width 1s;
   .scroll {
