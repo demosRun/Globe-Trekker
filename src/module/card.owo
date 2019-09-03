@@ -2,7 +2,7 @@
 <div class="card-switch">
   <ul class="stack stack--yuda" id="stack_yuda">
     <li class="stack__item">
-      <div class="title-bar">1、[多选]小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div>
+      <div class="title-bar">1、小明正收拾行李准备赴美旅行，以下关于不可携带物品说法正确的有:</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 6000美元现金</p>
@@ -32,7 +32,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">2、[多选]小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div>
+      <div class="title-bar">2、小明在美国旅行期间接到一个电话，来电播放中文语音留言，“这里是XX大使馆，你有一封邮件需要领取，请按1接通人工服务...”，他应该：</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 接通人工服务</p>
@@ -62,7 +62,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">3、[单选]小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div>
+      <div class="title-bar">3、小明租车行驶在纽约至华盛顿的高速公路上，突然有警车紧随车后闪灯鸣笛，小明此时应该：</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 只要没超速就可以不用管，继续平稳行驶</p>
@@ -92,7 +92,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">4、[多选]小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div>
+      <div class="title-bar">4、小明夫妇携小孩在美国度假，期间出现以下哪些情况可能会给自身带来麻烦：</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 夫妻在酒店大堂吵架并推搡，吓得小孩在一旁大哭</p>
@@ -122,7 +122,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">5、[多选]小明到美国某商场购物，以下行为不恰当的有：</div>
+      <div class="title-bar">5、小明到美国某商场购物，以下行为不恰当的有：</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 将未付款衣物放进自己口袋</p>
@@ -158,7 +158,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">6、[多选]小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div>
+      <div class="title-bar">6、小明的表弟刚到美国留学，在社交网络上加入了很多“华人服务”群，面对群里“朋友”发布的广告，他不能采信的有：</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 优惠换汇</p>
@@ -188,7 +188,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">7、[多选]小明在美国旅游期间，以下哪些“便宜”不能占：</div>
+      <div class="title-bar">7、小明在美国旅游期间，以下哪些“便宜”不能占：</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 帅哥美女搭讪提供“特殊”服务</p>
@@ -218,7 +218,7 @@
       <div class="next-button" :tap="accept">下一题</div>
     </li>
     <li class="stack__item">
-      <div class="title-bar">8、[多选]小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div>
+      <div class="title-bar">8、小明即将结束在美国的旅行，准备带点当地“特产”回国，以下物品不能带回的有</div>
       <div class="answer-list">
         <div class="answer answer-1" :tap="checkItem">
           <p>A. 新购的2台笔记本电脑和2台高档相机</p>
@@ -573,8 +573,9 @@
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
   background: linear-gradient(to right, #90a9e7 , #6179d6);
 }
 .tips-title-bar {

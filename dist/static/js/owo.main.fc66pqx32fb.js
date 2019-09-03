@@ -1,4 +1,4 @@
-// Sun Sep 01 2019 23:42:29 GMT+0800 (GMT+08:00)
+// Tue Sep 03 2019 16:01:57 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -24,47 +24,47 @@ owo.script = {
 
       var queue = new createjs.LoadQueue();
       queue.loadManifest([{
-        src: "./static/resource/icon-1.png"
+        src: "/img/MAIN/2019/08/119613/resource/icon-1.png"
       }, {
-        src: "./static/resource/icon-2.png"
+        src: "/img/MAIN/2019/08/119613/resource/icon-2.png"
       }, {
-        src: "./static/resource/icon-3.png"
+        src: "/img/MAIN/2019/08/119613/resource/icon-3.png"
       }, {
-        src: "./static/resource/icon-4.png"
+        src: "/img/MAIN/2019/08/119613/resource/icon-4.png"
       }, {
-        src: "./static/resource/loading-bar.png"
+        src: "/img/MAIN/2019/08/119613/resource/loading-bar.png"
       }, {
-        src: "./static/resource/page.png"
+        src: "/img/MAIN/2019/08/119613/resource/page.png"
       }, {
-        src: "./static/resource/people.png"
+        src: "/img/MAIN/2019/08/119613/resource/people.png"
       }, {
-        src: "./static/resource/scroll.png"
+        src: "/img/MAIN/2019/08/119613/resource/scroll.png"
       }, {
-        src: "./static/resource/two-bg.jpg"
+        src: "/img/MAIN/2019/08/119613/resource/two-bg.jpg"
       }, {
-        src: "./static/resource/two-button.png"
+        src: "/img/MAIN/2019/08/119613/resource/two-button.png"
       }, {
-        src: "./static/resource/two-logo.png"
+        src: "/img/MAIN/2019/08/119613/resource/two-logo.png"
       }, {
-        src: "./static/resource/two-text.png"
+        src: "/img/MAIN/2019/08/119613/resource/two-text.png"
       }, {
-        src: "./static/resource/two-tip-close.png"
+        src: "/img/MAIN/2019/08/119613/resource/two-tip-close.png"
       }, {
-        src: "./static/resource/two-tip-title.png"
+        src: "/img/MAIN/2019/08/119613/resource/two-tip-title.png"
       }, {
-        src: "./static/resource/two-title.png"
+        src: "/img/MAIN/2019/08/119613/resource/two-title.png"
       }, {
-        src: "./static/resource/click.mp3"
+        src: "/img/MAIN/2019/08/119613/resource/click.mp3"
       }, {
-        src: "./static/resource/check.png"
+        src: "/img/MAIN/2019/08/119613/resource/check.png"
       }, {
-        src: "./static/resource/cloud.png"
+        src: "/img/MAIN/2019/08/119613/resource/cloud.png"
       }, {
-        src: "./static/resource/five-button.png"
+        src: "/img/MAIN/2019/08/119613/resource/five-button.png"
       }, {
-        src: "./static/resource/five-scroll-1.png"
+        src: "/img/MAIN/2019/08/119613/resource/five-scroll-1.png"
       }, {
-        src: "./static/resource/bg.mp3"
+        src: "/img/MAIN/2019/08/119613/resource/bg.mp3"
       }]);
       queue.on("progress", function (event) {
         var left = queue.progress * 100 - 12;
@@ -97,7 +97,7 @@ owo.script = {
       owo.tool.animate('pulse', this.query('.button')[0], 1600);
     },
     "toThree": function toThree() {
-      new Audio("./static/resource/click.mp3").play();
+      new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play();
       owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
     }
   },
@@ -170,7 +170,7 @@ owo.script = {
           owo.state.checkList.push(tempCheck);
         },
         "accept": function accept() {
-          new Audio("./static/resource/click.mp3").play(); // 计算分数
+          new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play(); // 计算分数
 
           switch (this.data.number) {
             case 1:
@@ -332,7 +332,7 @@ owo.script = {
           this.data.yuda.reject();
         },
         "checkItem": function checkItem(e) {
-          new Audio("./static/resource/click.mp3").play();
+          new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play();
           var parentElement = this.$event.target.parentElement;
           var answer = parentElement.querySelectorAll('.answer'); // console.log(this.$event.target.classList.contains('ischeck'))
 
@@ -521,7 +521,7 @@ owo.script = {
           this.data.yuda.restart();
         },
         "accept": function accept() {
-          new Audio("./static/resource/click.mp3").play();
+          new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play();
           this.data.number++;
 
           if (this.data.number > this.data.allNumber) {
@@ -569,6 +569,15 @@ owo.script = {
 
           this.query('.page')[0].innerText = this.data.number + ' / ' + this.data.allNumber;
           this.data.yuda.reject();
+        },
+        "toNext": function toNext() {
+          if (this.data.yuda) this.reject();
+        },
+        "toBack": function toBack() {
+          if (this.data.yuda) this.back();
+        },
+        "showE": function showE() {
+          this.query('.stack__item--current')[0].getElementsByClassName('explain')[0].style.display = 'block';
         },
         "prop": {}
       }
@@ -664,9 +673,9 @@ _owo._run = function (eventFor, templateName, event) {
 
 _owo.bindEvent = function (eventName, eventFor, tempDom, templateName) {
   // 处理事件 使用bind防止闭包
-  tempDom.addEventListener(eventName, function(event) {
+  tempDom['on' + eventName] = function(event) {
     _owo._run(eventFor, templateName, event)
-  }.bind({eventFor}), false)
+  }.bind({eventFor: eventFor})
 }
 
 /* owo事件处理 */
@@ -1055,8 +1064,8 @@ owo.tool.touch = function (config) {
     if (config.end) {
       config.end({
         target: startTarget,
-        start,
-        end,
+        start: start,
+        end: end,
         swipe: [end[0] - start[0], end[1] - start[1]]
       })
     }
@@ -1079,8 +1088,8 @@ owo.tool.touch = function (config) {
     if (config.end) {
       config.end({
         target: startTarget,
-        start,
-        end,
+        start: start,
+        end: end,
         swipe: [end[0] - start[0], end[1] - start[1]]
       })
     }
@@ -1134,7 +1143,7 @@ _owo.handlePage = function (newPageFunction, entryDom) {
     // 待修复,临时获取方式,这种方式获取到的dom不准确
     var childDom = entryDom.querySelectorAll('[template="' + key +'"]')[0]
     if (!childDom) {
-      console.error('组件丢失！')
+      console.error('组件丢失:', key)
       continue
     }
     // 递归处理
