@@ -1,4 +1,4 @@
-// Tue Sep 03 2019 16:01:57 GMT+0800 (GMT+08:00)
+// Wed Sep 04 2019 23:08:02 GMT+0800 (GMT+08:00)
 
 "use strict";
 
@@ -24,47 +24,47 @@ owo.script = {
 
       var queue = new createjs.LoadQueue();
       queue.loadManifest([{
-        src: "/img/MAIN/2019/08/119613/resource/icon-1.png"
+        src: "./static/resource/icon-1.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/icon-2.png"
+        src: "./static/resource/icon-2.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/icon-3.png"
+        src: "./static/resource/icon-3.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/icon-4.png"
+        src: "./static/resource/icon-4.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/loading-bar.png"
+        src: "./static/resource/loading-bar.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/page.png"
+        src: "./static/resource/page.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/people.png"
+        src: "./static/resource/people.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/scroll.png"
+        src: "./static/resource/scroll.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-bg.jpg"
+        src: "./static/resource/two-bg.jpg"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-button.png"
+        src: "./static/resource/two-button.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-logo.png"
+        src: "./static/resource/two-logo.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-text.png"
+        src: "./static/resource/two-text.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-tip-close.png"
+        src: "./static/resource/two-tip-close.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-tip-title.png"
+        src: "./static/resource/two-tip-title.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/two-title.png"
+        src: "./static/resource/two-title.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/click.mp3"
+        src: "./static/resource/click.mp3"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/check.png"
+        src: "./static/resource/check.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/cloud.png"
+        src: "./static/resource/cloud.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/five-button.png"
+        src: "./static/resource/five-button.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/five-scroll-1.png"
+        src: "./static/resource/five-scroll-1.png"
       }, {
-        src: "/img/MAIN/2019/08/119613/resource/bg.mp3"
+        src: "./static/resource/bg.mp3"
       }]);
       queue.on("progress", function (event) {
         var left = queue.progress * 100 - 12;
@@ -97,7 +97,7 @@ owo.script = {
       owo.tool.animate('pulse', this.query('.button')[0], 1600);
     },
     "toThree": function toThree() {
-      new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play();
+      new Audio("./static/resource/click.mp3").play();
       owo.go('three', 'fade', 'moveFromRight', 'fade', 'moveFromLeft', true);
     }
   },
@@ -117,6 +117,7 @@ owo.script = {
           owo.state.checkList = [];
           this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
             infinite: false,
+            interval: 0,
             onEndStack: function onEndStack() {
               console.log('最后了');
             }
@@ -170,7 +171,7 @@ owo.script = {
           owo.state.checkList.push(tempCheck);
         },
         "accept": function accept() {
-          new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play(); // 计算分数
+          new Audio("./static/resource/click.mp3").play(); // 计算分数
 
           switch (this.data.number) {
             case 1:
@@ -184,7 +185,7 @@ owo.script = {
 
                 this.setCheckList(check);
 
-                if (check[1] && check[2] && check[3]) {
+                if (!check[0] && check[1] && check[2] && check[3]) {
                   owo.state.code++;
                 }
 
@@ -310,7 +311,7 @@ owo.script = {
 
                 this.setCheckList(_check7);
 
-                if (!_check7[0] && _check7[1] && _check7[2] && _check7[3]) {
+                if (_check7[1] && _check7[2] && _check7[3]) {
                   owo.state.code++;
                 }
 
@@ -332,7 +333,7 @@ owo.script = {
           this.data.yuda.reject();
         },
         "checkItem": function checkItem(e) {
-          new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play();
+          new Audio("./static/resource/click.mp3").play();
           var parentElement = this.$event.target.parentElement;
           var answer = parentElement.querySelectorAll('.answer'); // console.log(this.$event.target.classList.contains('ischeck'))
 
@@ -395,7 +396,7 @@ owo.script = {
       this.query('.overstep')[0].innerText = "\u8D85\u8D8A".concat(owo.state.overstep, "%\u73A9\u5BB6");
       owo.tool.animate('bounceInRight', this.query('.overstep')[0], 1800);
 
-      if (owo.state.code >= 8) {
+      if (owo.state.code >= 7) {
         this.$el.classList.add('lave3');
         this.query('.bold-text')[0].innerText = '100分';
       } else if (owo.state.code > 5) {
@@ -521,7 +522,7 @@ owo.script = {
           this.data.yuda.restart();
         },
         "accept": function accept() {
-          new Audio("/img/MAIN/2019/08/119613/resource/click.mp3").play();
+          new Audio("./static/resource/click.mp3").play();
           this.data.number++;
 
           if (this.data.number > this.data.allNumber) {
