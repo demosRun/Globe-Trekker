@@ -336,14 +336,15 @@
   top: 84px;
 }
 .code-text {
-  font-size: 38px;
+  font-size: 34px;
   position: absolute;
   text-align: center;
   top: 360px;
   left: 0;
   right: 0;
+  font-weight: bold;
   span {
-    margin: 0 5px;
+    margin: 0 3px;
   }
   .bold-text {
     font-weight: bold;

@@ -396,7 +396,7 @@ owo.script = {
       this.query('.overstep')[0].innerText = "\u8D85\u8D8A".concat(owo.state.overstep, "%\u73A9\u5BB6");
       owo.tool.animate('bounceInRight', this.query('.overstep')[0], 1800);
 
-      if (owo.state.code >= 7) {
+      if (owo.state.code >= 8) {
         this.$el.classList.add('lave3');
         this.query('.bold-text')[0].innerText = '100分';
       } else if (owo.state.code > 5) {
