@@ -264,6 +264,7 @@
       owo.state.checkList = []
       this.data.yuda = new Stack(document.getElementById('stack_yuda'), {
         infinite: false,
+        interval: 0,
         onEndStack: function () {
           console.log('最后了')
         }
